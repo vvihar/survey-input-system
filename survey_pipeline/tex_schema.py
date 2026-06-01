@@ -4,6 +4,8 @@ import re
 from pathlib import Path
 from typing import Any
 
+from .models import TexActivityItem, TexDigitQuestion, TexScenarioItem, TexSchema
+
 def _remove_tex_comments(text: str) -> str:
     # Remove comments introduced by unescaped %. Keep line breaks.
     out_lines = []
@@ -88,7 +90,7 @@ def _choices(body: str) -> list[str]:
     return vals
 
 
-def parse_digit_questions(tex_path: Path) -> list[dict[str, Any]]:
+def parse_digit_questions(tex_path: Path) -> list[TexDigitQuestion]:
     text = _remove_tex_comments(tex_path.read_text(encoding="utf-8"))
     cut = text.find("\\section{ドライバーとしてのシナリオ評価}")
     text_head = text[:cut] if cut >= 0 else text
@@ -100,7 +102,7 @@ def parse_digit_questions(tex_path: Path) -> list[dict[str, Any]]:
         events.append((pos, "question", (title, body)))
     events.sort(key=lambda x: x[0])
 
-    result: list[dict[str, Any]] = []
+    result: list[TexDigitQuestion] = []
     section_no = 0
     q_no = 0
     for _pos, kind, payload in events:
@@ -115,15 +117,14 @@ def parse_digit_questions(tex_path: Path) -> list[dict[str, Any]]:
         title = _strip_tex(title_raw)
         ch = _choices(body)
         multiple = "全て" in body or "すべて" in body
-        result.append({
-            "id": f"q{section_no}_{q_no}",
-            "type": "digit",
-            "label": title,
-            "choices": ch,
-            "min": 1 if ch else None,
-            "max": len(ch) if ch else None,
-            "multiple": multiple,
-        })
+        result.append(TexDigitQuestion(
+            id=f"q{section_no}_{q_no}",
+            label=title,
+            choices=ch,
+            min=1 if ch else None,
+            max=len(ch) if ch else None,
+            multiple=multiple,
+        ))
     return result
 
 def _iter_newcommands(text: str) -> list[tuple[str, str]]:
@@ -150,7 +151,7 @@ def _iter_newcommands(text: str) -> list[tuple[str, str]]:
     return out
 
 
-def parse_scenario_sets(tex_path: Path) -> dict[str, Any]:
+def parse_scenario_sets(tex_path: Path) -> dict[str, list[TexScenarioItem]]:
     text = _remove_tex_comments(tex_path.read_text(encoding="utf-8"))
     commands = dict(_iter_newcommands(text))
 
@@ -164,9 +165,9 @@ def parse_scenario_sets(tex_path: Path) -> dict[str, Any]:
         if re.match(r"^(commute|ondemand|passenger)Set[ABC]$", name):
             sets[name] = re.findall(r"\\((?:commute|ondemand|passenger)Scenario\w+)", body)
 
-    by_version: dict[str, list[dict[str, Any]]] = {}
+    by_version: dict[str, list[TexScenarioItem]] = {}
     for version in ["A", "B", "C"]:
-        items: list[dict[str, Any]] = []
+        items: list[TexScenarioItem] = []
         for part, set_prefix, q_prefix, label in [
             ("driver_commute", "commuteSet", "q4_commute", "ドライバー・通勤中"),
             ("driver_home", "ondemandSet", "q4_home", "ドライバー・自宅"),
@@ -174,28 +175,25 @@ def parse_scenario_sets(tex_path: Path) -> dict[str, Any]:
         ]:
             refs = sets.get(f"{set_prefix}{version}", [])
             for i, ref in enumerate(refs, start=1):
-                items.append({
-                    "id": f"{q_prefix}_{i}",
-                    "type": "rating5",
-                    "part": part,
-                    "label": f"{label} {i}",
-                    "scenario_macro": ref,
-                    "scenario_text": scenario_bodies.get(ref, ""),
-                    "min": 1,
-                    "max": 5,
-                })
+                items.append(TexScenarioItem(
+                    id=f"{q_prefix}_{i}",
+                    part=part,
+                    label=f"{label} {i}",
+                    scenario_macro=ref,
+                    scenario_text=scenario_bodies.get(ref, ""),
+                ))
         by_version[version] = items
     return by_version
 
-def activity_schema() -> list[dict[str, Any]]:
+def activity_schema() -> list[TexActivityItem]:
     days = ["月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日", "日曜日"]
     cols = ["dep_time", "dep_place", "arr_time", "arr_place", "purpose", "mode", "tolerance_min"]
-    return [{"day": d, "rows": 7, "columns": cols} for d in days]
+    return [TexActivityItem(day=d, columns=cols) for d in days]
 
 
-def build_tex_schema(tex_path: Path) -> dict[str, Any]:
-    return {
-        "digit_questions": parse_digit_questions(tex_path),
-        "scenario_sets": parse_scenario_sets(tex_path),
-        "activities": activity_schema(),
-    }
+def build_tex_schema(tex_path: Path) -> TexSchema:
+    return TexSchema(
+        digit_questions=parse_digit_questions(tex_path),
+        scenario_sets=parse_scenario_sets(tex_path),
+        activities=activity_schema(),
+    )

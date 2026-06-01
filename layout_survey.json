@@ -36,7 +36,7 @@
     330.0,
     720.0
   ],
-  "schema": {
+  "schema_data": {
     "digit_questions": [
       {
         "id": "q1_1",
@@ -835,9 +835,7 @@
             "その他",
             "回答しない"
           ],
-          "min": 1,
-          "max": 4,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -852,7 +850,18 @@
             0.0,
             761.336,
             246.988
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 4,
+          "multiple": false
         },
         {
           "id": "q1_2",
@@ -873,9 +882,7 @@
             "85〜89歳",
             "90歳以上"
           ],
-          "min": 1,
-          "max": 13,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -890,7 +897,18 @@
             134.456,
             761.336,
             384.344
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 13,
+          "multiple": false
         },
         {
           "id": "q1_3",
@@ -901,9 +919,7 @@
             "三之瀬",
             "大地蔵"
           ],
-          "min": 1,
-          "max": 3,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -918,7 +934,18 @@
             218.015,
             761.336,
             467.903
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 3,
+          "multiple": false
         },
         {
           "id": "q1_4",
@@ -932,9 +959,7 @@
             "学生",
             "その他"
           ],
-          "min": 1,
-          "max": 6,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -949,7 +974,18 @@
             336.442,
             761.336,
             586.3299999999999
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 6,
+          "multiple": false
         },
         {
           "id": "q1_5",
@@ -959,9 +995,7 @@
             "はい",
             "いいえ"
           ],
-          "min": 1,
-          "max": 2,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -976,7 +1010,18 @@
             419.004,
             761.336,
             668.892
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 2,
+          "multiple": false
         },
         {
           "id": "q2_1",
@@ -987,9 +1032,7 @@
             "持っていない",
             "持っていたが 返納した"
           ],
-          "min": 1,
-          "max": 3,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -1004,7 +1047,18 @@
             548.59,
             761.336,
             798.478
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 3,
+          "multiple": false
         },
         {
           "id": "q2_2",
@@ -1014,9 +1068,7 @@
             "ある",
             "ない"
           ],
-          "min": 1,
-          "max": 2,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -1031,7 +1083,18 @@
             0.0,
             1046.9270000000001,
             233.936
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 2,
+          "multiple": false
         },
         {
           "id": "q2_3",
@@ -1043,9 +1106,7 @@
             "週に3〜4回",
             "ほぼ毎日"
           ],
-          "min": 1,
-          "max": 4,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -1060,7 +1121,18 @@
             84.543,
             1046.9270000000001,
             334.43100000000004
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 4,
+          "multiple": false
         },
         {
           "id": "q2_4",
@@ -1070,9 +1142,7 @@
             "いる",
             "いない"
           ],
-          "min": 1,
-          "max": 2,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -1087,7 +1157,18 @@
             184.04199999999997,
             1046.9270000000001,
             433.93
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 2,
+          "multiple": false
         },
         {
           "id": "q2_5",
@@ -1100,9 +1181,7 @@
             "家族・ 友人に頼む",
             "その他"
           ],
-          "min": 1,
-          "max": 5,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -1117,7 +1196,18 @@
             302.469,
             1046.9270000000001,
             552.357
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 5,
+          "multiple": false
         },
         {
           "id": "q2_6",
@@ -1130,9 +1220,7 @@
             "非常に不便",
             "わからない"
           ],
-          "min": 1,
-          "max": 5,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -1147,7 +1235,18 @@
             437.83299999999997,
             1046.9270000000001,
             687.721
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 5,
+          "multiple": false
         },
         {
           "id": "q2_7",
@@ -1158,9 +1257,7 @@
             "持っているが、電話くらいしか使わない",
             "持っていない"
           ],
-          "min": 1,
-          "max": 3,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -1175,7 +1272,18 @@
             535.054,
             1046.9270000000001,
             784.942
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 3,
+          "multiple": false
         },
         {
           "id": "q3_1",
@@ -1186,9 +1294,7 @@
             "条件によっては引き受けてもよい",
             "ぜひ引き受けたい"
           ],
-          "min": 1,
-          "max": 3,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -1203,7 +1309,18 @@
             132.306,
             1190.551025390625,
             382.194
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 3,
+          "multiple": false
         },
         {
           "id": "q3_2",
@@ -1214,9 +1331,7 @@
             "条件によっては利用してもよい",
             "ぜひ利用したい"
           ],
-          "min": 1,
-          "max": 3,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -1231,7 +1346,18 @@
             263.399,
             1190.551025390625,
             513.287
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 3,
+          "multiple": false
         },
         {
           "id": "q3_3",
@@ -1246,9 +1372,7 @@
             "その他",
             "利用したくない"
           ],
-          "min": 1,
-          "max": 7,
-          "multiple": true,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -1263,7 +1387,18 @@
             450.56899999999996,
             1190.551025390625,
             700.457
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 7,
+          "multiple": true
         },
         {
           "id": "q3_4",
@@ -1275,9 +1410,7 @@
             "20分くらい",
             "30分以上"
           ],
-          "min": 1,
-          "max": 4,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 0,
           "local_page_index": 0,
@@ -1292,7 +1425,18 @@
             568.0,
             1190.551025390625,
             817.888
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 4,
+          "multiple": false
         }
       ]
     },
@@ -1316,9 +1460,7 @@
             "500円",
             "600円以上"
           ],
-          "min": 1,
-          "max": 7,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -1333,7 +1475,18 @@
             19.913999999999987,
             475.746,
             269.802
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 7,
+          "multiple": false
         },
         {
           "id": "q3_6",
@@ -1347,9 +1500,7 @@
             "700円",
             "1,000円以上"
           ],
-          "min": 1,
-          "max": 6,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -1364,7 +1515,18 @@
             172.21499999999997,
             475.746,
             422.103
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 6,
+          "multiple": false
         },
         {
           "id": "q3_7",
@@ -1377,9 +1539,7 @@
             "少し感じる",
             "強く感じる"
           ],
-          "min": 1,
-          "max": 5,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -1394,7 +1554,18 @@
             290.642,
             475.746,
             540.53
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 5,
+          "multiple": false
         },
         {
           "id": "q3_8",
@@ -1407,9 +1578,7 @@
             "やや重視する",
             "非常に重視する"
           ],
-          "min": 1,
-          "max": 5,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -1424,7 +1593,18 @@
             426.006,
             475.746,
             675.894
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 5,
+          "multiple": false
         },
         {
           "id": "q3_9",
@@ -1434,9 +1614,7 @@
             "今すぐ300円相当の割引",
             "1年後に360円相当の割引"
           ],
-          "min": 1,
-          "max": 2,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -1451,7 +1629,18 @@
             542.057,
             475.746,
             791.945
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 2,
+          "multiple": false
         },
         {
           "id": "q3_10",
@@ -1461,9 +1650,7 @@
             "今すぐ300円相当の割引",
             "5年後に600円相当の割引"
           ],
-          "min": 1,
-          "max": 2,
-          "multiple": false,
+          "part": null,
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -1478,17 +1665,25 @@
             621.246,
             475.746,
             841.8900146484375
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 2,
+          "multiple": false
         },
         {
           "id": "q4_commute_1",
           "type": "rating5",
-          "part": "driver_commute",
           "label": "ドライバー・通勤中 1",
-          "scenario_macro": "commuteScenarioOne",
-          "scenario_text": "ドライバー報酬 距離比例100円/km（2kmなら200円） 追加時間 ＋約20分 拒否権 条件を見て成立後でも断れる",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_commute",
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -1504,6 +1699,7 @@
             882.322,
             655.846
           ],
+          "table_rect": null,
           "cells": [
             [
               463.691,
@@ -1536,17 +1732,22 @@
               570.846
             ]
           ],
-          "context_text": "回答欄移動では、多少不便でも時間どおり着くことを重4やや重視する5非常に重視するつの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）追加時間＋約20分拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高いドライバー報酬定額300円追加時間＋約20分拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例20円/km（4kmなら80円）拒否"
+          "context_text": "回答欄移動では、多少不便でも時間どおり着くことを重4やや重視する5非常に重視するつの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）追加時間＋約20分拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高いドライバー報酬定額300円追加時間＋約20分拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例20円/km（4kmなら80円）拒否",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "commuteScenarioOne",
+          "scenario_text": "ドライバー報酬 距離比例100円/km（2kmなら200円） 追加時間 ＋約20分 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_commute_2",
           "type": "rating5",
-          "part": "driver_commute",
           "label": "ドライバー・通勤中 2",
-          "scenario_macro": "commuteScenarioTwo",
-          "scenario_text": "ドライバー報酬 定額300円 追加時間 ＋約20分 拒否権 稼働時間内で成立したら断れない",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_commute",
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -1562,6 +1763,7 @@
             882.322,
             747.381
           ],
+          "table_rect": null,
           "cells": [
             [
               463.691,
@@ -1594,17 +1796,22 @@
               662.381
             ]
           ],
-          "context_text": "つの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引引き受けたい度（5段階）12345ドライバー報酬定額300円追加時間＋約20分拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高いドライバー報酬距離比例140円/km（4kmなら560円）追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額100円拒否権成立したら断れないNG設定NG時間帯のみ引き受"
+          "context_text": "つの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引引き受けたい度（5段階）12345ドライバー報酬定額300円追加時間＋約20分拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高いドライバー報酬距離比例140円/km（4kmなら560円）追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額100円拒否権成立したら断れないNG設定NG時間帯のみ引き受",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "commuteScenarioTwo",
+          "scenario_text": "ドライバー報酬 定額300円 追加時間 ＋約20分 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_commute_3",
           "type": "rating5",
-          "part": "driver_commute",
           "label": "ドライバー・通勤中 3",
-          "scenario_macro": "commuteScenarioFour",
-          "scenario_text": "ドライバー報酬 距離比例140円/km（4kmなら560円） 追加時間 追加ほぼなし 拒否権 稼働時間内で成立したら断れない",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_commute",
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -1620,6 +1827,7 @@
             882.322,
             838.916
           ],
+          "table_rect": null,
           "cells": [
             [
               463.691,
@@ -1652,17 +1860,22 @@
               753.916
             ]
           ],
-          "context_text": "回答欄円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引引き受けたい度（5段階）12345ドライバー報酬距離比例140円/km（4kmなら560円）追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高いページ2/4"
+          "context_text": "回答欄円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引引き受けたい度（5段階）12345ドライバー報酬距離比例140円/km（4kmなら560円）追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高いページ2/4",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "commuteScenarioFour",
+          "scenario_text": "ドライバー報酬 距離比例140円/km（4kmなら560円） 追加時間 追加ほぼなし 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_commute_4",
           "type": "rating5",
-          "part": "driver_commute",
           "label": "ドライバー・通勤中 4",
-          "scenario_macro": "commuteScenarioSeven",
-          "scenario_text": "ドライバー報酬 定額300円 追加時間 ＋約20分 拒否権 条件を見て成立後でも断れる",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_commute",
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -1678,6 +1891,7 @@
             1167.912,
             194.164
           ],
+          "table_rect": null,
           "cells": [
             [
               749.282,
@@ -1710,17 +1924,22 @@
               109.164
             ]
           ],
-          "context_text": "1枚目/2枚ドライバーとしてのシナリオ評価「ノッカル」にドライバーとして参加する場合について、各カードの条件を読み、引き受けたい度を1〜5でお答えくだ参加意向（設問3.1）で「絶対に引き受けたくない」を選んだ方は回答不要です。また、免許をお持ちでない、または返納条件を読んで、当てはまる段階に○を付けてくだドライバー報酬定額300円追加時間＋約20分拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高い4.2ご自宅にいる場合あなたがご自宅にいて時間に余裕があるときに、利用者の求めに応じて送迎する場合についてお尋ねします。以下の各条件を見て、「引き受けたい度」を1（まったく引き"
+          "context_text": "1枚目/2枚ドライバーとしてのシナリオ評価「ノッカル」にドライバーとして参加する場合について、各カードの条件を読み、引き受けたい度を1〜5でお答えくだ参加意向（設問3.1）で「絶対に引き受けたくない」を選んだ方は回答不要です。また、免許をお持ちでない、または返納条件を読んで、当てはまる段階に○を付けてくだドライバー報酬定額300円追加時間＋約20分拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高い4.2ご自宅にいる場合あなたがご自宅にいて時間に余裕があるときに、利用者の求めに応じて送迎する場合についてお尋ねします。以下の各条件を見て、「引き受けたい度」を1（まったく引き",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "commuteScenarioSeven",
+          "scenario_text": "ドライバー報酬 定額300円 追加時間 ＋約20分 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_home_1",
           "type": "rating5",
-          "part": "driver_home",
           "label": "ドライバー・自宅 1",
-          "scenario_macro": "ondemandScenarioOne",
-          "scenario_text": "ドライバー報酬 定額300円 拒否権 条件確認後も断れる NG設定 NG時間帯のみ",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_home",
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -1736,6 +1955,7 @@
             1167.912,
             561.679
           ],
+          "table_rect": null,
           "cells": [
             [
               749.282,
@@ -1768,17 +1988,22 @@
               476.679
             ]
           ],
-          "context_text": "回の送迎を引き受けた際にドライバーが受け取る金額（定額または距離比例）利用者を同乗させることによって、普段の通勤所要時間に対して追加でかかる時間マッチング成立後に、乗客の条件（乗車地・目的地・時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）拒否権条件を見て成立後でも断れる12345低い高い迎を引き受けない設定ドライバー報酬定額300円拒否権条件確認後も断れるNG設定NG時間帯のみ引き受けたい度（5段階）12345低い高いドライバー報酬距離比例20円/km（4kmなら80円）拒否権条件確認後も断れるNG設定NGエリアのみ引き受けたい度（5段階）1"
+          "context_text": "回の送迎を引き受けた際にドライバーが受け取る金額（定額または距離比例）利用者を同乗させることによって、普段の通勤所要時間に対して追加でかかる時間マッチング成立後に、乗客の条件（乗車地・目的地・時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）拒否権条件を見て成立後でも断れる12345低い高い迎を引き受けない設定ドライバー報酬定額300円拒否権条件確認後も断れるNG設定NG時間帯のみ引き受けたい度（5段階）12345低い高いドライバー報酬距離比例20円/km（4kmなら80円）拒否権条件確認後も断れるNG設定NGエリアのみ引き受けたい度（5段階）1",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "ondemandScenarioOne",
+          "scenario_text": "ドライバー報酬 定額300円 拒否権 条件確認後も断れる NG設定 NG時間帯のみ",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_home_2",
           "type": "rating5",
-          "part": "driver_home",
           "label": "ドライバー・自宅 2",
-          "scenario_macro": "ondemandScenarioFour",
-          "scenario_text": "ドライバー報酬 距離比例20円/km（4kmなら80円） 拒否権 条件確認後も断れる NG設定 NGエリアのみ",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_home",
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -1794,6 +2019,7 @@
             1167.912,
             653.214
           ],
+          "table_rect": null,
           "cells": [
             [
               749.282,
@@ -1826,17 +2052,22 @@
               568.214
             ]
           ],
-          "context_text": "時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）拒否権条件を見て成立後でも断れる12345低い高い拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例20円/km（4kmなら80円）拒否権条件確認後も断れるNG設定NGエリアのみ引き受けたい度（5段階）12345低い高いドライバー報酬定額100円拒否権成立したら断れないNG設定NG時間帯のみ引き受けたい度（5段階）12345低い高い運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃距離に比例1"
+          "context_text": "時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）拒否権条件を見て成立後でも断れる12345低い高い拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例20円/km（4kmなら80円）拒否権条件確認後も断れるNG設定NGエリアのみ引き受けたい度（5段階）12345低い高いドライバー報酬定額100円拒否権成立したら断れないNG設定NG時間帯のみ引き受けたい度（5段階）12345低い高い運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃距離に比例1",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "ondemandScenarioFour",
+          "scenario_text": "ドライバー報酬 距離比例20円/km（4kmなら80円） 拒否権 条件確認後も断れる NG設定 NGエリアのみ",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_home_3",
           "type": "rating5",
-          "part": "driver_home",
           "label": "ドライバー・自宅 3",
-          "scenario_macro": "ondemandScenarioSeven",
-          "scenario_text": "ドライバー報酬 定額100円 拒否権 成立したら断れない NG設定 NG時間帯のみ",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_home",
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -1852,6 +2083,7 @@
             1167.912,
             744.749
           ],
+          "table_rect": null,
           "cells": [
             [
               749.282,
@@ -1884,17 +2116,22 @@
               659.749
             ]
           ],
-          "context_text": "12345拒否権稼働時間内で成立したら断れない12345低い高いドライバー報酬距離比例140円/km（4kmなら560円）拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額100円拒否権成立したら断れないNG設定NG時間帯のみ引き受けたい度（5段階）12345低い高いドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い運賃距離に比例60円/km（4k"
+          "context_text": "12345拒否権稼働時間内で成立したら断れない12345低い高いドライバー報酬距離比例140円/km（4kmなら560円）拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額100円拒否権成立したら断れないNG設定NG時間帯のみ引き受けたい度（5段階）12345低い高いドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い運賃距離に比例60円/km（4k",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "ondemandScenarioSeven",
+          "scenario_text": "ドライバー報酬 定額100円 拒否権 成立したら断れない NG設定 NG時間帯のみ",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_home_4",
           "type": "rating5",
-          "part": "driver_home",
           "label": "ドライバー・自宅 4",
-          "scenario_macro": "ondemandScenarioNine",
-          "scenario_text": "ドライバー報酬 定額300円 拒否権 成立したら断れない NG設定 NGエリア＋時間",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_home",
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -1910,6 +2147,7 @@
             1167.912,
             836.284
           ],
+          "table_rect": null,
           "cells": [
             [
               749.282,
@@ -1942,17 +2180,22 @@
               751.284
             ]
           ],
-          "context_text": "12345ドライバー報酬距離比例140円/km（4kmなら560円）拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃距離に比例60円/km（4kmなら240円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高いページ2/42枚目に続きます"
+          "context_text": "12345ドライバー報酬距離比例140円/km（4kmなら560円）拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃距離に比例60円/km（4kmなら240円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高いページ2/42枚目に続きます",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "ondemandScenarioNine",
+          "scenario_text": "ドライバー報酬 定額300円 拒否権 成立したら断れない NG設定 NGエリア＋時間",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q5_passenger_1",
           "type": "rating5",
-          "part": "passenger",
           "label": "乗客 1",
-          "scenario_macro": "passengerScenarioOne",
-          "scenario_text": "運賃 距離に比例 140円/km（4kmなら560円） 呼び出し 15分程度 相乗り 顔見知りの住民とだけ相乗り",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "passenger",
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -1968,6 +2211,7 @@
             1190.551025390625,
             551.53
           ],
+          "table_rect": null,
           "cells": [
             [
               1034.872,
@@ -2000,17 +2244,22 @@
               466.53
             ]
           ],
-          "context_text": "迎を引き受けない設定12345低い高い円/km（4kmなら80円）低い高い常に貸し切り他の利用者とは相乗りしない運賃距離に比例140円/km（4kmなら560円）呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い"
+          "context_text": "迎を引き受けない設定12345低い高い円/km（4kmなら80円）低い高い常に貸し切り他の利用者とは相乗りしない運賃距離に比例140円/km（4kmなら560円）呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "passengerScenarioOne",
+          "scenario_text": "運賃 距離に比例 140円/km（4kmなら560円） 呼び出し 15分程度 相乗り 顔見知りの住民とだけ相乗り",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q5_passenger_2",
           "type": "rating5",
-          "part": "passenger",
           "label": "乗客 2",
-          "scenario_macro": "passengerScenarioThree",
-          "scenario_text": "運賃 定額300円 呼び出し 5分程度 相乗り 常に貸し切り",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "passenger",
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -2026,6 +2275,7 @@
             1190.551025390625,
             643.065
           ],
+          "table_rect": null,
           "cells": [
             [
               1034.872,
@@ -2058,17 +2308,22 @@
               558.065
             ]
           ],
-          "context_text": "12345低い高い円/km（4kmなら80円）12345低い高い低い高い引き受けたい度（5段階）12345運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い"
+          "context_text": "12345低い高い円/km（4kmなら80円）12345低い高い低い高い引き受けたい度（5段階）12345運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "passengerScenarioThree",
+          "scenario_text": "運賃 定額300円 呼び出し 5分程度 相乗り 常に貸し切り",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q5_passenger_3",
           "type": "rating5",
-          "part": "passenger",
           "label": "乗客 3",
-          "scenario_macro": "passengerScenarioSix",
-          "scenario_text": "運賃 距離に比例 100円/km（2kmなら200円） 呼び出し 5分程度 相乗り 誰とでも相乗り",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "passenger",
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -2084,6 +2339,7 @@
             1190.551025390625,
             734.6
           ],
+          "table_rect": null,
           "cells": [
             [
               1034.872,
@@ -2116,17 +2372,22 @@
               649.6
             ]
           ],
-          "context_text": "12345低い高い12345低い高い低い高い引き受けたい度（5段階）12345運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い運賃距離に比例60円/km（4kmなら240円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い"
+          "context_text": "12345低い高い12345低い高い低い高い引き受けたい度（5段階）12345運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い運賃距離に比例60円/km（4kmなら240円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "passengerScenarioSix",
+          "scenario_text": "運賃 距離に比例 100円/km（2kmなら200円） 呼び出し 5分程度 相乗り 誰とでも相乗り",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q5_passenger_4",
           "type": "rating5",
-          "part": "passenger",
           "label": "乗客 4",
-          "scenario_macro": "passengerScenarioNine",
-          "scenario_text": "運賃 距離に比例 60円/km（4kmなら240円） 呼び出し 5分程度 相乗り 顔見知りの住民とだけ相乗り",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "passenger",
           "version": "A",
           "template_page_index": 1,
           "local_page_index": 1,
@@ -2142,6 +2403,7 @@
             1190.551025390625,
             826.135
           ],
+          "table_rect": null,
           "cells": [
             [
               1034.872,
@@ -2174,7 +2436,15 @@
               741.135
             ]
           ],
-          "context_text": "12345低い高い12345低い高い引き受けたい度（5段階）12345運賃距離に比例60円/km（4kmなら240円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い2枚目に続きます"
+          "context_text": "12345低い高い12345低い高い引き受けたい度（5段階）12345運賃距離に比例60円/km（4kmなら240円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い2枚目に続きます",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "passengerScenarioNine",
+          "scenario_text": "運賃 距離に比例 60円/km（4kmなら240円） 呼び出し 5分程度 相乗り 顔見知りの住民とだけ相乗り",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         }
       ]
     },
@@ -2189,6 +2459,31 @@
           "id": "activity_月曜日",
           "type": "activity_day",
           "label": "月曜日の活動",
+          "choices": [],
+          "part": null,
+          "version": "A",
+          "template_page_index": 2,
+          "local_page_index": 2,
+          "rect": [
+            28.346,
+            241.812,
+            578.275,
+            485.16
+          ],
+          "context_rect": [
+            28.346,
+            241.812,
+            578.275,
+            485.16
+          ],
+          "table_rect": [
+            28.794,
+            260.333,
+            577.827,
+            484.712
+          ],
+          "cells": null,
+          "context_text": null,
           "day": "月曜日",
           "rows": 7,
           "columns": [
@@ -2200,32 +2495,41 @@
             "mode",
             "tolerance_min"
           ],
-          "version": "A",
-          "template_page_index": 2,
-          "local_page_index": 2,
-          "rect": [
-            28.346,
-            241.812,
-            578.275,
-            485.16
-          ],
-          "context_rect": [
-            28.346,
-            241.812,
-            578.275,
-            485.16
-          ],
-          "table_rect": [
-            28.794,
-            260.333,
-            577.827,
-            484.712
-          ]
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
         },
         {
           "id": "activity_水曜日",
           "type": "activity_day",
           "label": "水曜日の活動",
+          "choices": [],
+          "part": null,
+          "version": "A",
+          "template_page_index": 2,
+          "local_page_index": 2,
+          "rect": [
+            592.442,
+            241.812,
+            1142.371,
+            485.16
+          ],
+          "context_rect": [
+            592.442,
+            241.812,
+            1142.371,
+            485.16
+          ],
+          "table_rect": [
+            592.89,
+            260.333,
+            1141.923,
+            484.712
+          ],
+          "cells": null,
+          "context_text": null,
           "day": "水曜日",
           "rows": 7,
           "columns": [
@@ -2237,43 +2541,18 @@
             "mode",
             "tolerance_min"
           ],
-          "version": "A",
-          "template_page_index": 2,
-          "local_page_index": 2,
-          "rect": [
-            592.442,
-            241.812,
-            1142.371,
-            485.16
-          ],
-          "context_rect": [
-            592.442,
-            241.812,
-            1142.371,
-            485.16
-          ],
-          "table_rect": [
-            592.89,
-            260.333,
-            1141.923,
-            484.712
-          ]
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
         },
         {
           "id": "activity_火曜日",
           "type": "activity_day",
           "label": "火曜日の活動",
-          "day": "火曜日",
-          "rows": 7,
-          "columns": [
-            "dep_time",
-            "dep_place",
-            "arr_time",
-            "arr_place",
-            "purpose",
-            "mode",
-            "tolerance_min"
-          ],
+          "choices": [],
+          "part": null,
           "version": "A",
           "template_page_index": 2,
           "local_page_index": 2,
@@ -2294,13 +2573,10 @@
             522.933,
             577.827,
             747.312
-          ]
-        },
-        {
-          "id": "activity_木曜日",
-          "type": "activity_day",
-          "label": "木曜日の活動",
-          "day": "木曜日",
+          ],
+          "cells": null,
+          "context_text": null,
+          "day": "火曜日",
           "rows": 7,
           "columns": [
             "dep_time",
@@ -2311,6 +2587,18 @@
             "mode",
             "tolerance_min"
           ],
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
+        },
+        {
+          "id": "activity_木曜日",
+          "type": "activity_day",
+          "label": "木曜日の活動",
+          "choices": [],
+          "part": null,
           "version": "A",
           "template_page_index": 2,
           "local_page_index": 2,
@@ -2331,7 +2619,25 @@
             522.933,
             1141.923,
             747.312
-          ]
+          ],
+          "cells": null,
+          "context_text": null,
+          "day": "木曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
         }
       ]
     },
@@ -2346,17 +2652,8 @@
           "id": "activity_金曜日",
           "type": "activity_day",
           "label": "金曜日の活動",
-          "day": "金曜日",
-          "rows": 7,
-          "columns": [
-            "dep_time",
-            "dep_place",
-            "arr_time",
-            "arr_place",
-            "purpose",
-            "mode",
-            "tolerance_min"
-          ],
+          "choices": [],
+          "part": null,
           "version": "A",
           "template_page_index": 3,
           "local_page_index": 3,
@@ -2377,13 +2674,10 @@
             45.669,
             590.582,
             270.048
-          ]
-        },
-        {
-          "id": "activity_土曜日",
-          "type": "activity_day",
-          "label": "土曜日の活動",
-          "day": "土曜日",
+          ],
+          "cells": null,
+          "context_text": null,
+          "day": "金曜日",
           "rows": 7,
           "columns": [
             "dep_time",
@@ -2394,6 +2688,18 @@
             "mode",
             "tolerance_min"
           ],
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
+        },
+        {
+          "id": "activity_土曜日",
+          "type": "activity_day",
+          "label": "土曜日の活動",
+          "choices": [],
+          "part": null,
           "version": "A",
           "template_page_index": 3,
           "local_page_index": 3,
@@ -2414,13 +2720,10 @@
             303.02,
             590.582,
             527.399
-          ]
-        },
-        {
-          "id": "activity_日曜日",
-          "type": "activity_day",
-          "label": "日曜日の活動",
-          "day": "日曜日",
+          ],
+          "cells": null,
+          "context_text": null,
+          "day": "土曜日",
           "rows": 7,
           "columns": [
             "dep_time",
@@ -2431,6 +2734,18 @@
             "mode",
             "tolerance_min"
           ],
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
+        },
+        {
+          "id": "activity_日曜日",
+          "type": "activity_day",
+          "label": "日曜日の活動",
+          "choices": [],
+          "part": null,
           "version": "A",
           "template_page_index": 3,
           "local_page_index": 3,
@@ -2451,7 +2766,25 @@
             560.37,
             590.582,
             784.749
-          ]
+          ],
+          "cells": null,
+          "context_text": null,
+          "day": "日曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
         }
       ]
     },
@@ -2472,9 +2805,7 @@
             "その他",
             "回答しない"
           ],
-          "min": 1,
-          "max": 4,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2489,7 +2820,18 @@
             0.0,
             761.336,
             246.988
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 4,
+          "multiple": false
         },
         {
           "id": "q1_2",
@@ -2510,9 +2852,7 @@
             "85〜89歳",
             "90歳以上"
           ],
-          "min": 1,
-          "max": 13,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2527,7 +2867,18 @@
             134.456,
             761.336,
             384.344
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 13,
+          "multiple": false
         },
         {
           "id": "q1_3",
@@ -2538,9 +2889,7 @@
             "三之瀬",
             "大地蔵"
           ],
-          "min": 1,
-          "max": 3,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2555,7 +2904,18 @@
             218.015,
             761.336,
             467.903
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 3,
+          "multiple": false
         },
         {
           "id": "q1_4",
@@ -2569,9 +2929,7 @@
             "学生",
             "その他"
           ],
-          "min": 1,
-          "max": 6,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2586,7 +2944,18 @@
             336.442,
             761.336,
             586.3299999999999
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 6,
+          "multiple": false
         },
         {
           "id": "q1_5",
@@ -2596,9 +2965,7 @@
             "はい",
             "いいえ"
           ],
-          "min": 1,
-          "max": 2,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2613,7 +2980,18 @@
             419.004,
             761.336,
             668.892
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 2,
+          "multiple": false
         },
         {
           "id": "q2_1",
@@ -2624,9 +3002,7 @@
             "持っていない",
             "持っていたが 返納した"
           ],
-          "min": 1,
-          "max": 3,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2641,7 +3017,18 @@
             548.59,
             761.336,
             798.478
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 3,
+          "multiple": false
         },
         {
           "id": "q2_2",
@@ -2651,9 +3038,7 @@
             "ある",
             "ない"
           ],
-          "min": 1,
-          "max": 2,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2668,7 +3053,18 @@
             0.0,
             1046.9270000000001,
             233.936
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 2,
+          "multiple": false
         },
         {
           "id": "q2_3",
@@ -2680,9 +3076,7 @@
             "週に3〜4回",
             "ほぼ毎日"
           ],
-          "min": 1,
-          "max": 4,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2697,7 +3091,18 @@
             84.543,
             1046.9270000000001,
             334.43100000000004
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 4,
+          "multiple": false
         },
         {
           "id": "q2_4",
@@ -2707,9 +3112,7 @@
             "いる",
             "いない"
           ],
-          "min": 1,
-          "max": 2,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2724,7 +3127,18 @@
             184.04199999999997,
             1046.9270000000001,
             433.93
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 2,
+          "multiple": false
         },
         {
           "id": "q2_5",
@@ -2737,9 +3151,7 @@
             "家族・ 友人に頼む",
             "その他"
           ],
-          "min": 1,
-          "max": 5,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2754,7 +3166,18 @@
             302.469,
             1046.9270000000001,
             552.357
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 5,
+          "multiple": false
         },
         {
           "id": "q2_6",
@@ -2767,9 +3190,7 @@
             "非常に不便",
             "わからない"
           ],
-          "min": 1,
-          "max": 5,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2784,7 +3205,18 @@
             437.83299999999997,
             1046.9270000000001,
             687.721
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 5,
+          "multiple": false
         },
         {
           "id": "q2_7",
@@ -2795,9 +3227,7 @@
             "持っているが、電話くらいしか使わない",
             "持っていない"
           ],
-          "min": 1,
-          "max": 3,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2812,7 +3242,18 @@
             535.054,
             1046.9270000000001,
             784.942
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 3,
+          "multiple": false
         },
         {
           "id": "q3_1",
@@ -2823,9 +3264,7 @@
             "条件によっては引き受けてもよい",
             "ぜひ引き受けたい"
           ],
-          "min": 1,
-          "max": 3,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2840,7 +3279,18 @@
             132.306,
             1190.551025390625,
             382.194
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 3,
+          "multiple": false
         },
         {
           "id": "q3_2",
@@ -2851,9 +3301,7 @@
             "条件によっては利用してもよい",
             "ぜひ利用したい"
           ],
-          "min": 1,
-          "max": 3,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2868,7 +3316,18 @@
             263.399,
             1190.551025390625,
             513.287
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 3,
+          "multiple": false
         },
         {
           "id": "q3_3",
@@ -2883,9 +3342,7 @@
             "その他",
             "利用したくない"
           ],
-          "min": 1,
-          "max": 7,
-          "multiple": true,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2900,7 +3357,18 @@
             450.56899999999996,
             1190.551025390625,
             700.457
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 7,
+          "multiple": true
         },
         {
           "id": "q3_4",
@@ -2912,9 +3380,7 @@
             "20分くらい",
             "30分以上"
           ],
-          "min": 1,
-          "max": 4,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 4,
           "local_page_index": 0,
@@ -2929,7 +3395,18 @@
             568.0,
             1190.551025390625,
             817.888
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 4,
+          "multiple": false
         }
       ]
     },
@@ -2953,9 +3430,7 @@
             "500円",
             "600円以上"
           ],
-          "min": 1,
-          "max": 7,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -2970,7 +3445,18 @@
             19.913999999999987,
             475.746,
             269.802
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 7,
+          "multiple": false
         },
         {
           "id": "q3_6",
@@ -2984,9 +3470,7 @@
             "700円",
             "1,000円以上"
           ],
-          "min": 1,
-          "max": 6,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3001,7 +3485,18 @@
             172.21499999999997,
             475.746,
             422.103
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 6,
+          "multiple": false
         },
         {
           "id": "q3_7",
@@ -3014,9 +3509,7 @@
             "少し感じる",
             "強く感じる"
           ],
-          "min": 1,
-          "max": 5,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3031,7 +3524,18 @@
             290.642,
             475.746,
             540.53
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 5,
+          "multiple": false
         },
         {
           "id": "q3_8",
@@ -3044,9 +3548,7 @@
             "やや重視する",
             "非常に重視する"
           ],
-          "min": 1,
-          "max": 5,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3061,7 +3563,18 @@
             426.006,
             475.746,
             675.894
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 5,
+          "multiple": false
         },
         {
           "id": "q3_9",
@@ -3071,9 +3584,7 @@
             "今すぐ300円相当の割引",
             "1年後に360円相当の割引"
           ],
-          "min": 1,
-          "max": 2,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3088,7 +3599,18 @@
             542.057,
             475.746,
             791.945
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 2,
+          "multiple": false
         },
         {
           "id": "q3_10",
@@ -3098,9 +3620,7 @@
             "今すぐ300円相当の割引",
             "5年後に600円相当の割引"
           ],
-          "min": 1,
-          "max": 2,
-          "multiple": false,
+          "part": null,
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3115,17 +3635,25 @@
             621.246,
             475.746,
             841.8900146484375
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 2,
+          "multiple": false
         },
         {
           "id": "q4_commute_1",
           "type": "rating5",
-          "part": "driver_commute",
           "label": "ドライバー・通勤中 1",
-          "scenario_macro": "commuteScenarioThree",
-          "scenario_text": "ドライバー報酬 距離比例100円/km（2kmなら200円） 追加時間 ＋約20分 拒否権 稼働時間内で成立したら断れない",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_commute",
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3141,6 +3669,7 @@
             882.322,
             655.846
           ],
+          "table_rect": null,
           "cells": [
             [
               463.691,
@@ -3173,17 +3702,22 @@
               570.846
             ]
           ],
-          "context_text": "回答欄移動では、多少不便でも時間どおり着くことを重4やや重視する5非常に重視するつの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）追加時間＋約20分拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高いドライバー報酬距離比例60円/km（4kmなら240円）追加時間＋約10分拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例2"
+          "context_text": "回答欄移動では、多少不便でも時間どおり着くことを重4やや重視する5非常に重視するつの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）追加時間＋約20分拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高いドライバー報酬距離比例60円/km（4kmなら240円）追加時間＋約10分拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例2",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "commuteScenarioThree",
+          "scenario_text": "ドライバー報酬 距離比例100円/km（2kmなら200円） 追加時間 ＋約20分 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_commute_2",
           "type": "rating5",
-          "part": "driver_commute",
           "label": "ドライバー・通勤中 2",
-          "scenario_macro": "commuteScenarioFive",
-          "scenario_text": "ドライバー報酬 距離比例60円/km（4kmなら240円） 追加時間 ＋約10分 拒否権 稼働時間内で成立したら断れない",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_commute",
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3199,6 +3733,7 @@
             882.322,
             747.381
           ],
+          "table_rect": null,
           "cells": [
             [
               463.691,
@@ -3231,17 +3766,22 @@
               662.381
             ]
           ],
-          "context_text": "つの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（4kmなら240円）追加時間＋約10分拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高いドライバー報酬定額300円追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリアのみ引き受け"
+          "context_text": "つの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（4kmなら240円）追加時間＋約10分拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高いドライバー報酬定額300円追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリアのみ引き受け",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "commuteScenarioFive",
+          "scenario_text": "ドライバー報酬 距離比例60円/km（4kmなら240円） 追加時間 ＋約10分 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_commute_3",
           "type": "rating5",
-          "part": "driver_commute",
           "label": "ドライバー・通勤中 3",
-          "scenario_macro": "commuteScenarioSix",
-          "scenario_text": "ドライバー報酬 定額300円 追加時間 追加ほぼなし 拒否権 稼働時間内で成立したら断れない",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_commute",
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3257,6 +3797,7 @@
             882.322,
             838.916
           ],
+          "table_rect": null,
           "cells": [
             [
               463.691,
@@ -3289,17 +3830,22 @@
               753.916
             ]
           ],
-          "context_text": "回答欄円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引引き受けたい度（5段階）12345ドライバー報酬定額300円追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高いページ2/4"
+          "context_text": "回答欄円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引引き受けたい度（5段階）12345ドライバー報酬定額300円追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高いページ2/4",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "commuteScenarioSix",
+          "scenario_text": "ドライバー報酬 定額300円 追加時間 追加ほぼなし 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_commute_4",
           "type": "rating5",
-          "part": "driver_commute",
           "label": "ドライバー・通勤中 4",
-          "scenario_macro": "commuteScenarioEleven",
-          "scenario_text": "ドライバー報酬 定額300円 追加時間 追加ほぼなし 拒否権 条件を見て成立後でも断れる",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_commute",
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3315,6 +3861,7 @@
             1167.912,
             194.164
           ],
+          "table_rect": null,
           "cells": [
             [
               749.282,
@@ -3347,17 +3894,22 @@
               109.164
             ]
           ],
-          "context_text": "1枚目/2枚ドライバーとしてのシナリオ評価「ノッカル」にドライバーとして参加する場合について、各カードの条件を読み、引き受けたい度を1〜5でお答えくだ参加意向（設問3.1）で「絶対に引き受けたくない」を選んだ方は回答不要です。また、免許をお持ちでない、または返納条件を読んで、当てはまる段階に○を付けてくだドライバー報酬定額300円追加時間追加ほぼなし拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高い4.2ご自宅にいる場合あなたがご自宅にいて時間に余裕があるときに、利用者の求めに応じて送迎する場合についてお尋ねします。以下の各条件を見て、「引き受けたい度」を1（まったく引"
+          "context_text": "1枚目/2枚ドライバーとしてのシナリオ評価「ノッカル」にドライバーとして参加する場合について、各カードの条件を読み、引き受けたい度を1〜5でお答えくだ参加意向（設問3.1）で「絶対に引き受けたくない」を選んだ方は回答不要です。また、免許をお持ちでない、または返納条件を読んで、当てはまる段階に○を付けてくだドライバー報酬定額300円追加時間追加ほぼなし拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高い4.2ご自宅にいる場合あなたがご自宅にいて時間に余裕があるときに、利用者の求めに応じて送迎する場合についてお尋ねします。以下の各条件を見て、「引き受けたい度」を1（まったく引",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "commuteScenarioEleven",
+          "scenario_text": "ドライバー報酬 定額300円 追加時間 追加ほぼなし 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_home_1",
           "type": "rating5",
-          "part": "driver_home",
           "label": "ドライバー・自宅 1",
-          "scenario_macro": "ondemandScenarioTwo",
-          "scenario_text": "ドライバー報酬 定額100円 拒否権 条件確認後も断れる NG設定 NG設定なし",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_home",
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3373,6 +3925,7 @@
             1167.912,
             561.679
           ],
+          "table_rect": null,
           "cells": [
             [
               749.282,
@@ -3405,17 +3958,22 @@
               476.679
             ]
           ],
-          "context_text": "回の送迎を引き受けた際にドライバーが受け取る金額（定額または距離比例）利用者を同乗させることによって、普段の通勤所要時間に対して追加でかかる時間マッチング成立後に、乗客の条件（乗車地・目的地・時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）拒否権稼働時間内で成立したら断れない12345低い高い迎を引き受けない設定ドライバー報酬定額100円拒否権条件確認後も断れるNG設定NG設定なし引き受けたい度（5段階）12345低い高いドライバー報酬距離比例20円/km（2kmなら40円）拒否権成立したら断れないNG設定NGエリア＋時間引き受けたい度（5段階"
+          "context_text": "回の送迎を引き受けた際にドライバーが受け取る金額（定額または距離比例）利用者を同乗させることによって、普段の通勤所要時間に対して追加でかかる時間マッチング成立後に、乗客の条件（乗車地・目的地・時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）拒否権稼働時間内で成立したら断れない12345低い高い迎を引き受けない設定ドライバー報酬定額100円拒否権条件確認後も断れるNG設定NG設定なし引き受けたい度（5段階）12345低い高いドライバー報酬距離比例20円/km（2kmなら40円）拒否権成立したら断れないNG設定NGエリア＋時間引き受けたい度（5段階",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "ondemandScenarioTwo",
+          "scenario_text": "ドライバー報酬 定額100円 拒否権 条件確認後も断れる NG設定 NG設定なし",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_home_2",
           "type": "rating5",
-          "part": "driver_home",
           "label": "ドライバー・自宅 2",
-          "scenario_macro": "ondemandScenarioFive",
-          "scenario_text": "ドライバー報酬 距離比例20円/km（2kmなら40円） 拒否権 成立したら断れない NG設定 NGエリア＋時間",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_home",
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3431,6 +3989,7 @@
             1167.912,
             653.214
           ],
+          "table_rect": null,
           "cells": [
             [
               749.282,
@@ -3463,17 +4022,22 @@
               568.214
             ]
           ],
-          "context_text": "時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）拒否権稼働時間内で成立したら断れない12345低い高い円/km（4kmなら240円）拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例20円/km（2kmなら40円）拒否権成立したら断れないNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高いドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリアのみ引き受けたい度（5段階）12345低い高い運賃距離に比例140円/km（4kmなら560円）呼び出し15分程度相乗"
+          "context_text": "時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）拒否権稼働時間内で成立したら断れない12345低い高い円/km（4kmなら240円）拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例20円/km（2kmなら40円）拒否権成立したら断れないNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高いドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリアのみ引き受けたい度（5段階）12345低い高い運賃距離に比例140円/km（4kmなら560円）呼び出し15分程度相乗",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "ondemandScenarioFive",
+          "scenario_text": "ドライバー報酬 距離比例20円/km（2kmなら40円） 拒否権 成立したら断れない NG設定 NGエリア＋時間",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_home_3",
           "type": "rating5",
-          "part": "driver_home",
           "label": "ドライバー・自宅 3",
-          "scenario_macro": "ondemandScenarioEight",
-          "scenario_text": "ドライバー報酬 定額300円 拒否権 成立したら断れない NG設定 NGエリアのみ",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_home",
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3489,6 +4053,7 @@
             1167.912,
             744.749
           ],
+          "table_rect": null,
           "cells": [
             [
               749.282,
@@ -3521,17 +4086,22 @@
               659.749
             ]
           ],
-          "context_text": "12345円/km（4kmなら240円）拒否権稼働時間内で成立したら断れない12345低い高い拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリアのみ引き受けたい度（5段階）12345低い高いドライバー報酬定額300円拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃距離に比例140円/km（4kmなら560円）呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相"
+          "context_text": "12345円/km（4kmなら240円）拒否権稼働時間内で成立したら断れない12345低い高い拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリアのみ引き受けたい度（5段階）12345低い高いドライバー報酬定額300円拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃距離に比例140円/km（4kmなら560円）呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "ondemandScenarioEight",
+          "scenario_text": "ドライバー報酬 定額300円 拒否権 成立したら断れない NG設定 NGエリアのみ",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_home_4",
           "type": "rating5",
-          "part": "driver_home",
           "label": "ドライバー・自宅 4",
-          "scenario_macro": "ondemandScenarioTen",
-          "scenario_text": "ドライバー報酬 定額300円 拒否権 条件確認後も断れる NG設定 NGエリア＋時間",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_home",
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3547,6 +4117,7 @@
             1167.912,
             836.284
           ],
+          "table_rect": null,
           "cells": [
             [
               749.282,
@@ -3579,17 +4150,22 @@
               751.284
             ]
           ],
-          "context_text": "12345拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高いページ2/42枚目に続きます"
+          "context_text": "12345拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高いページ2/42枚目に続きます",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "ondemandScenarioTen",
+          "scenario_text": "ドライバー報酬 定額300円 拒否権 条件確認後も断れる NG設定 NGエリア＋時間",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q5_passenger_1",
           "type": "rating5",
-          "part": "passenger",
           "label": "乗客 1",
-          "scenario_macro": "passengerScenarioTwo",
-          "scenario_text": "運賃 距離に比例 60円/km（2kmなら120円） 呼び出し 15分程度 相乗り 誰とでも相乗り",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "passenger",
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3605,6 +4181,7 @@
             1190.551025390625,
             551.53
           ],
+          "table_rect": null,
           "cells": [
             [
               1034.872,
@@ -3637,17 +4214,22 @@
               466.53
             ]
           ],
-          "context_text": "迎を引き受けない設定12345低い高い円/km（2kmなら40円）低い高い常に貸し切り他の利用者とは相乗りしない運賃距離に比例60円/km（2kmなら120円）呼び出し15分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い運賃距離に比例140円/km（4kmなら560円）呼び出し15分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い"
+          "context_text": "迎を引き受けない設定12345低い高い円/km（2kmなら40円）低い高い常に貸し切り他の利用者とは相乗りしない運賃距離に比例60円/km（2kmなら120円）呼び出し15分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い運賃距離に比例140円/km（4kmなら560円）呼び出し15分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "passengerScenarioTwo",
+          "scenario_text": "運賃 距離に比例 60円/km（2kmなら120円） 呼び出し 15分程度 相乗り 誰とでも相乗り",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q5_passenger_2",
           "type": "rating5",
-          "part": "passenger",
           "label": "乗客 2",
-          "scenario_macro": "passengerScenarioFive",
-          "scenario_text": "運賃 距離に比例 140円/km（4kmなら560円） 呼び出し 15分程度 相乗り 誰とでも相乗り",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "passenger",
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3663,6 +4245,7 @@
             1190.551025390625,
             643.065
           ],
+          "table_rect": null,
           "cells": [
             [
               1034.872,
@@ -3695,17 +4278,22 @@
               558.065
             ]
           ],
-          "context_text": "12345低い高い円/km（2kmなら40円）12345低い高い低い高い引き受けたい度（5段階）12345運賃距離に比例140円/km（4kmなら560円）呼び出し15分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い運賃距離に比例140円/km（4kmなら560円）呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い"
+          "context_text": "12345低い高い円/km（2kmなら40円）12345低い高い低い高い引き受けたい度（5段階）12345運賃距離に比例140円/km（4kmなら560円）呼び出し15分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い運賃距離に比例140円/km（4kmなら560円）呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "passengerScenarioFive",
+          "scenario_text": "運賃 距離に比例 140円/km（4kmなら560円） 呼び出し 15分程度 相乗り 誰とでも相乗り",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q5_passenger_3",
           "type": "rating5",
-          "part": "passenger",
           "label": "乗客 3",
-          "scenario_macro": "passengerScenarioSeven",
-          "scenario_text": "運賃 距離に比例 140円/km（4kmなら560円） 呼び出し 5分程度 相乗り 常に貸し切り",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "passenger",
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3721,6 +4309,7 @@
             1190.551025390625,
             734.6
           ],
+          "table_rect": null,
           "cells": [
             [
               1034.872,
@@ -3753,17 +4342,22 @@
               649.6
             ]
           ],
-          "context_text": "12345低い高い12345低い高い低い高い引き受けたい度（5段階）12345運賃距離に比例140円/km（4kmなら560円）呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い"
+          "context_text": "12345低い高い12345低い高い低い高い引き受けたい度（5段階）12345運賃距離に比例140円/km（4kmなら560円）呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "passengerScenarioSeven",
+          "scenario_text": "運賃 距離に比例 140円/km（4kmなら560円） 呼び出し 5分程度 相乗り 常に貸し切り",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q5_passenger_4",
           "type": "rating5",
-          "part": "passenger",
           "label": "乗客 4",
-          "scenario_macro": "passengerScenarioEight",
-          "scenario_text": "運賃 定額500円 呼び出し 15分程度 相乗り 顔見知りの住民とだけ相乗り",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "passenger",
           "version": "B",
           "template_page_index": 5,
           "local_page_index": 1,
@@ -3779,6 +4373,7 @@
             1190.551025390625,
             826.135
           ],
+          "table_rect": null,
           "cells": [
             [
               1034.872,
@@ -3811,7 +4406,15 @@
               741.135
             ]
           ],
-          "context_text": "12345低い高い12345低い高い引き受けたい度（5段階）12345運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い2枚目に続きます"
+          "context_text": "12345低い高い12345低い高い引き受けたい度（5段階）12345運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い2枚目に続きます",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "passengerScenarioEight",
+          "scenario_text": "運賃 定額500円 呼び出し 15分程度 相乗り 顔見知りの住民とだけ相乗り",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         }
       ]
     },
@@ -3826,6 +4429,31 @@
           "id": "activity_月曜日",
           "type": "activity_day",
           "label": "月曜日の活動",
+          "choices": [],
+          "part": null,
+          "version": "B",
+          "template_page_index": 6,
+          "local_page_index": 2,
+          "rect": [
+            28.346,
+            241.812,
+            578.275,
+            485.16
+          ],
+          "context_rect": [
+            28.346,
+            241.812,
+            578.275,
+            485.16
+          ],
+          "table_rect": [
+            28.794,
+            260.333,
+            577.827,
+            484.712
+          ],
+          "cells": null,
+          "context_text": null,
           "day": "月曜日",
           "rows": 7,
           "columns": [
@@ -3837,32 +4465,41 @@
             "mode",
             "tolerance_min"
           ],
-          "version": "B",
-          "template_page_index": 6,
-          "local_page_index": 2,
-          "rect": [
-            28.346,
-            241.812,
-            578.275,
-            485.16
-          ],
-          "context_rect": [
-            28.346,
-            241.812,
-            578.275,
-            485.16
-          ],
-          "table_rect": [
-            28.794,
-            260.333,
-            577.827,
-            484.712
-          ]
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
         },
         {
           "id": "activity_水曜日",
           "type": "activity_day",
           "label": "水曜日の活動",
+          "choices": [],
+          "part": null,
+          "version": "B",
+          "template_page_index": 6,
+          "local_page_index": 2,
+          "rect": [
+            592.442,
+            241.812,
+            1142.371,
+            485.16
+          ],
+          "context_rect": [
+            592.442,
+            241.812,
+            1142.371,
+            485.16
+          ],
+          "table_rect": [
+            592.89,
+            260.333,
+            1141.923,
+            484.712
+          ],
+          "cells": null,
+          "context_text": null,
           "day": "水曜日",
           "rows": 7,
           "columns": [
@@ -3874,43 +4511,18 @@
             "mode",
             "tolerance_min"
           ],
-          "version": "B",
-          "template_page_index": 6,
-          "local_page_index": 2,
-          "rect": [
-            592.442,
-            241.812,
-            1142.371,
-            485.16
-          ],
-          "context_rect": [
-            592.442,
-            241.812,
-            1142.371,
-            485.16
-          ],
-          "table_rect": [
-            592.89,
-            260.333,
-            1141.923,
-            484.712
-          ]
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
         },
         {
           "id": "activity_火曜日",
           "type": "activity_day",
           "label": "火曜日の活動",
-          "day": "火曜日",
-          "rows": 7,
-          "columns": [
-            "dep_time",
-            "dep_place",
-            "arr_time",
-            "arr_place",
-            "purpose",
-            "mode",
-            "tolerance_min"
-          ],
+          "choices": [],
+          "part": null,
           "version": "B",
           "template_page_index": 6,
           "local_page_index": 2,
@@ -3931,13 +4543,10 @@
             522.933,
             577.827,
             747.312
-          ]
-        },
-        {
-          "id": "activity_木曜日",
-          "type": "activity_day",
-          "label": "木曜日の活動",
-          "day": "木曜日",
+          ],
+          "cells": null,
+          "context_text": null,
+          "day": "火曜日",
           "rows": 7,
           "columns": [
             "dep_time",
@@ -3948,6 +4557,18 @@
             "mode",
             "tolerance_min"
           ],
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
+        },
+        {
+          "id": "activity_木曜日",
+          "type": "activity_day",
+          "label": "木曜日の活動",
+          "choices": [],
+          "part": null,
           "version": "B",
           "template_page_index": 6,
           "local_page_index": 2,
@@ -3968,7 +4589,25 @@
             522.933,
             1141.923,
             747.312
-          ]
+          ],
+          "cells": null,
+          "context_text": null,
+          "day": "木曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
         }
       ]
     },
@@ -3983,17 +4622,8 @@
           "id": "activity_金曜日",
           "type": "activity_day",
           "label": "金曜日の活動",
-          "day": "金曜日",
-          "rows": 7,
-          "columns": [
-            "dep_time",
-            "dep_place",
-            "arr_time",
-            "arr_place",
-            "purpose",
-            "mode",
-            "tolerance_min"
-          ],
+          "choices": [],
+          "part": null,
           "version": "B",
           "template_page_index": 7,
           "local_page_index": 3,
@@ -4014,13 +4644,10 @@
             45.669,
             590.582,
             270.048
-          ]
-        },
-        {
-          "id": "activity_土曜日",
-          "type": "activity_day",
-          "label": "土曜日の活動",
-          "day": "土曜日",
+          ],
+          "cells": null,
+          "context_text": null,
+          "day": "金曜日",
           "rows": 7,
           "columns": [
             "dep_time",
@@ -4031,6 +4658,18 @@
             "mode",
             "tolerance_min"
           ],
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
+        },
+        {
+          "id": "activity_土曜日",
+          "type": "activity_day",
+          "label": "土曜日の活動",
+          "choices": [],
+          "part": null,
           "version": "B",
           "template_page_index": 7,
           "local_page_index": 3,
@@ -4051,13 +4690,10 @@
             303.02,
             590.582,
             527.399
-          ]
-        },
-        {
-          "id": "activity_日曜日",
-          "type": "activity_day",
-          "label": "日曜日の活動",
-          "day": "日曜日",
+          ],
+          "cells": null,
+          "context_text": null,
+          "day": "土曜日",
           "rows": 7,
           "columns": [
             "dep_time",
@@ -4068,6 +4704,18 @@
             "mode",
             "tolerance_min"
           ],
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
+        },
+        {
+          "id": "activity_日曜日",
+          "type": "activity_day",
+          "label": "日曜日の活動",
+          "choices": [],
+          "part": null,
           "version": "B",
           "template_page_index": 7,
           "local_page_index": 3,
@@ -4088,7 +4736,25 @@
             560.37,
             590.582,
             784.749
-          ]
+          ],
+          "cells": null,
+          "context_text": null,
+          "day": "日曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
         }
       ]
     },
@@ -4109,9 +4775,7 @@
             "その他",
             "回答しない"
           ],
-          "min": 1,
-          "max": 4,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4126,7 +4790,18 @@
             0.0,
             761.336,
             246.988
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 4,
+          "multiple": false
         },
         {
           "id": "q1_2",
@@ -4147,9 +4822,7 @@
             "85〜89歳",
             "90歳以上"
           ],
-          "min": 1,
-          "max": 13,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4164,7 +4837,18 @@
             134.456,
             761.336,
             384.344
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 13,
+          "multiple": false
         },
         {
           "id": "q1_3",
@@ -4175,9 +4859,7 @@
             "三之瀬",
             "大地蔵"
           ],
-          "min": 1,
-          "max": 3,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4192,7 +4874,18 @@
             218.015,
             761.336,
             467.903
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 3,
+          "multiple": false
         },
         {
           "id": "q1_4",
@@ -4206,9 +4899,7 @@
             "学生",
             "その他"
           ],
-          "min": 1,
-          "max": 6,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4223,7 +4914,18 @@
             336.442,
             761.336,
             586.3299999999999
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 6,
+          "multiple": false
         },
         {
           "id": "q1_5",
@@ -4233,9 +4935,7 @@
             "はい",
             "いいえ"
           ],
-          "min": 1,
-          "max": 2,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4250,7 +4950,18 @@
             419.004,
             761.336,
             668.892
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 2,
+          "multiple": false
         },
         {
           "id": "q2_1",
@@ -4261,9 +4972,7 @@
             "持っていない",
             "持っていたが 返納した"
           ],
-          "min": 1,
-          "max": 3,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4278,7 +4987,18 @@
             548.59,
             761.336,
             798.478
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 3,
+          "multiple": false
         },
         {
           "id": "q2_2",
@@ -4288,9 +5008,7 @@
             "ある",
             "ない"
           ],
-          "min": 1,
-          "max": 2,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4305,7 +5023,18 @@
             0.0,
             1046.9270000000001,
             233.936
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 2,
+          "multiple": false
         },
         {
           "id": "q2_3",
@@ -4317,9 +5046,7 @@
             "週に3〜4回",
             "ほぼ毎日"
           ],
-          "min": 1,
-          "max": 4,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4334,7 +5061,18 @@
             84.543,
             1046.9270000000001,
             334.43100000000004
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 4,
+          "multiple": false
         },
         {
           "id": "q2_4",
@@ -4344,9 +5082,7 @@
             "いる",
             "いない"
           ],
-          "min": 1,
-          "max": 2,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4361,7 +5097,18 @@
             184.04199999999997,
             1046.9270000000001,
             433.93
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 2,
+          "multiple": false
         },
         {
           "id": "q2_5",
@@ -4374,9 +5121,7 @@
             "家族・ 友人に頼む",
             "その他"
           ],
-          "min": 1,
-          "max": 5,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4391,7 +5136,18 @@
             302.469,
             1046.9270000000001,
             552.357
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 5,
+          "multiple": false
         },
         {
           "id": "q2_6",
@@ -4404,9 +5160,7 @@
             "非常に不便",
             "わからない"
           ],
-          "min": 1,
-          "max": 5,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4421,7 +5175,18 @@
             437.83299999999997,
             1046.9270000000001,
             687.721
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 5,
+          "multiple": false
         },
         {
           "id": "q2_7",
@@ -4432,9 +5197,7 @@
             "持っているが、電話くらいしか使わない",
             "持っていない"
           ],
-          "min": 1,
-          "max": 3,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4449,7 +5212,18 @@
             535.054,
             1046.9270000000001,
             784.942
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 3,
+          "multiple": false
         },
         {
           "id": "q3_1",
@@ -4460,9 +5234,7 @@
             "条件によっては引き受けてもよい",
             "ぜひ引き受けたい"
           ],
-          "min": 1,
-          "max": 3,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4477,7 +5249,18 @@
             132.306,
             1190.551025390625,
             382.194
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 3,
+          "multiple": false
         },
         {
           "id": "q3_2",
@@ -4488,9 +5271,7 @@
             "条件によっては利用してもよい",
             "ぜひ利用したい"
           ],
-          "min": 1,
-          "max": 3,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4505,7 +5286,18 @@
             263.399,
             1190.551025390625,
             513.287
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 3,
+          "multiple": false
         },
         {
           "id": "q3_3",
@@ -4520,9 +5312,7 @@
             "その他",
             "利用したくない"
           ],
-          "min": 1,
-          "max": 7,
-          "multiple": true,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4537,7 +5327,18 @@
             450.56899999999996,
             1190.551025390625,
             700.457
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 7,
+          "multiple": true
         },
         {
           "id": "q3_4",
@@ -4549,9 +5350,7 @@
             "20分くらい",
             "30分以上"
           ],
-          "min": 1,
-          "max": 4,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 8,
           "local_page_index": 0,
@@ -4566,7 +5365,18 @@
             568.0,
             1190.551025390625,
             817.888
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 4,
+          "multiple": false
         }
       ]
     },
@@ -4590,9 +5400,7 @@
             "500円",
             "600円以上"
           ],
-          "min": 1,
-          "max": 7,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -4607,7 +5415,18 @@
             19.913999999999987,
             475.746,
             269.802
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 7,
+          "multiple": false
         },
         {
           "id": "q3_6",
@@ -4621,9 +5440,7 @@
             "700円",
             "1,000円以上"
           ],
-          "min": 1,
-          "max": 6,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -4638,7 +5455,18 @@
             172.21499999999997,
             475.746,
             422.103
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 6,
+          "multiple": false
         },
         {
           "id": "q3_7",
@@ -4651,9 +5479,7 @@
             "少し感じる",
             "強く感じる"
           ],
-          "min": 1,
-          "max": 5,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -4668,7 +5494,18 @@
             290.642,
             475.746,
             540.53
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 5,
+          "multiple": false
         },
         {
           "id": "q3_8",
@@ -4681,9 +5518,7 @@
             "やや重視する",
             "非常に重視する"
           ],
-          "min": 1,
-          "max": 5,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -4698,7 +5533,18 @@
             426.006,
             475.746,
             675.894
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 5,
+          "multiple": false
         },
         {
           "id": "q3_9",
@@ -4708,9 +5554,7 @@
             "今すぐ300円相当の割引",
             "1年後に360円相当の割引"
           ],
-          "min": 1,
-          "max": 2,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -4725,7 +5569,18 @@
             542.057,
             475.746,
             791.945
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 2,
+          "multiple": false
         },
         {
           "id": "q3_10",
@@ -4735,9 +5590,7 @@
             "今すぐ300円相当の割引",
             "5年後に600円相当の割引"
           ],
-          "min": 1,
-          "max": 2,
-          "multiple": false,
+          "part": null,
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -4752,17 +5605,25 @@
             621.246,
             475.746,
             841.8900146484375
-          ]
+          ],
+          "table_rect": null,
+          "cells": null,
+          "context_text": null,
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": 1,
+          "max": 2,
+          "multiple": false
         },
         {
           "id": "q4_commute_1",
           "type": "rating5",
-          "part": "driver_commute",
           "label": "ドライバー・通勤中 1",
-          "scenario_macro": "commuteScenarioEight",
-          "scenario_text": "ドライバー報酬 距離比例140円/km（4kmなら560円） 追加時間 ＋約20分 拒否権 条件を見て成立後でも断れる",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_commute",
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -4778,6 +5639,7 @@
             882.322,
             655.846
           ],
+          "table_rect": null,
           "cells": [
             [
               463.691,
@@ -4810,17 +5672,22 @@
               570.846
             ]
           ],
-          "context_text": "回答欄移動では、多少不便でも時間どおり着くことを重4やや重視する5非常に重視するつの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例140円/km（4kmなら560円）追加時間＋約20分拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高いドライバー報酬定額700円追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額100円拒否権条件確認後も断れるNG設"
+          "context_text": "回答欄移動では、多少不便でも時間どおり着くことを重4やや重視する5非常に重視するつの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例140円/km（4kmなら560円）追加時間＋約20分拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高いドライバー報酬定額700円追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額100円拒否権条件確認後も断れるNG設",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "commuteScenarioEight",
+          "scenario_text": "ドライバー報酬 距離比例140円/km（4kmなら560円） 追加時間 ＋約20分 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_commute_2",
           "type": "rating5",
-          "part": "driver_commute",
           "label": "ドライバー・通勤中 2",
-          "scenario_macro": "commuteScenarioNine",
-          "scenario_text": "ドライバー報酬 定額700円 追加時間 追加ほぼなし 拒否権 稼働時間内で成立したら断れない",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_commute",
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -4836,6 +5703,7 @@
             882.322,
             747.381
           ],
+          "table_rect": null,
           "cells": [
             [
               463.691,
@@ -4868,17 +5736,22 @@
               662.381
             ]
           ],
-          "context_text": "つの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引引き受けたい度（5段階）12345ドライバー報酬定額700円追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高いドライバー報酬距離比例60円/km（2kmなら120円）追加時間追加ほぼなし拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（4kmなら240円）拒否権条件確認後も断れるN"
+          "context_text": "つの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引引き受けたい度（5段階）12345ドライバー報酬定額700円追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高いドライバー報酬距離比例60円/km（2kmなら120円）追加時間追加ほぼなし拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（4kmなら240円）拒否権条件確認後も断れるN",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "commuteScenarioNine",
+          "scenario_text": "ドライバー報酬 定額700円 追加時間 追加ほぼなし 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_commute_3",
           "type": "rating5",
-          "part": "driver_commute",
           "label": "ドライバー・通勤中 3",
-          "scenario_macro": "commuteScenarioTen",
-          "scenario_text": "ドライバー報酬 距離比例60円/km（2kmなら120円） 追加時間 追加ほぼなし 拒否権 条件を見て成立後でも断れる",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_commute",
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -4894,6 +5767,7 @@
             882.322,
             838.916
           ],
+          "table_rect": null,
           "cells": [
             [
               463.691,
@@ -4926,17 +5800,22 @@
               753.916
             ]
           ],
-          "context_text": "回答欄円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（2kmなら120円）追加時間追加ほぼなし拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（4kmなら240円）拒否権成立したら断れないNG設定NGエリアのみ引き受けたい度（5段階）12345低い高いページ2/4"
+          "context_text": "回答欄円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（2kmなら120円）追加時間追加ほぼなし拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（4kmなら240円）拒否権成立したら断れないNG設定NGエリアのみ引き受けたい度（5段階）12345低い高いページ2/4",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "commuteScenarioTen",
+          "scenario_text": "ドライバー報酬 距離比例60円/km（2kmなら120円） 追加時間 追加ほぼなし 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_commute_4",
           "type": "rating5",
-          "part": "driver_commute",
           "label": "ドライバー・通勤中 4",
-          "scenario_macro": "commuteScenarioEleven",
-          "scenario_text": "ドライバー報酬 定額300円 追加時間 追加ほぼなし 拒否権 条件を見て成立後でも断れる",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_commute",
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -4952,6 +5831,7 @@
             1167.912,
             194.164
           ],
+          "table_rect": null,
           "cells": [
             [
               749.282,
@@ -4984,17 +5864,22 @@
               109.164
             ]
           ],
-          "context_text": "1枚目/2枚ドライバーとしてのシナリオ評価「ノッカル」にドライバーとして参加する場合について、各カードの条件を読み、引き受けたい度を1〜5でお答えくだ参加意向（設問3.1）で「絶対に引き受けたくない」を選んだ方は回答不要です。また、免許をお持ちでない、または返納条件を読んで、当てはまる段階に○を付けてくだドライバー報酬定額300円追加時間追加ほぼなし拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高い4.2ご自宅にいる場合あなたがご自宅にいて時間に余裕があるときに、利用者の求めに応じて送迎する場合についてお尋ねします。以下の各条件を見て、「引き受けたい度」を1（まったく引"
+          "context_text": "1枚目/2枚ドライバーとしてのシナリオ評価「ノッカル」にドライバーとして参加する場合について、各カードの条件を読み、引き受けたい度を1〜5でお答えくだ参加意向（設問3.1）で「絶対に引き受けたくない」を選んだ方は回答不要です。また、免許をお持ちでない、または返納条件を読んで、当てはまる段階に○を付けてくだドライバー報酬定額300円追加時間追加ほぼなし拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高い4.2ご自宅にいる場合あなたがご自宅にいて時間に余裕があるときに、利用者の求めに応じて送迎する場合についてお尋ねします。以下の各条件を見て、「引き受けたい度」を1（まったく引",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "commuteScenarioEleven",
+          "scenario_text": "ドライバー報酬 定額300円 追加時間 追加ほぼなし 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_home_1",
           "type": "rating5",
-          "part": "driver_home",
           "label": "ドライバー・自宅 1",
-          "scenario_macro": "ondemandScenarioThree",
-          "scenario_text": "ドライバー報酬 定額300円 拒否権 成立したら断れない NG設定 NG設定なし",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_home",
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -5010,6 +5895,7 @@
             1167.912,
             561.679
           ],
+          "table_rect": null,
           "cells": [
             [
               749.282,
@@ -5042,17 +5928,22 @@
               476.679
             ]
           ],
-          "context_text": "回の送迎を引き受けた際にドライバーが受け取る金額（定額または距離比例）利用者を同乗させることによって、普段の通勤所要時間に対して追加でかかる時間マッチング成立後に、乗客の条件（乗車地・目的地・時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例140円/km（4kmなら560円）拒否権条件を見て成立後でも断れる12345低い高い迎を引き受けない設定ドライバー報酬定額300円拒否権成立したら断れないNG設定NG設定なし引き受けたい度（5段階）12345低い高いドライバー報酬定額100円拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃距離に比"
+          "context_text": "回の送迎を引き受けた際にドライバーが受け取る金額（定額または距離比例）利用者を同乗させることによって、普段の通勤所要時間に対して追加でかかる時間マッチング成立後に、乗客の条件（乗車地・目的地・時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例140円/km（4kmなら560円）拒否権条件を見て成立後でも断れる12345低い高い迎を引き受けない設定ドライバー報酬定額300円拒否権成立したら断れないNG設定NG設定なし引き受けたい度（5段階）12345低い高いドライバー報酬定額100円拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃距離に比",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "ondemandScenarioThree",
+          "scenario_text": "ドライバー報酬 定額300円 拒否権 成立したら断れない NG設定 NG設定なし",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_home_2",
           "type": "rating5",
-          "part": "driver_home",
           "label": "ドライバー・自宅 2",
-          "scenario_macro": "ondemandScenarioSix",
-          "scenario_text": "ドライバー報酬 定額100円 拒否権 条件確認後も断れる NG設定 NGエリア＋時間",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_home",
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -5068,6 +5959,7 @@
             1167.912,
             653.214
           ],
+          "table_rect": null,
           "cells": [
             [
               749.282,
@@ -5100,17 +5992,22 @@
               568.214
             ]
           ],
-          "context_text": "時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例140円/km（4kmなら560円）拒否権条件を見て成立後でも断れる12345低い高い拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額100円拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高いドライバー報酬距離比例60円/km（4kmなら240円）拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き"
+          "context_text": "時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例140円/km（4kmなら560円）拒否権条件を見て成立後でも断れる12345低い高い拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額100円拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高いドライバー報酬距離比例60円/km（4kmなら240円）拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "ondemandScenarioSix",
+          "scenario_text": "ドライバー報酬 定額100円 拒否権 条件確認後も断れる NG設定 NGエリア＋時間",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_home_3",
           "type": "rating5",
-          "part": "driver_home",
           "label": "ドライバー・自宅 3",
-          "scenario_macro": "ondemandScenarioEleven",
-          "scenario_text": "ドライバー報酬 距離比例60円/km（4kmなら240円） 拒否権 条件確認後も断れる NG設定 NGエリア＋時間",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_home",
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -5126,6 +6023,7 @@
             1167.912,
             744.749
           ],
+          "table_rect": null,
           "cells": [
             [
               749.282,
@@ -5158,17 +6056,22 @@
               659.749
             ]
           ],
-          "context_text": "12345拒否権稼働時間内で成立したら断れない12345低い高い円/km（2kmなら120円）拒否権条件を見て成立後でも断れる12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（4kmなら240円）拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高いドライバー報酬距離比例60円/km（4kmなら240円）拒否権成立したら断れないNG設定NGエリアのみ引き受けたい度（5段階）12345低い高い運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り"
+          "context_text": "12345拒否権稼働時間内で成立したら断れない12345低い高い円/km（2kmなら120円）拒否権条件を見て成立後でも断れる12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（4kmなら240円）拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高いドライバー報酬距離比例60円/km（4kmなら240円）拒否権成立したら断れないNG設定NGエリアのみ引き受けたい度（5段階）12345低い高い運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "ondemandScenarioEleven",
+          "scenario_text": "ドライバー報酬 距離比例60円/km（4kmなら240円） 拒否権 条件確認後も断れる NG設定 NGエリア＋時間",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q4_home_4",
           "type": "rating5",
-          "part": "driver_home",
           "label": "ドライバー・自宅 4",
-          "scenario_macro": "ondemandScenarioTwelve",
-          "scenario_text": "ドライバー報酬 距離比例60円/km（4kmなら240円） 拒否権 成立したら断れない NG設定 NGエリアのみ",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "driver_home",
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -5184,6 +6087,7 @@
             1167.912,
             836.284
           ],
+          "table_rect": null,
           "cells": [
             [
               749.282,
@@ -5216,17 +6120,22 @@
               751.284
             ]
           ],
-          "context_text": "12345円/km（2kmなら120円）拒否権条件を見て成立後でも断れる12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（4kmなら240円）拒否権成立したら断れないNG設定NGエリアのみ引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高いページ2/42枚目に続きます"
+          "context_text": "12345円/km（2kmなら120円）拒否権条件を見て成立後でも断れる12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（4kmなら240円）拒否権成立したら断れないNG設定NGエリアのみ引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高いページ2/42枚目に続きます",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "ondemandScenarioTwelve",
+          "scenario_text": "ドライバー報酬 距離比例60円/km（4kmなら240円） 拒否権 成立したら断れない NG設定 NGエリアのみ",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q5_passenger_1",
           "type": "rating5",
-          "part": "passenger",
           "label": "乗客 1",
-          "scenario_macro": "passengerScenarioFour",
-          "scenario_text": "運賃 距離に比例 60円/km（2kmなら120円） 呼び出し 15分程度 相乗り 常に貸し切り",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "passenger",
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -5242,6 +6151,7 @@
             1190.551025390625,
             551.53
           ],
+          "table_rect": null,
           "cells": [
             [
               1034.872,
@@ -5274,17 +6184,22 @@
               466.53
             ]
           ],
-          "context_text": "迎を引き受けない設定12345低い高い低い高い常に貸し切り他の利用者とは相乗りしない運賃距離に比例60円/km（2kmなら120円）呼び出し15分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い"
+          "context_text": "迎を引き受けない設定12345低い高い低い高い常に貸し切り他の利用者とは相乗りしない運賃距離に比例60円/km（2kmなら120円）呼び出し15分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "passengerScenarioFour",
+          "scenario_text": "運賃 距離に比例 60円/km（2kmなら120円） 呼び出し 15分程度 相乗り 常に貸し切り",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q5_passenger_2",
           "type": "rating5",
-          "part": "passenger",
           "label": "乗客 2",
-          "scenario_macro": "passengerScenarioTen",
-          "scenario_text": "運賃 距離に比例 100円/km（2kmなら200円） 呼び出し 5分程度 相乗り 顔見知りの住民とだけ相乗り",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "passenger",
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -5300,6 +6215,7 @@
             1190.551025390625,
             643.065
           ],
+          "table_rect": null,
           "cells": [
             [
               1034.872,
@@ -5332,17 +6248,22 @@
               558.065
             ]
           ],
-          "context_text": "12345低い高い12345低い高い円/km（4kmなら240円）低い高い引き受けたい度（5段階）12345運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い"
+          "context_text": "12345低い高い12345低い高い円/km（4kmなら240円）低い高い引き受けたい度（5段階）12345運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "passengerScenarioTen",
+          "scenario_text": "運賃 距離に比例 100円/km（2kmなら200円） 呼び出し 5分程度 相乗り 顔見知りの住民とだけ相乗り",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q5_passenger_3",
           "type": "rating5",
-          "part": "passenger",
           "label": "乗客 3",
-          "scenario_macro": "passengerScenarioThree",
-          "scenario_text": "運賃 定額300円 呼び出し 5分程度 相乗り 常に貸し切り",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "passenger",
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -5358,6 +6279,7 @@
             1190.551025390625,
             734.6
           ],
+          "table_rect": null,
           "cells": [
             [
               1034.872,
@@ -5390,17 +6312,22 @@
               649.6
             ]
           ],
-          "context_text": "12345低い高い円/km（4kmなら240円）12345低い高い円/km（4kmなら240円）低い高い引き受けたい度（5段階）12345運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い"
+          "context_text": "12345低い高い円/km（4kmなら240円）12345低い高い円/km（4kmなら240円）低い高い引き受けたい度（5段階）12345運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "passengerScenarioThree",
+          "scenario_text": "運賃 定額300円 呼び出し 5分程度 相乗り 常に貸し切り",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         },
         {
           "id": "q5_passenger_4",
           "type": "rating5",
-          "part": "passenger",
           "label": "乗客 4",
-          "scenario_macro": "passengerScenarioEight",
-          "scenario_text": "運賃 定額500円 呼び出し 15分程度 相乗り 顔見知りの住民とだけ相乗り",
-          "min": 1,
-          "max": 5,
+          "choices": [],
+          "part": "passenger",
           "version": "C",
           "template_page_index": 9,
           "local_page_index": 1,
@@ -5416,6 +6343,7 @@
             1190.551025390625,
             826.135
           ],
+          "table_rect": null,
           "cells": [
             [
               1034.872,
@@ -5448,7 +6376,15 @@
               741.135
             ]
           ],
-          "context_text": "12345低い高い円/km（4kmなら240円）12345低い高い引き受けたい度（5段階）12345運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い2枚目に続きます"
+          "context_text": "12345低い高い円/km（4kmなら240円）12345低い高い引き受けたい度（5段階）12345運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い2枚目に続きます",
+          "day": null,
+          "rows": null,
+          "columns": null,
+          "scenario_macro": "passengerScenarioEight",
+          "scenario_text": "運賃 定額500円 呼び出し 15分程度 相乗り 顔見知りの住民とだけ相乗り",
+          "min": 1,
+          "max": 5,
+          "multiple": null
         }
       ]
     },
@@ -5463,6 +6399,31 @@
           "id": "activity_月曜日",
           "type": "activity_day",
           "label": "月曜日の活動",
+          "choices": [],
+          "part": null,
+          "version": "C",
+          "template_page_index": 10,
+          "local_page_index": 2,
+          "rect": [
+            28.346,
+            241.812,
+            578.275,
+            485.16
+          ],
+          "context_rect": [
+            28.346,
+            241.812,
+            578.275,
+            485.16
+          ],
+          "table_rect": [
+            28.794,
+            260.333,
+            577.827,
+            484.712
+          ],
+          "cells": null,
+          "context_text": null,
           "day": "月曜日",
           "rows": 7,
           "columns": [
@@ -5474,32 +6435,41 @@
             "mode",
             "tolerance_min"
           ],
-          "version": "C",
-          "template_page_index": 10,
-          "local_page_index": 2,
-          "rect": [
-            28.346,
-            241.812,
-            578.275,
-            485.16
-          ],
-          "context_rect": [
-            28.346,
-            241.812,
-            578.275,
-            485.16
-          ],
-          "table_rect": [
-            28.794,
-            260.333,
-            577.827,
-            484.712
-          ]
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
         },
         {
           "id": "activity_水曜日",
           "type": "activity_day",
           "label": "水曜日の活動",
+          "choices": [],
+          "part": null,
+          "version": "C",
+          "template_page_index": 10,
+          "local_page_index": 2,
+          "rect": [
+            592.442,
+            241.812,
+            1142.371,
+            485.16
+          ],
+          "context_rect": [
+            592.442,
+            241.812,
+            1142.371,
+            485.16
+          ],
+          "table_rect": [
+            592.89,
+            260.333,
+            1141.923,
+            484.712
+          ],
+          "cells": null,
+          "context_text": null,
           "day": "水曜日",
           "rows": 7,
           "columns": [
@@ -5511,43 +6481,18 @@
             "mode",
             "tolerance_min"
           ],
-          "version": "C",
-          "template_page_index": 10,
-          "local_page_index": 2,
-          "rect": [
-            592.442,
-            241.812,
-            1142.371,
-            485.16
-          ],
-          "context_rect": [
-            592.442,
-            241.812,
-            1142.371,
-            485.16
-          ],
-          "table_rect": [
-            592.89,
-            260.333,
-            1141.923,
-            484.712
-          ]
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
         },
         {
           "id": "activity_火曜日",
           "type": "activity_day",
           "label": "火曜日の活動",
-          "day": "火曜日",
-          "rows": 7,
-          "columns": [
-            "dep_time",
-            "dep_place",
-            "arr_time",
-            "arr_place",
-            "purpose",
-            "mode",
-            "tolerance_min"
-          ],
+          "choices": [],
+          "part": null,
           "version": "C",
           "template_page_index": 10,
           "local_page_index": 2,
@@ -5568,13 +6513,10 @@
             522.933,
             577.827,
             747.312
-          ]
-        },
-        {
-          "id": "activity_木曜日",
-          "type": "activity_day",
-          "label": "木曜日の活動",
-          "day": "木曜日",
+          ],
+          "cells": null,
+          "context_text": null,
+          "day": "火曜日",
           "rows": 7,
           "columns": [
             "dep_time",
@@ -5585,6 +6527,18 @@
             "mode",
             "tolerance_min"
           ],
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
+        },
+        {
+          "id": "activity_木曜日",
+          "type": "activity_day",
+          "label": "木曜日の活動",
+          "choices": [],
+          "part": null,
           "version": "C",
           "template_page_index": 10,
           "local_page_index": 2,
@@ -5605,7 +6559,25 @@
             522.933,
             1141.923,
             747.312
-          ]
+          ],
+          "cells": null,
+          "context_text": null,
+          "day": "木曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
         }
       ]
     },
@@ -5620,17 +6592,8 @@
           "id": "activity_金曜日",
           "type": "activity_day",
           "label": "金曜日の活動",
-          "day": "金曜日",
-          "rows": 7,
-          "columns": [
-            "dep_time",
-            "dep_place",
-            "arr_time",
-            "arr_place",
-            "purpose",
-            "mode",
-            "tolerance_min"
-          ],
+          "choices": [],
+          "part": null,
           "version": "C",
           "template_page_index": 11,
           "local_page_index": 3,
@@ -5651,13 +6614,10 @@
             45.669,
             590.582,
             270.048
-          ]
-        },
-        {
-          "id": "activity_土曜日",
-          "type": "activity_day",
-          "label": "土曜日の活動",
-          "day": "土曜日",
+          ],
+          "cells": null,
+          "context_text": null,
+          "day": "金曜日",
           "rows": 7,
           "columns": [
             "dep_time",
@@ -5668,6 +6628,18 @@
             "mode",
             "tolerance_min"
           ],
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
+        },
+        {
+          "id": "activity_土曜日",
+          "type": "activity_day",
+          "label": "土曜日の活動",
+          "choices": [],
+          "part": null,
           "version": "C",
           "template_page_index": 11,
           "local_page_index": 3,
@@ -5688,13 +6660,10 @@
             303.02,
             590.582,
             527.399
-          ]
-        },
-        {
-          "id": "activity_日曜日",
-          "type": "activity_day",
-          "label": "日曜日の活動",
-          "day": "日曜日",
+          ],
+          "cells": null,
+          "context_text": null,
+          "day": "土曜日",
           "rows": 7,
           "columns": [
             "dep_time",
@@ -5705,6 +6674,18 @@
             "mode",
             "tolerance_min"
           ],
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
+        },
+        {
+          "id": "activity_日曜日",
+          "type": "activity_day",
+          "label": "日曜日の活動",
+          "choices": [],
+          "part": null,
           "version": "C",
           "template_page_index": 11,
           "local_page_index": 3,
@@ -5725,7 +6706,25 @@
             560.37,
             590.582,
             784.749
-          ]
+          ],
+          "cells": null,
+          "context_text": null,
+          "day": "日曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "scenario_macro": null,
+          "scenario_text": null,
+          "min": null,
+          "max": null,
+          "multiple": null
         }
       ]
     }

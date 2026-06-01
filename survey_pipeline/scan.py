@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 import cv2
 import fitz
@@ -28,28 +28,29 @@ from .digit_model import (
     split_digit_components,
     validate_value,
 )
+from .models import VERSION_ADAPTER, InitialAnswers, LayoutDocument, Version
 
 ID_PATTERN = re.compile(r"[A-Z0-9]{2,4}-[A-Z0-9]{3,5}")
 
 
-def detect_version_from_text(doc: fitz.Document, page_index: int) -> str | None:
-    text = doc[page_index].get_text("text") or ""
+def detect_version_from_text(doc: fitz.Document, page_index: int) -> Version | None:
+    text = cast(str, doc[page_index].get_text("text")) or ""
     m = re.search(r"版\s*([ABC])", text)
-    return m.group(1) if m else None
+    return VERSION_ADAPTER.validate_python(m.group(1)) if m else None
 
 
 def detect_version_by_template(
     answered_pdf: Path, template_pdf: Path, answered_page_index: int, dpi: int = 150
-) -> tuple[str, dict[str, float]]:
+) -> tuple[Version, dict[Version, float]]:
     scan_page, _ = render_pdf_page(answered_pdf, answered_page_index, dpi=dpi)
-    scores: dict[str, float] = {}
+    scores: dict[Version, float] = {}
     # 版表示周辺だけで照合。スキャンがずれている場合に備え、検索領域はやや広くする。
     search = crop_by_rect_pt(scan_page, VERSION_LABEL_SEARCH_RECT_PT, dpi=dpi)
     for version, base in VERSION_BASE_PAGE.items():
         tmpl_page, _ = render_pdf_page(template_pdf, base, dpi=dpi)
         tmpl = crop_by_rect_pt(tmpl_page, VERSION_LABEL_TEMPLATE_RECT_PT, dpi=dpi)
         scores[version] = match_template_score(search, tmpl)
-    version = max(scores, key=scores.get)
+    version = max(scores, key=lambda k: scores[k])
     return version, scores
 
 
@@ -60,7 +61,7 @@ def extract_id_from_text(doc: fitz.Document, booklet_start: int) -> str | None:
     for i in range(
         booklet_start, min(booklet_start + LOCAL_PAGES_PER_BOOKLET, len(doc))
     ):
-        words = doc[i].get_text("words")
+        words = cast(list[tuple[Any, ...]], doc[i].get_text("words"))
         buf = []
         for w in words:
             wx0, wy0, wx1, wy1, word, *_ = w
@@ -145,18 +146,21 @@ def read_digit_item(
 def read_scanned_pdf(
     answered_pdf: Path,
     template_pdf: Path,
-    layout: dict[str, Any],
+    layout: LayoutDocument | dict[str, Any],
     model_path: Path | None = None,
     dpi: int = 220,
     use_id_ocr: bool = True,
     booklet_offset: int = 0,
-) -> dict[str, Any]:
+) -> InitialAnswers:
     doc = fitz.open(answered_pdf)
     n_pages = len(doc)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = load_model(model_path, device) if model_path else None
 
     booklets: list[dict[str, Any]] = []
+    layout_data = (
+        layout.model_dump(mode="json") if isinstance(layout, LayoutDocument) else layout
+    )
     for start in range(0, n_pages, LOCAL_PAGES_PER_BOOKLET):
         if start + LOCAL_PAGES_PER_BOOKLET > n_pages:
             break
@@ -172,7 +176,7 @@ def read_scanned_pdf(
         if rid is None:
             rid = f"booklet_{start // LOCAL_PAGES_PER_BOOKLET + 1:04d}"
 
-        answers: dict[str, Any] = {}
+        answers: dict[str, dict[str, Any]] = {}
         alignments: list[dict[str, Any]] = []
         for local_page in range(LOCAL_PAGES_PER_BOOKLET):
             ans_page_index = start + local_page
@@ -191,7 +195,7 @@ def read_scanned_pdf(
             )
             layout_page = next(
                 p
-                for p in layout["pages"]
+                for p in layout_data["pages"]
                 if p["template_page_index"] == tmpl_page_index
             )
             for item in layout_page.get("items", []):
@@ -215,22 +219,24 @@ def read_scanned_pdf(
             }
         )
     doc.close()
-    return {
-        "source_pdf": str(answered_pdf),
-        "template_pdf": str(template_pdf),
-        "dpi": dpi,
-        "booklets": booklets,
-    }
+    return InitialAnswers.model_validate(
+        {
+            "source_pdf": str(answered_pdf),
+            "template_pdf": str(template_pdf),
+            "dpi": dpi,
+            "booklets": booklets,
+        }
+    )
 
 
 def read_scanned_pdfs(
     answered_pdfs: list[Path],
     template_pdf: Path,
-    layout: dict[str, Any],
+    layout: LayoutDocument | dict[str, Any],
     model_path: Path | None = None,
     dpi: int = 220,
     use_id_ocr: bool = True,
-) -> dict[str, Any]:
+) -> InitialAnswers:
     all_booklets: list[dict[str, Any]] = []
     booklet_offset = 0
     for pdf_path in answered_pdfs:
@@ -243,12 +249,15 @@ def read_scanned_pdfs(
             use_id_ocr=use_id_ocr,
             booklet_offset=booklet_offset,
         )
-        all_booklets.extend(result["booklets"])
-        booklet_offset += len(result["booklets"])
+        result_data = result.model_dump(mode="json")
+        all_booklets.extend(result_data["booklets"])
+        booklet_offset += len(result_data["booklets"])
     source_pdfs = [str(p) for p in answered_pdfs]
-    return {
-        "source_pdf": source_pdfs if len(source_pdfs) > 1 else source_pdfs[0],
-        "template_pdf": str(template_pdf),
-        "dpi": dpi,
-        "booklets": all_booklets,
-    }
+    return InitialAnswers.model_validate(
+        {
+            "source_pdf": source_pdfs if len(source_pdfs) > 1 else source_pdfs[0],
+            "template_pdf": str(template_pdf),
+            "dpi": dpi,
+            "booklets": all_booklets,
+        }
+    )

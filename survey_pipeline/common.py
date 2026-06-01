@@ -7,8 +7,11 @@ from typing import Any, Iterable
 import cv2
 import fitz
 import numpy as np
+import numpy.typing as npt
 
-VERSION_BASE_PAGE = {"A": 0, "B": 4, "C": 8}
+from .models import InitialAnswers, LayoutDocument, ReviewItem, Version
+
+VERSION_BASE_PAGE: dict[Version, int] = {"A": 0, "B": 4, "C": 8}
 VERSIONS = ("A", "B", "C")
 LOCAL_PAGES_PER_BOOKLET = 4
 
@@ -27,8 +30,21 @@ def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def read_layout(path: Path) -> LayoutDocument:
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if "schema" in data and "schema_data" not in data:
+        data["schema_data"] = data.pop("schema")
+    return LayoutDocument.model_validate(data)
+
+
+def read_initial_answers(path: Path) -> InitialAnswers:
+    return InitialAnswers.model_validate_json(path.read_text(encoding="utf-8"))
+
+
 def write_json(path: Path, obj: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+    if hasattr(obj, "model_dump"):
+        obj = obj.model_dump(mode="json")
     path.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
@@ -37,6 +53,13 @@ def iter_jsonl(path: Path) -> Iterable[dict[str, Any]]:
         for line in f:
             if line.strip():
                 yield json.loads(line)
+
+
+def iter_review_items(path: Path) -> Iterable[ReviewItem]:
+    with path.open("r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                yield ReviewItem.model_validate_json(line)
 
 
 def write_jsonl(path: Path, rows: Iterable[dict[str, Any]]) -> None:
@@ -73,16 +96,37 @@ def union_rects(rects: list[list[float]]) -> list[float]:
 
 def render_pdf_page(
     pdf_path: Path, page_index: int, dpi: int
-) -> tuple[np.ndarray, fitz.Rect]:
+) -> tuple[npt.NDArray[np.uint8], fitz.Rect]:
     doc = fitz.open(pdf_path)
     page = doc[page_index]
     zoom = dpi / 72.0
     pix = page.get_pixmap(matrix=fitz.Matrix(zoom, zoom), alpha=False)
-    img = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.height, pix.width, 3)
-    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+    img: npt.NDArray[np.uint8] = (
+        np.frombuffer(pix.samples, dtype=np.uint8)
+        .reshape(pix.height, pix.width, 3)
+        .copy()
+    )
+    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR).astype(np.uint8)
     rect = fitz.Rect(page.rect)
     doc.close()
     return img, rect
+
+
+def resize_uint8(img: npt.NDArray[np.uint8], size: tuple[int, int]) -> npt.NDArray[np.uint8]:
+    return cv2.resize(img, size, interpolation=cv2.INTER_AREA).astype(np.uint8)
+
+
+def warp_affine_uint8(
+    img: npt.NDArray[np.uint8], warp: npt.NDArray[np.float32], size: tuple[int, int]
+) -> npt.NDArray[np.uint8]:
+    return cv2.warpAffine(
+        img,
+        warp,
+        size,
+        flags=cv2.INTER_LINEAR + cv2.WARP_INVERSE_MAP,
+        borderMode=cv2.BORDER_CONSTANT,
+        borderValue=(255, 255, 255),
+    ).astype(np.uint8)
 
 
 def rect_pt_to_px(
@@ -98,7 +142,7 @@ def rect_pt_to_px(
     )
 
 
-def crop_px(img: np.ndarray, rect_px: tuple[int, int, int, int]) -> np.ndarray:
+def crop_px(img: npt.NDArray[np.uint8], rect_px: tuple[int, int, int, int]) -> npt.NDArray[np.uint8]:
     h, w = img.shape[:2]
     x0, y0, x1, y1 = rect_px
     x0 = max(0, min(w, x0))
@@ -109,31 +153,31 @@ def crop_px(img: np.ndarray, rect_px: tuple[int, int, int, int]) -> np.ndarray:
 
 
 def crop_by_rect_pt(
-    img: np.ndarray, rect_pt: list[float], dpi: int, pad_px: int = 0
-) -> np.ndarray:
+    img: npt.NDArray[np.uint8], rect_pt: list[float], dpi: int, pad_px: int = 0
+) -> npt.NDArray[np.uint8]:
     return crop_px(img, rect_pt_to_px(rect_pt, dpi, pad_px))
 
 
-def to_gray_float(img_bgr: np.ndarray) -> np.ndarray:
+def to_gray_float(img_bgr: npt.NDArray[np.uint8]) -> npt.NDArray[np.float32]:
     gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY)
     gray = cv2.GaussianBlur(gray, (3, 3), 0)
     return gray.astype(np.float32) / 255.0
 
 
 def align_ecc_affine(
-    scan_img: np.ndarray, template_img: np.ndarray
-) -> tuple[np.ndarray, float]:
+    scan_img: npt.NDArray[np.uint8], template_img: npt.NDArray[np.uint8]
+) -> tuple[npt.NDArray[np.uint8], float]:
     h, w = template_img.shape[:2]
     if scan_img.shape[:2] != (h, w):
-        scan_img = cv2.resize(scan_img, (w, h), interpolation=cv2.INTER_AREA)
+        scan_img = resize_uint8(scan_img, (w, h))
 
-    scan_gray = to_gray_float(scan_img)
-    tmpl_gray = to_gray_float(template_img)
-    warp = np.eye(2, 3, dtype=np.float32)
+    scan_gray: npt.NDArray[np.float32] = to_gray_float(scan_img).astype(np.float32)
+    tmpl_gray: npt.NDArray[np.float32] = to_gray_float(template_img).astype(np.float32)
+    warp: npt.NDArray[np.float32] = np.eye(2, 3, dtype=np.float32)
     criteria = (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 800, 1e-6)
 
     try:
-        cc, warp = cv2.findTransformECC(
+        cc, warp = cv2.findTransformECC(  # type: ignore[assignment, call-overload]
             tmpl_gray,
             scan_gray,
             warp,
@@ -142,20 +186,16 @@ def align_ecc_affine(
             inputMask=None,
             gaussFiltSize=5,
         )
-        aligned = cv2.warpAffine(
-            scan_img,
-            warp,
-            (w, h),
-            flags=cv2.INTER_LINEAR + cv2.WARP_INVERSE_MAP,
-            borderMode=cv2.BORDER_CONSTANT,
-            borderValue=(255, 255, 255),
-        )
+        aligned: npt.NDArray[np.uint8] = warp_affine_uint8(scan_img, warp, (w, h))
         return aligned, float(cc)
     except cv2.error:
-        return cv2.resize(scan_img, (w, h), interpolation=cv2.INTER_AREA), -1.0
+        fallback: npt.NDArray[np.uint8] = resize_uint8(scan_img, (w, h))
+        return fallback, -1.0
 
 
-def match_template_score(search_img: np.ndarray, template_img: np.ndarray) -> float:
+def match_template_score(
+    search_img: npt.NDArray[np.uint8], template_img: npt.NDArray[np.uint8]
+) -> float:
     search_gray = cv2.cvtColor(search_img, cv2.COLOR_BGR2GRAY)
     tmpl_gray = cv2.cvtColor(template_img, cv2.COLOR_BGR2GRAY)
     if (

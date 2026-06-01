@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import cast
 
 import cv2
 import numpy as np
+import numpy.typing as npt
 import torch
 import torch.nn as nn
 
@@ -77,15 +79,17 @@ def load_model(model_path: Path | None, device: torch.device) -> nn.Module | Non
     return model
 
 
-def _match_background_level(scan_gray: np.ndarray, tmpl_gray: np.ndarray) -> np.ndarray:
+def _match_background_level(
+    scan_gray: npt.NDArray[np.uint8], tmpl_gray: npt.NDArray[np.uint8]
+) -> npt.NDArray[np.uint8]:
     """Match paper-background brightness of scan_crop to template_crop.
 
     Scans are often globally darker than the rendered template.  If we simply
     compute template - scan, the whole crop may become foreground.  Estimate the
     paper background from bright pixels and shift the scan before differencing.
     """
-    scan_f = scan_gray.astype(np.float32)
-    tmpl_f = tmpl_gray.astype(np.float32)
+    scan_f: npt.NDArray[np.float32] = scan_gray.astype(np.float32)
+    tmpl_f: npt.NDArray[np.float32] = tmpl_gray.astype(np.float32)
 
     scan_bg = scan_f[scan_f >= np.percentile(scan_f, 65)]
     tmpl_bg = tmpl_f[tmpl_f >= np.percentile(tmpl_f, 65)]
@@ -95,7 +99,9 @@ def _match_background_level(scan_gray: np.ndarray, tmpl_gray: np.ndarray) -> np.
     return scan_f.astype(np.uint8)
 
 
-def _remove_small_components(binary: np.ndarray, min_area: int = 14) -> np.ndarray:
+def _remove_small_components(
+    binary: npt.NDArray[np.uint8], min_area: int = 14
+) -> npt.NDArray[np.uint8]:
     n, labels, stats, _ = cv2.connectedComponentsWithStats(binary, connectivity=8)
     out = np.zeros_like(binary)
     for i in range(1, n):
@@ -105,7 +111,9 @@ def _remove_small_components(binary: np.ndarray, min_area: int = 14) -> np.ndarr
     return out
 
 
-def extract_ink(scan_crop: np.ndarray, tmpl_crop: np.ndarray) -> np.ndarray:
+def extract_ink(
+    scan_crop: npt.NDArray[np.uint8], tmpl_crop: npt.NDArray[np.uint8]
+) -> npt.NDArray[np.uint8]:
     """Extract handwritten ink from an answer box.
 
     This version is intentionally more aggressive about removing the printed
@@ -117,10 +125,10 @@ def extract_ink(scan_crop: np.ndarray, tmpl_crop: np.ndarray) -> np.ndarray:
     Returned image: uint8 binary, black background and white handwritten ink.
     """
     if scan_crop.shape[:2] != tmpl_crop.shape[:2]:
-        tmpl_crop = cv2.resize(tmpl_crop, (scan_crop.shape[1], scan_crop.shape[0]))
+        tmpl_crop = cv2.resize(tmpl_crop, (scan_crop.shape[1], scan_crop.shape[0]))  # type: ignore[assignment]
 
-    scan_gray = cv2.cvtColor(scan_crop, cv2.COLOR_BGR2GRAY)
-    tmpl_gray = cv2.cvtColor(tmpl_crop, cv2.COLOR_BGR2GRAY)
+    scan_gray: npt.NDArray[np.uint8] = cv2.cvtColor(scan_crop, cv2.COLOR_BGR2GRAY)  # type: ignore[assignment]
+    tmpl_gray: npt.NDArray[np.uint8] = cv2.cvtColor(tmpl_crop, cv2.COLOR_BGR2GRAY)  # type: ignore[assignment]
 
     scan_gray = _match_background_level(scan_gray, tmpl_gray)
     scan_blur = cv2.GaussianBlur(scan_gray, (3, 3), 0)
@@ -137,13 +145,14 @@ def extract_ink(scan_crop: np.ndarray, tmpl_crop: np.ndarray) -> np.ndarray:
     # Remove pixels that already belong to printed template ink: frame lines,
     # QR fragments if accidentally included, and the pale "解答欄" placeholder.
     template_ink = (tmpl_gray < 248).astype(np.uint8) * 255
-    template_ink = cv2.dilate(template_ink, np.ones((3, 3), np.uint8), iterations=2)
+    template_ink = cv2.dilate(template_ink, np.ones((3, 3), np.uint8), iterations=2)  # type: ignore[assignment]
     binary[template_ink > 0] = 0
 
     # Reconnect handwriting strokes that were broken by placeholder removal.
     binary = cv2.morphologyEx(
         binary, cv2.MORPH_CLOSE, np.ones((2, 2), np.uint8), iterations=1
-    )
+    )  # type: ignore[assignment]
+    binary = cast(npt.NDArray[np.uint8], binary)
     binary = _remove_small_components(binary, min_area=14)
     binary = _strip_dirty_border(binary)
     binary = _suppress_edge_artifacts(binary)
@@ -151,7 +160,7 @@ def extract_ink(scan_crop: np.ndarray, tmpl_crop: np.ndarray) -> np.ndarray:
     return binary
 
 
-def _suppress_edge_artifacts(binary: np.ndarray) -> np.ndarray:
+def _suppress_edge_artifacts(binary: npt.NDArray[np.uint8]) -> npt.NDArray[np.uint8]:
     """Remove residual vertical frame fragments near crop edges.
 
     The answer box frame can survive template subtraction as a thin vertical
@@ -198,7 +207,7 @@ def _suppress_edge_artifacts(binary: np.ndarray) -> np.ndarray:
     return out
 
 
-def _strip_dirty_border(binary: np.ndarray) -> np.ndarray:
+def _strip_dirty_border(binary: npt.NDArray[np.uint8]) -> npt.NDArray[np.uint8]:
     """Clear only border columns/rows that are dominated by residual ink."""
     H, W = binary.shape[:2]
     if H == 0 or W == 0:
@@ -222,7 +231,9 @@ def _strip_dirty_border(binary: np.ndarray) -> np.ndarray:
     return out
 
 
-def split_digit_components(binary: np.ndarray) -> list[np.ndarray]:
+def split_digit_components(
+    binary: npt.NDArray[np.uint8],
+) -> list[npt.NDArray[np.uint8]]:
     binary = _strip_dirty_border(binary)
     binary = _suppress_edge_artifacts(binary)
     contours, _ = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -259,7 +270,7 @@ def split_digit_components(binary: np.ndarray) -> list[np.ndarray]:
     return crops
 
 
-def normalize_digit_for_mnist(img: np.ndarray) -> np.ndarray:
+def normalize_digit_for_mnist(img: npt.NDArray[np.uint8]) -> npt.NDArray[np.float32]:
     coords = cv2.findNonZero(img)
     if coords is None:
         return np.zeros((28, 28), dtype=np.float32)
@@ -272,7 +283,7 @@ def normalize_digit_for_mnist(img: np.ndarray) -> np.ndarray:
     new_w, new_h = max(1, int(round(w * scale))), max(1, int(round(h * scale)))
     resized = cv2.resize(img, (new_w, new_h), interpolation=cv2.INTER_AREA)
 
-    canvas = np.zeros((28, 28), dtype=np.uint8)
+    canvas: npt.NDArray[np.uint8] = np.zeros((28, 28), dtype=np.uint8)
     x0, y0 = (28 - new_w) // 2, (28 - new_h) // 2
     canvas[y0 : y0 + new_h, x0 : x0 + new_w] = resized
 
@@ -284,14 +295,17 @@ def normalize_digit_for_mnist(img: np.ndarray) -> np.ndarray:
         cy = m["m01"] / m["m00"]
         shift_x = int(round(14 - cx))
         shift_y = int(round(14 - cy))
-        M = np.float32([[1, 0, shift_x], [0, 1, shift_y]])
-        canvas = cv2.warpAffine(canvas, M, (28, 28), borderValue=0)
+        M = cast(
+            npt.NDArray[np.float32],
+            np.float32([[1, 0, shift_x], [0, 1, shift_y]]),  # type: ignore[arg-type]
+        )
+        canvas = cv2.warpAffine(canvas, M, (28, 28), borderValue=0)  # type: ignore[assignment]
 
     return canvas.astype(np.float32) / 255.0
 
 
 def predict_digit(
-    model: nn.Module, img28: np.ndarray, device: torch.device
+    model: nn.Module, img28: npt.NDArray[np.float32], device: torch.device
 ) -> tuple[int, float]:
     x = torch.from_numpy(img28).float().unsqueeze(0).unsqueeze(0)
     x = (x - 0.1307) / 0.3081

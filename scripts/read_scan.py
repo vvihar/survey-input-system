@@ -1,10 +1,14 @@
 from __future__ import annotations
 
-import argparse
 from pathlib import Path
 
-from survey_pipeline.common import read_json, write_json
+import typer
+
+from survey_pipeline.common import read_layout, write_json
+from survey_pipeline.models import ReadScanArgs
 from survey_pipeline.scan import read_scanned_pdf, read_scanned_pdfs
+
+app = typer.Typer(add_completion=False)
 
 
 def collect_pdfs(paths: list[Path]) -> list[Path]:
@@ -17,34 +21,43 @@ def collect_pdfs(paths: list[Path]) -> list[Path]:
     return result
 
 
-def main() -> None:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--answered-pdf", type=Path, action="append", default=[], help="answered PDF file (repeatable or use --answered-dir)")
-    ap.add_argument("--answered-dir", type=Path, default=None, help="directory containing answered PDFs")
-    ap.add_argument("--template-pdf", type=Path, required=True)
-    ap.add_argument("--layout", type=Path, required=True)
-    ap.add_argument("--model", type=Path, default=None)
-    ap.add_argument("--out", type=Path, required=True)
-    ap.add_argument("--dpi", type=int, default=220)
-    ap.add_argument("--no-id-ocr", action="store_true")
-    args = ap.parse_args()
-
-    pdfs: list[Path] = []
-    if args.answered_dir:
+@app.command()
+def main(
+    answered_pdf: list[Path] = typer.Option([], "--answered-pdf", help="answered PDF file (repeatable)"),
+    answered_dir: Path | None = typer.Option(None, "--answered-dir", help="directory containing answered PDFs"),
+    template_pdf: Path = typer.Option(..., "--template-pdf"),
+    layout: Path = typer.Option(..., "--layout"),
+    model: Path | None = typer.Option(None, "--model"),
+    out: Path = typer.Option(..., "--out"),
+    dpi: int = typer.Option(220, "--dpi"),
+    no_id_ocr: bool = typer.Option(False, "--no-id-ocr"),
+) -> None:
+    args = ReadScanArgs(
+        answered_pdfs=answered_pdf,
+        answered_dir=answered_dir,
+        template_pdf=template_pdf,
+        layout=layout,
+        model=model,
+        out=out,
+        dpi=dpi,
+        no_id_ocr=no_id_ocr,
+    )
+    pdfs = []
+    if args.answered_dir is not None:
         pdfs.extend(collect_pdfs([args.answered_dir]))
-    if args.answered_pdf:
-        pdfs.extend(collect_pdfs(args.answered_pdf))
+    if args.answered_pdfs:
+        pdfs.extend(collect_pdfs(args.answered_pdfs))
     pdfs = sorted(set(pdfs))
     if not pdfs:
-        ap.error("specify at least one --answered-pdf or --answered-dir")
+        raise typer.BadParameter("specify at least one --answered-pdf or --answered-dir")
 
-    layout = read_json(args.layout)
+    layout_model = read_layout(args.layout).model_dump()
 
     if len(pdfs) == 1:
         result = read_scanned_pdf(
             answered_pdf=pdfs[0],
             template_pdf=args.template_pdf,
-            layout=layout,
+            layout=layout_model,
             model_path=args.model,
             dpi=args.dpi,
             use_id_ocr=not args.no_id_ocr,
@@ -53,16 +66,16 @@ def main() -> None:
         result = read_scanned_pdfs(
             answered_pdfs=pdfs,
             template_pdf=args.template_pdf,
-            layout=layout,
+            layout=layout_model,
             model_path=args.model,
             dpi=args.dpi,
             use_id_ocr=not args.no_id_ocr,
         )
 
-    write_json(args.out, result)
-    n_booklets = len(result["booklets"])
-    print(f"wrote {args.out} ({n_booklets} booklets from {len(pdfs)} PDF(s))")
+    result_data = result.model_dump(mode="json")
+    write_json(args.out, result_data)
+    typer.echo(f"wrote {args.out} ({len(result_data['booklets'])} booklets from {len(pdfs)} PDF(s))")
 
 
 if __name__ == "__main__":
-    main()
+    app()

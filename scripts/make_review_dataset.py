@@ -1,10 +1,14 @@
 from __future__ import annotations
 
-import argparse
 from pathlib import Path
 
-from survey_pipeline.common import read_json
+import typer
+
+from survey_pipeline.common import read_initial_answers, read_layout
+from survey_pipeline.models import ReviewDatasetArgs
 from survey_pipeline.review_dataset import make_review_dataset, make_review_datasets
+
+app = typer.Typer(add_completion=False)
 
 
 def collect_pdfs(paths: list[Path]) -> list[Path]:
@@ -17,34 +21,42 @@ def collect_pdfs(paths: list[Path]) -> list[Path]:
     return result
 
 
-def main() -> None:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--answered-pdf", type=Path, action="append", default=[], help="answered PDF file (repeatable or use --answered-dir)")
-    ap.add_argument("--answered-dir", type=Path, default=None, help="directory containing answered PDFs")
-    ap.add_argument("--template-pdf", type=Path, required=True)
-    ap.add_argument("--layout", type=Path, required=True)
-    ap.add_argument("--answers", type=Path, required=True, help="initial_answers.json from read_scan.py")
-    ap.add_argument("--workdir", type=Path, required=True)
-    ap.add_argument("--dpi", type=int, default=220)
-    args = ap.parse_args()
-
-    pdfs: list[Path] = []
-    if args.answered_dir:
+@app.command()
+def main(
+    answered_pdf: list[Path] = typer.Option([], "--answered-pdf"),
+    answered_dir: Path | None = typer.Option(None, "--answered-dir"),
+    template_pdf: Path = typer.Option(..., "--template-pdf"),
+    layout: Path = typer.Option(..., "--layout"),
+    answers: Path = typer.Option(..., "--answers"),
+    workdir: Path = typer.Option(..., "--workdir"),
+    dpi: int = typer.Option(220, "--dpi"),
+) -> None:
+    args = ReviewDatasetArgs(
+        answered_pdfs=answered_pdf,
+        answered_dir=answered_dir,
+        template_pdf=template_pdf,
+        layout=layout,
+        answers=answers,
+        workdir=workdir,
+        dpi=dpi,
+    )
+    pdfs = []
+    if args.answered_dir is not None:
         pdfs.extend(collect_pdfs([args.answered_dir]))
-    if args.answered_pdf:
-        pdfs.extend(collect_pdfs(args.answered_pdf))
+    if args.answered_pdfs:
+        pdfs.extend(collect_pdfs(args.answered_pdfs))
     pdfs = sorted(set(pdfs))
 
-    layout = read_json(args.layout)
-    answers = read_json(args.answers)
+    layout_model = read_layout(args.layout).model_dump()
+    answers_model = read_initial_answers(args.answers).model_dump(mode="json")
 
     if len(pdfs) <= 1:
-        pdf = pdfs[0] if pdfs else Path(str(answers.get("source_pdf", answers.get("answered_pdf", ""))))
+        pdf = pdfs[0] if pdfs else Path(str(answers_model.get("source_pdf", answers_model.get("answered_pdf", ""))))
         manifest = make_review_dataset(
             answered_pdf=pdf,
             template_pdf=args.template_pdf,
-            layout=layout,
-            initial_answers=answers,
+            layout=layout_model,
+            initial_answers=answers_model,
             workdir=args.workdir,
             dpi=args.dpi,
         )
@@ -52,13 +64,13 @@ def main() -> None:
         manifest = make_review_datasets(
             answered_pdfs=pdfs,
             template_pdf=args.template_pdf,
-            layout=layout,
-            merged_initial_answers=answers,
+            layout=layout_model,
+            merged_initial_answers=answers_model,
             workdir=args.workdir,
             dpi=args.dpi,
         )
-    print(f"wrote {args.workdir} ({manifest['n_items']} items)")
+    typer.echo(f"wrote {args.workdir} ({manifest['n_items']} items)")
 
 
 if __name__ == "__main__":
-    main()
+    app()

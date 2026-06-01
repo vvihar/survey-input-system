@@ -1,10 +1,13 @@
 from __future__ import annotations
 
-import argparse
 from pathlib import Path
 
-from survey_pipeline.common import read_json
+import typer
+
+from survey_pipeline.common import read_initial_answers, read_layout
 from survey_pipeline.review_dataset import make_review_dataset
+
+app = typer.Typer(add_completion=False)
 
 
 def collect_pdfs(inputs: list[Path]) -> list[Path]:
@@ -17,38 +20,38 @@ def collect_pdfs(inputs: list[Path]) -> list[Path]:
     return out
 
 
-def main() -> None:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--answered-pdfs", type=Path, nargs="*", default=[])
-    ap.add_argument("--answered-dir", type=Path, default=None)
-    ap.add_argument("--template-pdf", type=Path, required=True)
-    ap.add_argument("--layout", type=Path, required=True)
-    ap.add_argument("--answers-dir", type=Path, required=True)
-    ap.add_argument("--workdir", type=Path, required=True)
-    ap.add_argument("--dpi", type=int, default=220)
-    args = ap.parse_args()
-
-    inputs = list(args.answered_pdfs)
-    if args.answered_dir is not None:
-        inputs.append(args.answered_dir)
+@app.command()
+def main(
+    answered_pdfs: list[Path] = typer.Option([], "--answered-pdfs"),
+    answered_dir: Path | None = typer.Option(None, "--answered-dir"),
+    template_pdf: Path = typer.Option(..., "--template-pdf"),
+    layout: Path = typer.Option(..., "--layout"),
+    answers_dir: Path = typer.Option(..., "--answers-dir"),
+    workdir: Path = typer.Option(..., "--workdir"),
+    dpi: int = typer.Option(220, "--dpi"),
+) -> None:
+    inputs = list(answered_pdfs)
+    if answered_dir is not None:
+        inputs.append(answered_dir)
     pdfs = collect_pdfs(inputs)
-    args.workdir.mkdir(parents=True, exist_ok=True)
+    workdir.mkdir(parents=True, exist_ok=True)
 
+    layout_model = read_layout(layout).model_dump()
     for pdf in pdfs:
-        answers_path = args.answers_dir / f"{pdf.stem}.json"
+        answers_path = answers_dir / f"{pdf.stem}.json"
         if not answers_path.exists():
             continue
-        out = args.workdir / pdf.stem
+        out = workdir / pdf.stem
         manifest = make_review_dataset(
             answered_pdf=pdf,
-            template_pdf=args.template_pdf,
-            layout=read_json(args.layout),
-            initial_answers=read_json(answers_path),
+            template_pdf=template_pdf,
+            layout=layout_model,
+            initial_answers=read_initial_answers(answers_path).model_dump(mode="json"),
             workdir=out,
-            dpi=args.dpi,
+            dpi=dpi,
         )
-        print(f"wrote {out} ({manifest['n_items']} items)")
+        typer.echo(f"wrote {out} ({manifest['n_items']} items)")
 
 
 if __name__ == "__main__":
-    main()
+    app()

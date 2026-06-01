@@ -9,8 +9,10 @@ dependencies = [
     "opencv-python>=4.13.0.92",
     "pandas>=3.0.3",
     "pillow>=12.2.0",
+    "pydantic>=2.12.0",
     "pymupdf>=1.27.2.3",
     "pytesseract>=0.3.13",
+    "typer>=0.20.0",
     "streamlit>=1.58.0",
     "torch>=2.12.0",
     "torchvision>=0.27.0",
@@ -21,3 +23,6 @@ dev = [
     "mypy>=2.1.0",
     "ruff>=0.15.15",
 ]
+
+[tool.mypy]
+ignore_missing_imports = true

@@ -1,11 +1,18 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 import fitz
 
 from .common import VERSION_BASE_PAGE, inflate_rect, rect_to_list, union_rects
+from .models import (
+    VERSION_ADAPTER,
+    Layout,
+    LayoutItem,
+    LayoutPage,
+    TexSchema,
+)
 from .tex_schema import build_tex_schema
 
 
@@ -65,7 +72,7 @@ def _rating_rows(page: fitz.Page) -> list[dict[str, Any]]:
             scale_rows.append(current)
 
     candidates: list[dict[str, Any]] = []
-    words = page.get_text("words")
+    words = cast(list[list[Any]], page.get_text("words"))
     for row in scale_rows:
         row = sorted(row, key=lambda r: r.x0)
         cells_pt = [rect_to_list(r) for r in row]
@@ -179,22 +186,26 @@ def _find_activity_blocks(page: fitz.Page, days: list[str]) -> list[dict[str, An
     return sorted(uniq, key=lambda it: (it["rect"][1], it["rect"][0]))
 
 
-def build_layout(template_pdf: Path, tex_path: Path) -> dict[str, Any]:
-    schema = build_tex_schema(tex_path)
-    digit_questions = schema["digit_questions"]
-    scenario_sets = schema["scenario_sets"]
-    activity_days = [x["day"] for x in schema["activities"]]
+def build_layout(template_pdf: Path, tex_path: Path) -> Layout:
+    schema: TexSchema = build_tex_schema(tex_path)
+    digit_questions = schema.digit_questions
+    scenario_sets = schema.scenario_sets
+    activity_days = [x.day for x in schema.activities]
 
-    doc = fitz.open(template_pdf)
-    pages: list[dict[str, Any]] = []
+    doc: fitz.Document = fitz.open(template_pdf)
+    pages: list[LayoutPage] = []
 
-    for page_index, page in enumerate(doc):
+    for page_index in range(doc.page_count):
+        page = doc.load_page(page_index)
+
         version = next(
             v for v, base in VERSION_BASE_PAGE.items() if base <= page_index <= base + 3
         )
-        local_page_index = page_index - VERSION_BASE_PAGE[version]
+        local_page_index = (
+            page_index - VERSION_BASE_PAGE[VERSION_ADAPTER.validate_python(version)]
+        )
         page_w, page_h = float(page.rect.width), float(page.rect.height)
-        items: list[dict[str, Any]] = []
+        items: list[LayoutItem] = []
 
         # q1_1〜q3_10: answerbox由来の数字欄。
         boxes = _digit_boxes(page)
@@ -209,14 +220,24 @@ def build_layout(template_pdf: Path, tex_path: Path) -> dict[str, Any]:
         for q, box in zip(qs, boxes):
             rect = rect_to_list(box)
             items.append(
-                {
-                    **q,
-                    "version": version,
-                    "template_page_index": page_index,
-                    "local_page_index": local_page_index,
-                    "rect": rect,
-                    "context_rect": inflate_rect(rect, 180.0, 110.0, page_w, page_h),
-                }
+                LayoutItem.model_validate(
+                    {
+                        "id": q.id,
+                        "type": q.type,
+                        "label": q.label,
+                        "version": version,
+                        "template_page_index": page_index,
+                        "local_page_index": local_page_index,
+                        "rect": rect,
+                        "context_rect": inflate_rect(
+                            rect, 180.0, 110.0, page_w, page_h
+                        ),
+                        "min": q.min,
+                        "max": q.max,
+                        "multiple": q.multiple,
+                        "choices": q.choices,
+                    }
+                )
             )
 
         # 5段階評価欄。TeX上のscenario setをメタデータとして付ける。
@@ -230,64 +251,79 @@ def build_layout(template_pdf: Path, tex_path: Path) -> dict[str, Any]:
             for i, row in enumerate(non_examples[: len(scenario_items)]):
                 meta = scenario_items[i]
                 items.append(
-                    {
-                        **meta,
-                        "version": version,
-                        "template_page_index": page_index,
-                        "local_page_index": local_page_index,
-                        "rect": row["rect"],
-                        "context_rect": row["context_rect"],
-                        "cells": row["cells"],
-                        "context_text": row.get("context_text", ""),
-                    }
+                    LayoutItem.model_validate(
+                        {
+                            "id": meta.id,
+                            "type": meta.type,
+                            "part": meta.part,
+                            "label": meta.label,
+                            "scenario_macro": meta.scenario_macro,
+                            "scenario_text": meta.scenario_text,
+                            "min": meta.min,
+                            "max": meta.max,
+                            "version": version,
+                            "template_page_index": page_index,
+                            "local_page_index": local_page_index,
+                            "rect": row["rect"],
+                            "context_rect": row["context_rect"],
+                            "cells": row["cells"],
+                            "context_text": row.get("context_text", ""),
+                        }
+                    )
                 )
 
         # 活動表。日単位で切り出し、GUIで7行入力。
         if local_page_index in (2, 3):
             for block in _find_activity_blocks(page, activity_days):
                 items.append(
-                    {
-                        "id": f"activity_{block['day']}",
-                        "type": "activity_day",
-                        "label": f"{block['day']}の活動",
-                        "day": block["day"],
-                        "rows": block["rows"],
-                        "columns": block["columns"],
-                        "version": version,
-                        "template_page_index": page_index,
-                        "local_page_index": local_page_index,
-                        "rect": block["rect"],
-                        "context_rect": block["rect"],
-                        "table_rect": block["table_rect"],
-                    }
+                    LayoutItem.model_validate(
+                        {
+                            "id": f"activity_{block['day']}",
+                            "type": "activity_day",
+                            "label": f"{block['day']}の活動",
+                            "day": block["day"],
+                            "rows": block["rows"],
+                            "columns": block["columns"],
+                            "version": version,
+                            "template_page_index": page_index,
+                            "local_page_index": local_page_index,
+                            "rect": block["rect"],
+                            "context_rect": block["rect"],
+                            "table_rect": block["table_rect"],
+                        }
+                    )
                 )
 
         pages.append(
-            {
-                "template_page_index": page_index,
-                "version": version,
-                "local_page_index": local_page_index,
-                "page_width_pt": page_w,
-                "page_height_pt": page_h,
-                "items": items,
-            }
+            LayoutPage.model_validate(
+                {
+                    "template_page_index": page_index,
+                    "version": version,
+                    "local_page_index": local_page_index,
+                    "page_width_pt": page_w,
+                    "page_height_pt": page_h,
+                    "items": items,
+                }
+            )
         )
 
     doc.close()
-    return {
-        "unit": "pdf_points",
-        "coordinate_origin": "top_left",
-        "versions": {
-            v: {
-                "template_page_start": base,
-                "template_pages": list(range(base, base + 4)),
-            }
-            for v, base in VERSION_BASE_PAGE.items()
-        },
-        "respondent_id_rect": [35.0, 615.0, 330.0, 720.0],
-        "schema": schema,
-        "pages": pages,
-    }
+    return Layout.model_validate(
+        {
+            "unit": "pdf_points",
+            "coordinate_origin": "top_left",
+            "versions": {
+                v: {
+                    "template_page_start": base,
+                    "template_pages": list(range(base, base + 4)),
+                }
+                for v, base in VERSION_BASE_PAGE.items()
+            },
+            "respondent_id_rect": [35.0, 615.0, 330.0, 720.0],
+            "schema_data": schema.model_dump(mode="json"),
+            "pages": pages,
+        }
+    )
 
 
 def find_layout_page(

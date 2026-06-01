@@ -4,6 +4,7 @@ import argparse
 import csv
 import pickle
 import random
+from collections.abc import Sized
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -245,7 +246,8 @@ class LabeledDigitCropDataset(Dataset[tuple[torch.Tensor, int]]):
             base = csv_path.parent
             with csv_path.open(newline="", encoding="utf-8-sig") as f:
                 reader = csv.DictReader(f)
-                if "path" not in reader.fieldnames or "label" not in reader.fieldnames:
+                fieldnames = reader.fieldnames or []
+                if "path" not in fieldnames or "label" not in fieldnames:
                     raise ValueError("fine-tune CSV must have columns: path,label")
                 for row in reader:
                     p = Path(row["path"])
@@ -271,17 +273,20 @@ class LabeledDigitCropDataset(Dataset[tuple[torch.Tensor, int]]):
 
 
 def make_crop_loaders(
-    dataset: Dataset,
+    dataset: Dataset[Any],
     batch_size: int,
     num_workers: int,
     val_ratio: float = 0.2,
-) -> tuple[DataLoader, DataLoader]:
+) -> tuple[DataLoader[Any], DataLoader[Any]]:
+    if not isinstance(dataset, Sized):
+        raise TypeError("dataset must implement __len__")
+
     n_val = max(1, int(round(len(dataset) * val_ratio)))
     n_train = len(dataset) - n_val
     if n_train <= 0:
         raise ValueError("Need at least two labeled crop images for fine-tuning.")
     generator = torch.Generator().manual_seed(42)
-    train_ds, val_ds = random_split(dataset, [n_train, n_val], generator=generator)
+    train_ds, val_ds = random_split(dataset, [n_train, n_val], generator=generator)  # type: ignore[arg-type]
     return (
         DataLoader(
             train_ds,
@@ -329,9 +334,11 @@ def run_epoch(
             loss = F.cross_entropy(logits, y)
 
             if is_train:
-                optimizer.zero_grad(set_to_none=True)
+                opt = optimizer
+                assert opt is not None
+                opt.zero_grad(set_to_none=True)
                 loss.backward()
-                optimizer.step()
+                opt.step()
 
         correct, total = accuracy_from_logits(logits, y)
         loss_sum += float(loss.item()) * total
@@ -367,7 +374,7 @@ def train_model(
     args: argparse.Namespace,
     phase_name: str,
 ) -> float:
-    optimizer = torch.optim.AdamW(
+    optimizer: torch.optim.Optimizer = torch.optim.AdamW(
         model.parameters(), lr=cfg.lr, weight_decay=cfg.weight_decay
     )
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
@@ -432,9 +439,10 @@ def export_onnx(model: nn.Module, out_path: Path, device: torch.device) -> None:
     model.eval()
     dummy = torch.zeros(1, 1, 28, 28, device=device)
     out_path.parent.mkdir(parents=True, exist_ok=True)
+    dummy_any: Any = dummy
     torch.onnx.export(
         model,
-        dummy,
+        dummy_any,
         str(out_path),
         input_names=["image"],
         output_names=["logits"],
