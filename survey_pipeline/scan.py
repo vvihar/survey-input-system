@@ -149,6 +149,7 @@ def read_scanned_pdf(
     model_path: Path | None = None,
     dpi: int = 220,
     use_id_ocr: bool = True,
+    booklet_offset: int = 0,
 ) -> dict[str, Any]:
     doc = fitz.open(answered_pdf)
     n_pages = len(doc)
@@ -200,15 +201,17 @@ def read_scanned_pdf(
                     aligned, tmpl_img, item, model, device, dpi
                 )
 
+        bi = booklet_offset + start // LOCAL_PAGES_PER_BOOKLET
         booklets.append(
             {
-                "booklet_index": start // LOCAL_PAGES_PER_BOOKLET,
+                "booklet_index": bi,
                 "answered_page_start": start,
                 "respondent_id": rid,
                 "version": version,
                 "version_scores": version_scores,
                 "alignments": alignments,
                 "answers": answers,
+                "source_pdf": str(answered_pdf),
             }
         )
     doc.close()
@@ -217,4 +220,35 @@ def read_scanned_pdf(
         "template_pdf": str(template_pdf),
         "dpi": dpi,
         "booklets": booklets,
+    }
+
+
+def read_scanned_pdfs(
+    answered_pdfs: list[Path],
+    template_pdf: Path,
+    layout: dict[str, Any],
+    model_path: Path | None = None,
+    dpi: int = 220,
+    use_id_ocr: bool = True,
+) -> dict[str, Any]:
+    all_booklets: list[dict[str, Any]] = []
+    booklet_offset = 0
+    for pdf_path in answered_pdfs:
+        result = read_scanned_pdf(
+            answered_pdf=pdf_path,
+            template_pdf=template_pdf,
+            layout=layout,
+            model_path=model_path,
+            dpi=dpi,
+            use_id_ocr=use_id_ocr,
+            booklet_offset=booklet_offset,
+        )
+        all_booklets.extend(result["booklets"])
+        booklet_offset += len(result["booklets"])
+    source_pdfs = [str(p) for p in answered_pdfs]
+    return {
+        "source_pdf": source_pdfs if len(source_pdfs) > 1 else source_pdfs[0],
+        "template_pdf": str(template_pdf),
+        "dpi": dpi,
+        "booklets": all_booklets,
     }

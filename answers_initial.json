@@ -1,0 +1,219 @@
+{
+  "source_pdf": "scanned/scanned1.pdf",
+  "template_pdf": "survey-sheet.pdf",
+  "dpi": 220,
+  "booklets": [
+    {
+      "booklet_index": 0,
+      "answered_page_start": 0,
+      "respondent_id": "MKH-ON7E",
+      "version": "C",
+      "version_scores": {
+        "A": 0.6761447191238403,
+        "B": 0.75467848777771,
+        "C": 0.8711017370223999
+      },
+      "alignments": [
+        {
+          "answered_page_index": 0,
+          "template_page_index": 8,
+          "ecc": 0.9162642243044633
+        },
+        {
+          "answered_page_index": 1,
+          "template_page_index": 9,
+          "ecc": 0.9127933494422756
+        },
+        {
+          "answered_page_index": 2,
+          "template_page_index": 10,
+          "ecc": 0.9562184654307002
+        },
+        {
+          "answered_page_index": 3,
+          "template_page_index": 11,
+          "ecc": 0.9727470598326623
+        }
+      ],
+      "answers": {
+        "q1_1": {
+          "field_id": "q1_1",
+          "type": "digit",
+          "pred_value": "2",
+          "pred_confidence": 0.9999773502349854,
+          "ink_ratio": 0.17246376811594202,
+          "status": "auto"
+        },
+        "q1_2": {
+          "field_id": "q1_2",
+          "type": "digit",
+          "pred_value": "6",
+          "pred_confidence": 0.9997288584709167,
+          "ink_ratio": 0.12623398445704684,
+          "status": "auto"
+        },
+        "q1_3": {
+          "field_id": "q1_3",
+          "type": "digit",
+          "pred_value": "1",
+          "pred_confidence": 0.9999998807907104,
+          "ink_ratio": 0.07391304347826087,
+          "status": "auto"
+        },
+        "q1_4": {
+          "field_id": "q1_4",
+          "type": "digit",
+          "pred_value": "3",
+          "pred_confidence": 0.9999332427978516,
+          "ink_ratio": 0.10922075194286915,
+          "status": "auto"
+        },
+        "q1_5": {
+          "field_id": "q1_5",
+          "type": "digit",
+          "pred_value": "2",
+          "pred_confidence": 1.0,
+          "ink_ratio": 0.1339544513457557,
+          "status": "auto"
+        },
+        "q2_1": {
+          "field_id": "q2_1",
+          "type": "digit",
+          "pred_value": "1",
+          "pred_confidence": 0.9999998807907104,
+          "ink_ratio": 0.05714285714285714,
+          "status": "auto"
+        },
+        "q2_2": {
+          "field_id": "q2_2",
+          "type": "digit",
+          "pred_value": "1",
+          "pred_confidence": 0.9999995231628418,
+          "ink_ratio": 0.06024844720496894,
+          "status": "auto"
+        },
+        "q2_3": {
+          "field_id": "q2_3",
+          "type": "digit",
+          "pred_value": "",
+          "pred_confidence": null,
+          "ink_ratio": 0.0,
+          "status": "blank"
+        },
+        "q2_4": {
+          "field_id": "q2_4",
+          "type": "digit",
+          "pred_value": "2",
+          "pred_confidence": 0.9891858100891113,
+          "ink_ratio": 0.09047619047619047,
+          "status": "auto"
+        },
+        "q2_5": {
+          "field_id": "q2_5",
+          "type": "digit",
+          "pred_value": "1",
+          "pred_confidence": 0.9999997615814209,
+          "ink_ratio": 0.06687370600414079,
+          "status": "auto"
+        },
+        "q2_6": {
+          "field_id": "q2_6",
+          "type": "digit",
+          "pred_value": "5",
+          "pred_confidence": 1.0,
+          "ink_ratio": 0.13295526149968495,
+          "status": "auto"
+        },
+        "q2_7": {
+          "field_id": "q2_7",
+          "type": "digit",
+          "pred_value": "1",
+          "pred_confidence": 0.9999997615814209,
+          "ink_ratio": 0.05692081495484142,
+          "status": "auto"
+        },
+        "q3_1": {
+          "field_id": "q3_1",
+          "type": "digit",
+          "pred_value": "3",
+          "pred_confidence": 0.9998160004615784,
+          "ink_ratio": 0.1116326530612245,
+          "status": "auto"
+        },
+        "q3_2": {
+          "field_id": "q3_2",
+          "type": "digit",
+          "pred_value": "3",
+          "pred_confidence": 0.9999955892562866,
+          "ink_ratio": 0.1072463768115942,
+          "status": "auto"
+        },
+        "q3_3": {
+          "field_id": "q3_3",
+          "type": "digit",
+          "pred_value": "2",
+          "pred_confidence": 1.0,
+          "ink_ratio": 0.125879917184265,
+          "status": "auto"
+        },
+        "q3_4": {
+          "field_id": "q3_4",
+          "type": "digit",
+          "pred_value": "2",
+          "pred_confidence": 1.0,
+          "ink_ratio": 0.1246376811594203,
+          "status": "auto"
+        },
+        "q3_5": {
+          "field_id": "q3_5",
+          "type": "digit",
+          "pred_value": "6",
+          "pred_confidence": 0.9945158362388611,
+          "ink_ratio": 0.12939958592132506,
+          "status": "auto"
+        },
+        "q3_6": {
+          "field_id": "q3_6",
+          "type": "digit",
+          "pred_value": "1",
+          "pred_confidence": 0.9983921647071838,
+          "ink_ratio": 0.09489795918367347,
+          "status": "auto"
+        },
+        "q3_7": {
+          "field_id": "q3_7",
+          "type": "digit",
+          "pred_value": "1",
+          "pred_confidence": 0.9999997615814209,
+          "ink_ratio": 0.0536734693877551,
+          "status": "auto"
+        },
+        "q3_8": {
+          "field_id": "q3_8",
+          "type": "digit",
+          "pred_value": "2",
+          "pred_confidence": 0.9999994039535522,
+          "ink_ratio": 0.10869565217391304,
+          "status": "auto"
+        },
+        "q3_9": {
+          "field_id": "q3_9",
+          "type": "digit",
+          "pred_value": "1",
+          "pred_confidence": 0.9999997615814209,
+          "ink_ratio": 0.05877551020408163,
+          "status": "auto"
+        },
+        "q3_10": {
+          "field_id": "q3_10",
+          "type": "digit",
+          "pred_value": "1",
+          "pred_confidence": 1.0,
+          "ink_ratio": 0.04040816326530612,
+          "status": "auto"
+        }
+      },
+      "source_pdf": "scanned/scanned1.pdf"
+    }
+  ]
+}

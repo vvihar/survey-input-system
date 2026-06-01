@@ -29,6 +29,14 @@ python -m scripts.make_review_dataset \
   --answers answers_initial.json \
   --workdir review_work
 
+# 複数PDF/ディレクトリ単位の一括作成
+python -m scripts.make_review_dataset_batch \
+  --answered-dir scanned/ \
+  --template-pdf survey-sheet.pdf \
+  --layout layout_survey.json \
+  --answers-dir answers/ \
+  --workdir review_work_batch
+
 # 4. GUIで確認・訂正
 streamlit run app_streamlit.py -- --workdir review_work
 

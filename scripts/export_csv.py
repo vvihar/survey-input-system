@@ -25,6 +25,7 @@ def main() -> None:
             simple_rows.append({
                 "respondent_id": r["respondent_id"],
                 "version": r["version"],
+                "source_pdf": r.get("source_pdf", ""),
                 "field_id": r["field_id"],
                 "type": r["type"],
                 "label": r.get("label"),
@@ -38,6 +39,7 @@ def main() -> None:
                 activity_rows.append({
                     "respondent_id": r["respondent_id"],
                     "version": r["version"],
+                    "source_pdf": r.get("source_pdf", ""),
                     "day": r.get("day"),
                     **ar,
                 })
@@ -45,7 +47,7 @@ def main() -> None:
     simple = pd.DataFrame(simple_rows)
     simple.to_csv(args.out_dir / "answers_long.csv", index=False)
     if not simple.empty:
-        wide = simple.pivot_table(index=["respondent_id", "version"], columns="field_id", values="value", aggfunc="first").reset_index()
+        wide = simple.pivot_table(index=["respondent_id", "version", "source_pdf"], columns="field_id", values="value", aggfunc="first").reset_index()
         wide.to_csv(args.out_dir / "answers_wide.csv", index=False)
     else:
         pd.DataFrame().to_csv(args.out_dir / "answers_wide.csv", index=False)

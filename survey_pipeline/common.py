@@ -14,8 +14,13 @@ LOCAL_PAGES_PER_BOOKLET = 4
 
 # PyMuPDF PDF point coordinates. Origin: top-left.
 VERSION_LABEL_TEMPLATE_RECT_PT = [0.0, 785.0, 100.0, 841.89]
-VERSION_LABEL_SEARCH_RECT_PT = [0.0, 745.0, 190.0, 841.89]
-DEFAULT_RESPONDENT_ID_RECT_PT = [35.0, 615.0, 330.0, 720.0]
+VERSION_LABEL_SEARCH_RECT_PT = [0.0, 745.0, 100.0, 841.89]
+DEFAULT_RESPONDENT_ID_RECT_PT = [35.0, 615.0, 330.0, 740.0]
+
+BOOKLET_META_RECT_BY_KIND = {
+    "respondent_id": DEFAULT_RESPONDENT_ID_RECT_PT,
+    "version": VERSION_LABEL_SEARCH_RECT_PT,
+}
 
 
 def read_json(path: Path) -> Any:
@@ -45,7 +50,9 @@ def rect_to_list(rect: fitz.Rect) -> list[float]:
     return [round(rect.x0, 3), round(rect.y0, 3), round(rect.x1, 3), round(rect.y1, 3)]
 
 
-def inflate_rect(rect: list[float], dx: float, dy: float, page_w: float, page_h: float) -> list[float]:
+def inflate_rect(
+    rect: list[float], dx: float, dy: float, page_w: float, page_h: float
+) -> list[float]:
     x0, y0, x1, y1 = rect
     return [
         max(0.0, x0 - dx),
@@ -64,7 +71,9 @@ def union_rects(rects: list[list[float]]) -> list[float]:
     ]
 
 
-def render_pdf_page(pdf_path: Path, page_index: int, dpi: int) -> tuple[np.ndarray, fitz.Rect]:
+def render_pdf_page(
+    pdf_path: Path, page_index: int, dpi: int
+) -> tuple[np.ndarray, fitz.Rect]:
     doc = fitz.open(pdf_path)
     page = doc[page_index]
     zoom = dpi / 72.0
@@ -76,7 +85,9 @@ def render_pdf_page(pdf_path: Path, page_index: int, dpi: int) -> tuple[np.ndarr
     return img, rect
 
 
-def rect_pt_to_px(rect_pt: list[float], dpi: int, pad_px: int = 0) -> tuple[int, int, int, int]:
+def rect_pt_to_px(
+    rect_pt: list[float], dpi: int, pad_px: int = 0
+) -> tuple[int, int, int, int]:
     scale = dpi / 72.0
     x0, y0, x1, y1 = rect_pt
     return (
@@ -90,12 +101,16 @@ def rect_pt_to_px(rect_pt: list[float], dpi: int, pad_px: int = 0) -> tuple[int,
 def crop_px(img: np.ndarray, rect_px: tuple[int, int, int, int]) -> np.ndarray:
     h, w = img.shape[:2]
     x0, y0, x1, y1 = rect_px
-    x0 = max(0, min(w, x0)); x1 = max(0, min(w, x1))
-    y0 = max(0, min(h, y0)); y1 = max(0, min(h, y1))
+    x0 = max(0, min(w, x0))
+    x1 = max(0, min(w, x1))
+    y0 = max(0, min(h, y0))
+    y1 = max(0, min(h, y1))
     return img[y0:y1, x0:x1]
 
 
-def crop_by_rect_pt(img: np.ndarray, rect_pt: list[float], dpi: int, pad_px: int = 0) -> np.ndarray:
+def crop_by_rect_pt(
+    img: np.ndarray, rect_pt: list[float], dpi: int, pad_px: int = 0
+) -> np.ndarray:
     return crop_px(img, rect_pt_to_px(rect_pt, dpi, pad_px))
 
 
@@ -105,7 +120,9 @@ def to_gray_float(img_bgr: np.ndarray) -> np.ndarray:
     return gray.astype(np.float32) / 255.0
 
 
-def align_ecc_affine(scan_img: np.ndarray, template_img: np.ndarray) -> tuple[np.ndarray, float]:
+def align_ecc_affine(
+    scan_img: np.ndarray, template_img: np.ndarray
+) -> tuple[np.ndarray, float]:
     h, w = template_img.shape[:2]
     if scan_img.shape[:2] != (h, w):
         scan_img = cv2.resize(scan_img, (w, h), interpolation=cv2.INTER_AREA)
@@ -141,7 +158,10 @@ def align_ecc_affine(scan_img: np.ndarray, template_img: np.ndarray) -> tuple[np
 def match_template_score(search_img: np.ndarray, template_img: np.ndarray) -> float:
     search_gray = cv2.cvtColor(search_img, cv2.COLOR_BGR2GRAY)
     tmpl_gray = cv2.cvtColor(template_img, cv2.COLOR_BGR2GRAY)
-    if search_gray.shape[0] < tmpl_gray.shape[0] or search_gray.shape[1] < tmpl_gray.shape[1]:
+    if (
+        search_gray.shape[0] < tmpl_gray.shape[0]
+        or search_gray.shape[1] < tmpl_gray.shape[1]
+    ):
         return -1.0
     res = cv2.matchTemplate(search_gray, tmpl_gray, cv2.TM_CCOEFF_NORMED)
     _, max_val, _, _ = cv2.minMaxLoc(res)
