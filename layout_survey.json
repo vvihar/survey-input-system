@@ -1,0 +1,5733 @@
+{
+  "unit": "pdf_points",
+  "coordinate_origin": "top_left",
+  "versions": {
+    "A": {
+      "template_page_start": 0,
+      "template_pages": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "B": {
+      "template_page_start": 4,
+      "template_pages": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "C": {
+      "template_page_start": 8,
+      "template_pages": [
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  "respondent_id_rect": [
+    35.0,
+    615.0,
+    330.0,
+    720.0
+  ],
+  "schema": {
+    "digit_questions": [
+      {
+        "id": "q1_1",
+        "type": "digit",
+        "label": "性別を教えてください。",
+        "choices": [
+          "男性",
+          "女性",
+          "その他",
+          "回答しない"
+        ],
+        "min": 1,
+        "max": 4,
+        "multiple": false
+      },
+      {
+        "id": "q1_2",
+        "type": "digit",
+        "label": "年齢を教えてください。",
+        "choices": [
+          "10歳未満",
+          "10〜19歳",
+          "20〜29歳",
+          "30〜39歳",
+          "40〜49歳",
+          "50〜59歳",
+          "60〜64歳",
+          "65〜69歳",
+          "70〜74歳",
+          "75〜79歳",
+          "80〜84歳",
+          "85〜89歳",
+          "90歳以上"
+        ],
+        "min": 1,
+        "max": 13,
+        "multiple": false
+      },
+      {
+        "id": "q1_3",
+        "type": "digit",
+        "label": "現在お住まいの地区を教えてください。",
+        "choices": [
+          "下島",
+          "三之瀬",
+          "大地蔵"
+        ],
+        "min": 1,
+        "max": 3,
+        "multiple": false
+      },
+      {
+        "id": "q1_4",
+        "type": "digit",
+        "label": "現在の就業形態について、最もあてはまるものを教えてください。",
+        "choices": [
+          "常勤（正社員・正職員）",
+          "パート・アルバイト",
+          "自営業・自由業",
+          "退職している",
+          "学生",
+          "その他"
+        ],
+        "min": 1,
+        "max": 6,
+        "multiple": false
+      },
+      {
+        "id": "q1_5",
+        "type": "digit",
+        "label": "日常生活で、杖や歩行器、車椅子などを使っていますか。",
+        "choices": [
+          "はい",
+          "いいえ"
+        ],
+        "min": 1,
+        "max": 2,
+        "multiple": false
+      },
+      {
+        "id": "q2_1",
+        "type": "digit",
+        "label": "自動車の運転免許を持っていますか。",
+        "choices": [
+          "持っている",
+          "持っていない",
+          "持っていたが 返納した"
+        ],
+        "min": 1,
+        "max": 3,
+        "multiple": false
+      },
+      {
+        "id": "q2_2",
+        "type": "digit",
+        "label": "（免許をお持ちの方へ）ご自身で自由に使える自動車はありますか。",
+        "choices": [
+          "ある",
+          "ない"
+        ],
+        "min": 1,
+        "max": 2,
+        "multiple": false
+      },
+      {
+        "id": "q2_3",
+        "type": "digit",
+        "label": "（免許をお持ちの方へ）週に何回くらい自動車を運転しますか。",
+        "choices": [
+          "ほとんどしない",
+          "週に1〜2回",
+          "週に3〜4回",
+          "ほぼ毎日"
+        ],
+        "min": 1,
+        "max": 4,
+        "multiple": false
+      },
+      {
+        "id": "q2_4",
+        "type": "digit",
+        "label": "（免許をお持ちでない、または返納された方へ）あなたの送迎をしてくれるご家族や身寄りの方は、近くにいらっしゃいますか。",
+        "choices": [
+          "いる",
+          "いない"
+        ],
+        "min": 1,
+        "max": 2,
+        "multiple": false
+      },
+      {
+        "id": "q2_5",
+        "type": "digit",
+        "label": "食料品や日用品は、主にどこで購入しますか。",
+        "choices": [
+          "本土（広など）の スーパー",
+          "島内の商店",
+          "移動販売・宅配",
+          "家族・ 友人に頼む",
+          "その他"
+        ],
+        "min": 1,
+        "max": 5,
+        "multiple": false
+      },
+      {
+        "id": "q2_6",
+        "type": "digit",
+        "label": "本土（広方面）へ行くバス（沖友天満宮〜中国労災病院線）と、その先のJRや他のバスとの乗り継ぎについてどう感じますか。",
+        "choices": [
+          "便利",
+          "普通",
+          "少し不便",
+          "非常に不便",
+          "わからない"
+        ],
+        "min": 1,
+        "max": 5,
+        "multiple": false
+      },
+      {
+        "id": "q2_7",
+        "type": "digit",
+        "label": "スマートフォンをお持ちですか。",
+        "choices": [
+          "持っており、日常的に使う",
+          "持っているが、電話くらいしか使わない",
+          "持っていない"
+        ],
+        "min": 1,
+        "max": 3,
+        "multiple": false
+      },
+      {
+        "id": "q3_1",
+        "type": "digit",
+        "label": "（免許をお持ちの方へ）あなたがドライバーとしてライドシェアに参加することについて、現時点の気持ちに近いものを教えてください。",
+        "choices": [
+          "絶対に引き受けたくない",
+          "条件によっては引き受けてもよい",
+          "ぜひ引き受けたい"
+        ],
+        "min": 1,
+        "max": 3,
+        "multiple": false
+      },
+      {
+        "id": "q3_2",
+        "type": "digit",
+        "label": "あなたが乗客としてライドシェアを利用することについて、現時点の気持ちに近いものを教えてください。",
+        "choices": [
+          "絶対に利用したくない",
+          "条件によっては利用してもよい",
+          "ぜひ利用したい"
+        ],
+        "min": 1,
+        "max": 3,
+        "multiple": false
+      },
+      {
+        "id": "q3_3",
+        "type": "digit",
+        "label": "島内で安価で手軽に利用できるライドシェアがあった場合、どのようなときに使ってみたいですか。",
+        "choices": [
+          "雨や荷物が多いとき",
+          "島内の病院",
+          "島内の買い物・用事",
+          "島内の友人宅や集まりへの訪問",
+          "本土の駅や病院など、バス停から離れた場所への接続",
+          "その他",
+          "利用したくない"
+        ],
+        "min": 1,
+        "max": 7,
+        "multiple": true
+      },
+      {
+        "id": "q3_4",
+        "type": "digit",
+        "label": "もし相乗りになった場合、病院の予約など時間が厳密に決まっている用事で、同乗によってどれくらい到着が遅くなることを許容できますか。",
+        "choices": [
+          "遠回りしてほしくない",
+          "10分くらい",
+          "20分くらい",
+          "30分以上"
+        ],
+        "min": 1,
+        "max": 4,
+        "multiple": false
+      },
+      {
+        "id": "q3_5",
+        "type": "digit",
+        "label": "島内で、約2km程度の移動をする場合についてお聞きします。バスより便利で、タクシーよりは簡単なサービスだとしたとき、「高いと感じ始める金額」はいくらくらいですか。",
+        "choices": [
+          "100円未満",
+          "100円",
+          "200円",
+          "300円",
+          "400円",
+          "500円",
+          "600円以上"
+        ],
+        "min": 1,
+        "max": 7,
+        "multiple": false
+      },
+      {
+        "id": "q3_6",
+        "type": "digit",
+        "label": "ふだんの移動に比べて、約20分余計に時間がかかるとした場合、ドライバーとして「これくらいなら引き受けてもよい」と感じる最低限の報酬はいくらですか。",
+        "choices": [
+          "もらえなくてもよい",
+          "100円",
+          "300円",
+          "500円",
+          "700円",
+          "1,000円以上"
+        ],
+        "min": 1,
+        "max": 6,
+        "multiple": false
+      },
+      {
+        "id": "q3_7",
+        "type": "digit",
+        "label": "島内の他の住民と同じ車に乗って移動することに、抵抗を感じますか。",
+        "choices": [
+          "まったく感じない",
+          "あまり感じない",
+          "どちらともいえない",
+          "少し感じる",
+          "強く感じる"
+        ],
+        "min": 1,
+        "max": 5,
+        "multiple": false
+      },
+      {
+        "id": "q3_8",
+        "type": "digit",
+        "label": "病院の予約や仕事など、到着時刻が決まっている移動では、多少不便でも時間どおり着くことを重視しますか。",
+        "choices": [
+          "まったく重視しない",
+          "あまり重視しない",
+          "どちらともいえない",
+          "やや重視する",
+          "非常に重視する"
+        ],
+        "min": 1,
+        "max": 5,
+        "multiple": false
+      },
+      {
+        "id": "q3_9",
+        "type": "digit",
+        "label": "次の2つのうち、どちらを選びますか。",
+        "choices": [
+          "今すぐ300円相当の割引",
+          "1年後に360円相当の割引"
+        ],
+        "min": 1,
+        "max": 2,
+        "multiple": false
+      },
+      {
+        "id": "q3_10",
+        "type": "digit",
+        "label": "次の2つのうち、どちらを選びますか。",
+        "choices": [
+          "今すぐ300円相当の割引",
+          "5年後に600円相当の割引"
+        ],
+        "min": 1,
+        "max": 2,
+        "multiple": false
+      }
+    ],
+    "scenario_sets": {
+      "A": [
+        {
+          "id": "q4_commute_1",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 1",
+          "scenario_macro": "commuteScenarioOne",
+          "scenario_text": "ドライバー報酬 距離比例100円/km（2kmなら200円） 追加時間 ＋約20分 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_commute_2",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 2",
+          "scenario_macro": "commuteScenarioTwo",
+          "scenario_text": "ドライバー報酬 定額300円 追加時間 ＋約20分 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_commute_3",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 3",
+          "scenario_macro": "commuteScenarioFour",
+          "scenario_text": "ドライバー報酬 距離比例140円/km（4kmなら560円） 追加時間 追加ほぼなし 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_commute_4",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 4",
+          "scenario_macro": "commuteScenarioSeven",
+          "scenario_text": "ドライバー報酬 定額300円 追加時間 ＋約20分 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_home_1",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 1",
+          "scenario_macro": "ondemandScenarioOne",
+          "scenario_text": "ドライバー報酬 定額300円 拒否権 条件確認後も断れる NG設定 NG時間帯のみ",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_home_2",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 2",
+          "scenario_macro": "ondemandScenarioFour",
+          "scenario_text": "ドライバー報酬 距離比例20円/km（4kmなら80円） 拒否権 条件確認後も断れる NG設定 NGエリアのみ",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_home_3",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 3",
+          "scenario_macro": "ondemandScenarioSeven",
+          "scenario_text": "ドライバー報酬 定額100円 拒否権 成立したら断れない NG設定 NG時間帯のみ",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_home_4",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 4",
+          "scenario_macro": "ondemandScenarioNine",
+          "scenario_text": "ドライバー報酬 定額300円 拒否権 成立したら断れない NG設定 NGエリア＋時間",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q5_passenger_1",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 1",
+          "scenario_macro": "passengerScenarioOne",
+          "scenario_text": "運賃 距離に比例 140円/km（4kmなら560円） 呼び出し 15分程度 相乗り 顔見知りの住民とだけ相乗り",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q5_passenger_2",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 2",
+          "scenario_macro": "passengerScenarioThree",
+          "scenario_text": "運賃 定額300円 呼び出し 5分程度 相乗り 常に貸し切り",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q5_passenger_3",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 3",
+          "scenario_macro": "passengerScenarioSix",
+          "scenario_text": "運賃 距離に比例 100円/km（2kmなら200円） 呼び出し 5分程度 相乗り 誰とでも相乗り",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q5_passenger_4",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 4",
+          "scenario_macro": "passengerScenarioNine",
+          "scenario_text": "運賃 距離に比例 60円/km（4kmなら240円） 呼び出し 5分程度 相乗り 顔見知りの住民とだけ相乗り",
+          "min": 1,
+          "max": 5
+        }
+      ],
+      "B": [
+        {
+          "id": "q4_commute_1",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 1",
+          "scenario_macro": "commuteScenarioThree",
+          "scenario_text": "ドライバー報酬 距離比例100円/km（2kmなら200円） 追加時間 ＋約20分 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_commute_2",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 2",
+          "scenario_macro": "commuteScenarioFive",
+          "scenario_text": "ドライバー報酬 距離比例60円/km（4kmなら240円） 追加時間 ＋約10分 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_commute_3",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 3",
+          "scenario_macro": "commuteScenarioSix",
+          "scenario_text": "ドライバー報酬 定額300円 追加時間 追加ほぼなし 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_commute_4",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 4",
+          "scenario_macro": "commuteScenarioEleven",
+          "scenario_text": "ドライバー報酬 定額300円 追加時間 追加ほぼなし 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_home_1",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 1",
+          "scenario_macro": "ondemandScenarioTwo",
+          "scenario_text": "ドライバー報酬 定額100円 拒否権 条件確認後も断れる NG設定 NG設定なし",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_home_2",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 2",
+          "scenario_macro": "ondemandScenarioFive",
+          "scenario_text": "ドライバー報酬 距離比例20円/km（2kmなら40円） 拒否権 成立したら断れない NG設定 NGエリア＋時間",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_home_3",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 3",
+          "scenario_macro": "ondemandScenarioEight",
+          "scenario_text": "ドライバー報酬 定額300円 拒否権 成立したら断れない NG設定 NGエリアのみ",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_home_4",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 4",
+          "scenario_macro": "ondemandScenarioTen",
+          "scenario_text": "ドライバー報酬 定額300円 拒否権 条件確認後も断れる NG設定 NGエリア＋時間",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q5_passenger_1",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 1",
+          "scenario_macro": "passengerScenarioTwo",
+          "scenario_text": "運賃 距離に比例 60円/km（2kmなら120円） 呼び出し 15分程度 相乗り 誰とでも相乗り",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q5_passenger_2",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 2",
+          "scenario_macro": "passengerScenarioFive",
+          "scenario_text": "運賃 距離に比例 140円/km（4kmなら560円） 呼び出し 15分程度 相乗り 誰とでも相乗り",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q5_passenger_3",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 3",
+          "scenario_macro": "passengerScenarioSeven",
+          "scenario_text": "運賃 距離に比例 140円/km（4kmなら560円） 呼び出し 5分程度 相乗り 常に貸し切り",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q5_passenger_4",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 4",
+          "scenario_macro": "passengerScenarioEight",
+          "scenario_text": "運賃 定額500円 呼び出し 15分程度 相乗り 顔見知りの住民とだけ相乗り",
+          "min": 1,
+          "max": 5
+        }
+      ],
+      "C": [
+        {
+          "id": "q4_commute_1",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 1",
+          "scenario_macro": "commuteScenarioEight",
+          "scenario_text": "ドライバー報酬 距離比例140円/km（4kmなら560円） 追加時間 ＋約20分 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_commute_2",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 2",
+          "scenario_macro": "commuteScenarioNine",
+          "scenario_text": "ドライバー報酬 定額700円 追加時間 追加ほぼなし 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_commute_3",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 3",
+          "scenario_macro": "commuteScenarioTen",
+          "scenario_text": "ドライバー報酬 距離比例60円/km（2kmなら120円） 追加時間 追加ほぼなし 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_commute_4",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 4",
+          "scenario_macro": "commuteScenarioEleven",
+          "scenario_text": "ドライバー報酬 定額300円 追加時間 追加ほぼなし 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_home_1",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 1",
+          "scenario_macro": "ondemandScenarioThree",
+          "scenario_text": "ドライバー報酬 定額300円 拒否権 成立したら断れない NG設定 NG設定なし",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_home_2",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 2",
+          "scenario_macro": "ondemandScenarioSix",
+          "scenario_text": "ドライバー報酬 定額100円 拒否権 条件確認後も断れる NG設定 NGエリア＋時間",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_home_3",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 3",
+          "scenario_macro": "ondemandScenarioEleven",
+          "scenario_text": "ドライバー報酬 距離比例60円/km（4kmなら240円） 拒否権 条件確認後も断れる NG設定 NGエリア＋時間",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q4_home_4",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 4",
+          "scenario_macro": "ondemandScenarioTwelve",
+          "scenario_text": "ドライバー報酬 距離比例60円/km（4kmなら240円） 拒否権 成立したら断れない NG設定 NGエリアのみ",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q5_passenger_1",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 1",
+          "scenario_macro": "passengerScenarioFour",
+          "scenario_text": "運賃 距離に比例 60円/km（2kmなら120円） 呼び出し 15分程度 相乗り 常に貸し切り",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q5_passenger_2",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 2",
+          "scenario_macro": "passengerScenarioTen",
+          "scenario_text": "運賃 距離に比例 100円/km（2kmなら200円） 呼び出し 5分程度 相乗り 顔見知りの住民とだけ相乗り",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q5_passenger_3",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 3",
+          "scenario_macro": "passengerScenarioThree",
+          "scenario_text": "運賃 定額300円 呼び出し 5分程度 相乗り 常に貸し切り",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "id": "q5_passenger_4",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 4",
+          "scenario_macro": "passengerScenarioEight",
+          "scenario_text": "運賃 定額500円 呼び出し 15分程度 相乗り 顔見知りの住民とだけ相乗り",
+          "min": 1,
+          "max": 5
+        }
+      ]
+    },
+    "activities": [
+      {
+        "day": "月曜日",
+        "rows": 7,
+        "columns": [
+          "dep_time",
+          "dep_place",
+          "arr_time",
+          "arr_place",
+          "purpose",
+          "mode",
+          "tolerance_min"
+        ]
+      },
+      {
+        "day": "火曜日",
+        "rows": 7,
+        "columns": [
+          "dep_time",
+          "dep_place",
+          "arr_time",
+          "arr_place",
+          "purpose",
+          "mode",
+          "tolerance_min"
+        ]
+      },
+      {
+        "day": "水曜日",
+        "rows": 7,
+        "columns": [
+          "dep_time",
+          "dep_place",
+          "arr_time",
+          "arr_place",
+          "purpose",
+          "mode",
+          "tolerance_min"
+        ]
+      },
+      {
+        "day": "木曜日",
+        "rows": 7,
+        "columns": [
+          "dep_time",
+          "dep_place",
+          "arr_time",
+          "arr_place",
+          "purpose",
+          "mode",
+          "tolerance_min"
+        ]
+      },
+      {
+        "day": "金曜日",
+        "rows": 7,
+        "columns": [
+          "dep_time",
+          "dep_place",
+          "arr_time",
+          "arr_place",
+          "purpose",
+          "mode",
+          "tolerance_min"
+        ]
+      },
+      {
+        "day": "土曜日",
+        "rows": 7,
+        "columns": [
+          "dep_time",
+          "dep_place",
+          "arr_time",
+          "arr_place",
+          "purpose",
+          "mode",
+          "tolerance_min"
+        ]
+      },
+      {
+        "day": "日曜日",
+        "rows": 7,
+        "columns": [
+          "dep_time",
+          "dep_place",
+          "arr_time",
+          "arr_place",
+          "purpose",
+          "mode",
+          "tolerance_min"
+        ]
+      }
+    ]
+  },
+  "pages": [
+    {
+      "template_page_index": 0,
+      "version": "A",
+      "local_page_index": 0,
+      "page_width_pt": 1190.551025390625,
+      "page_height_pt": 841.8900146484375,
+      "items": [
+        {
+          "id": "q1_1",
+          "type": "digit",
+          "label": "性別を教えてください。",
+          "choices": [
+            "男性",
+            "女性",
+            "その他",
+            "回答しない"
+          ],
+          "min": 1,
+          "max": 4,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            107.1,
+            581.336,
+            136.988
+          ],
+          "context_rect": [
+            371.448,
+            0.0,
+            761.336,
+            246.988
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "digit",
+          "label": "年齢を教えてください。",
+          "choices": [
+            "10歳未満",
+            "10〜19歳",
+            "20〜29歳",
+            "30〜39歳",
+            "40〜49歳",
+            "50〜59歳",
+            "60〜64歳",
+            "65〜69歳",
+            "70〜74歳",
+            "75〜79歳",
+            "80〜84歳",
+            "85〜89歳",
+            "90歳以上"
+          ],
+          "min": 1,
+          "max": 13,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            244.456,
+            581.336,
+            274.344
+          ],
+          "context_rect": [
+            371.448,
+            134.456,
+            761.336,
+            384.344
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "digit",
+          "label": "現在お住まいの地区を教えてください。",
+          "choices": [
+            "下島",
+            "三之瀬",
+            "大地蔵"
+          ],
+          "min": 1,
+          "max": 3,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            328.015,
+            581.336,
+            357.903
+          ],
+          "context_rect": [
+            371.448,
+            218.015,
+            761.336,
+            467.903
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "digit",
+          "label": "現在の就業形態について、最もあてはまるものを教えてください。",
+          "choices": [
+            "常勤（正社員・正職員）",
+            "パート・アルバイト",
+            "自営業・自由業",
+            "退職している",
+            "学生",
+            "その他"
+          ],
+          "min": 1,
+          "max": 6,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            446.442,
+            581.336,
+            476.33
+          ],
+          "context_rect": [
+            371.448,
+            336.442,
+            761.336,
+            586.3299999999999
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "digit",
+          "label": "日常生活で、杖や歩行器、車椅子などを使っていますか。",
+          "choices": [
+            "はい",
+            "いいえ"
+          ],
+          "min": 1,
+          "max": 2,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            529.004,
+            581.336,
+            558.892
+          ],
+          "context_rect": [
+            371.448,
+            419.004,
+            761.336,
+            668.892
+          ]
+        },
+        {
+          "id": "q2_1",
+          "type": "digit",
+          "label": "自動車の運転免許を持っていますか。",
+          "choices": [
+            "持っている",
+            "持っていない",
+            "持っていたが 返納した"
+          ],
+          "min": 1,
+          "max": 3,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            658.59,
+            581.336,
+            688.478
+          ],
+          "context_rect": [
+            371.448,
+            548.59,
+            761.336,
+            798.478
+          ]
+        },
+        {
+          "id": "q2_2",
+          "type": "digit",
+          "label": "（免許をお持ちの方へ）ご自身で自由に使える自動車はありますか。",
+          "choices": [
+            "ある",
+            "ない"
+          ],
+          "min": 1,
+          "max": 2,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            94.048,
+            866.927,
+            123.936
+          ],
+          "context_rect": [
+            657.039,
+            0.0,
+            1046.9270000000001,
+            233.936
+          ]
+        },
+        {
+          "id": "q2_3",
+          "type": "digit",
+          "label": "（免許をお持ちの方へ）週に何回くらい自動車を運転しますか。",
+          "choices": [
+            "ほとんどしない",
+            "週に1〜2回",
+            "週に3〜4回",
+            "ほぼ毎日"
+          ],
+          "min": 1,
+          "max": 4,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            194.543,
+            866.927,
+            224.431
+          ],
+          "context_rect": [
+            657.039,
+            84.543,
+            1046.9270000000001,
+            334.43100000000004
+          ]
+        },
+        {
+          "id": "q2_4",
+          "type": "digit",
+          "label": "（免許をお持ちでない、または返納された方へ）あなたの送迎をしてくれるご家族や身寄りの方は、近くにいらっしゃいますか。",
+          "choices": [
+            "いる",
+            "いない"
+          ],
+          "min": 1,
+          "max": 2,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            294.042,
+            866.927,
+            323.93
+          ],
+          "context_rect": [
+            657.039,
+            184.04199999999997,
+            1046.9270000000001,
+            433.93
+          ]
+        },
+        {
+          "id": "q2_5",
+          "type": "digit",
+          "label": "食料品や日用品は、主にどこで購入しますか。",
+          "choices": [
+            "本土（広など）の スーパー",
+            "島内の商店",
+            "移動販売・宅配",
+            "家族・ 友人に頼む",
+            "その他"
+          ],
+          "min": 1,
+          "max": 5,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            412.469,
+            866.927,
+            442.357
+          ],
+          "context_rect": [
+            657.039,
+            302.469,
+            1046.9270000000001,
+            552.357
+          ]
+        },
+        {
+          "id": "q2_6",
+          "type": "digit",
+          "label": "本土（広方面）へ行くバス（沖友天満宮〜中国労災病院線）と、その先のJRや他のバスとの乗り継ぎについてどう感じますか。",
+          "choices": [
+            "便利",
+            "普通",
+            "少し不便",
+            "非常に不便",
+            "わからない"
+          ],
+          "min": 1,
+          "max": 5,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            547.833,
+            866.927,
+            577.721
+          ],
+          "context_rect": [
+            657.039,
+            437.83299999999997,
+            1046.9270000000001,
+            687.721
+          ]
+        },
+        {
+          "id": "q2_7",
+          "type": "digit",
+          "label": "スマートフォンをお持ちですか。",
+          "choices": [
+            "持っており、日常的に使う",
+            "持っているが、電話くらいしか使わない",
+            "持っていない"
+          ],
+          "min": 1,
+          "max": 3,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            645.054,
+            866.927,
+            674.942
+          ],
+          "context_rect": [
+            657.039,
+            535.054,
+            1046.9270000000001,
+            784.942
+          ]
+        },
+        {
+          "id": "q3_1",
+          "type": "digit",
+          "label": "（免許をお持ちの方へ）あなたがドライバーとしてライドシェアに参加することについて、現時点の気持ちに近いものを教えてください。",
+          "choices": [
+            "絶対に引き受けたくない",
+            "条件によっては引き受けてもよい",
+            "ぜひ引き受けたい"
+          ],
+          "min": 1,
+          "max": 3,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            1122.63,
+            242.306,
+            1152.518,
+            272.194
+          ],
+          "context_rect": [
+            942.6300000000001,
+            132.306,
+            1190.551025390625,
+            382.194
+          ]
+        },
+        {
+          "id": "q3_2",
+          "type": "digit",
+          "label": "あなたが乗客としてライドシェアを利用することについて、現時点の気持ちに近いものを教えてください。",
+          "choices": [
+            "絶対に利用したくない",
+            "条件によっては利用してもよい",
+            "ぜひ利用したい"
+          ],
+          "min": 1,
+          "max": 3,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            1122.63,
+            373.399,
+            1152.518,
+            403.287
+          ],
+          "context_rect": [
+            942.6300000000001,
+            263.399,
+            1190.551025390625,
+            513.287
+          ]
+        },
+        {
+          "id": "q3_3",
+          "type": "digit",
+          "label": "島内で安価で手軽に利用できるライドシェアがあった場合、どのようなときに使ってみたいですか。",
+          "choices": [
+            "雨や荷物が多いとき",
+            "島内の病院",
+            "島内の買い物・用事",
+            "島内の友人宅や集まりへの訪問",
+            "本土の駅や病院など、バス停から離れた場所への接続",
+            "その他",
+            "利用したくない"
+          ],
+          "min": 1,
+          "max": 7,
+          "multiple": true,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            1122.63,
+            560.569,
+            1152.518,
+            590.457
+          ],
+          "context_rect": [
+            942.6300000000001,
+            450.56899999999996,
+            1190.551025390625,
+            700.457
+          ]
+        },
+        {
+          "id": "q3_4",
+          "type": "digit",
+          "label": "もし相乗りになった場合、病院の予約など時間が厳密に決まっている用事で、同乗によってどれくらい到着が遅くなることを許容できますか。",
+          "choices": [
+            "遠回りしてほしくない",
+            "10分くらい",
+            "20分くらい",
+            "30分以上"
+          ],
+          "min": 1,
+          "max": 4,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 0,
+          "local_page_index": 0,
+          "rect": [
+            1122.63,
+            678.0,
+            1152.518,
+            707.888
+          ],
+          "context_rect": [
+            942.6300000000001,
+            568.0,
+            1190.551025390625,
+            817.888
+          ]
+        }
+      ]
+    },
+    {
+      "template_page_index": 1,
+      "version": "A",
+      "local_page_index": 1,
+      "page_width_pt": 1190.551025390625,
+      "page_height_pt": 841.8900146484375,
+      "items": [
+        {
+          "id": "q3_5",
+          "type": "digit",
+          "label": "島内で、約2km程度の移動をする場合についてお聞きします。バスより便利で、タクシーよりは簡単なサービスだとしたとき、「高いと感じ始める金額」はいくらくらいですか。",
+          "choices": [
+            "100円未満",
+            "100円",
+            "200円",
+            "300円",
+            "400円",
+            "500円",
+            "600円以上"
+          ],
+          "min": 1,
+          "max": 7,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            129.914,
+            295.746,
+            159.802
+          ],
+          "context_rect": [
+            85.858,
+            19.913999999999987,
+            475.746,
+            269.802
+          ]
+        },
+        {
+          "id": "q3_6",
+          "type": "digit",
+          "label": "ふだんの移動に比べて、約20分余計に時間がかかるとした場合、ドライバーとして「これくらいなら引き受けてもよい」と感じる最低限の報酬はいくらですか。",
+          "choices": [
+            "もらえなくてもよい",
+            "100円",
+            "300円",
+            "500円",
+            "700円",
+            "1,000円以上"
+          ],
+          "min": 1,
+          "max": 6,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            282.215,
+            295.746,
+            312.103
+          ],
+          "context_rect": [
+            85.858,
+            172.21499999999997,
+            475.746,
+            422.103
+          ]
+        },
+        {
+          "id": "q3_7",
+          "type": "digit",
+          "label": "島内の他の住民と同じ車に乗って移動することに、抵抗を感じますか。",
+          "choices": [
+            "まったく感じない",
+            "あまり感じない",
+            "どちらともいえない",
+            "少し感じる",
+            "強く感じる"
+          ],
+          "min": 1,
+          "max": 5,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            400.642,
+            295.746,
+            430.53
+          ],
+          "context_rect": [
+            85.858,
+            290.642,
+            475.746,
+            540.53
+          ]
+        },
+        {
+          "id": "q3_8",
+          "type": "digit",
+          "label": "病院の予約や仕事など、到着時刻が決まっている移動では、多少不便でも時間どおり着くことを重視しますか。",
+          "choices": [
+            "まったく重視しない",
+            "あまり重視しない",
+            "どちらともいえない",
+            "やや重視する",
+            "非常に重視する"
+          ],
+          "min": 1,
+          "max": 5,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            536.006,
+            295.746,
+            565.894
+          ],
+          "context_rect": [
+            85.858,
+            426.006,
+            475.746,
+            675.894
+          ]
+        },
+        {
+          "id": "q3_9",
+          "type": "digit",
+          "label": "次の2つのうち、どちらを選びますか。",
+          "choices": [
+            "今すぐ300円相当の割引",
+            "1年後に360円相当の割引"
+          ],
+          "min": 1,
+          "max": 2,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            652.057,
+            295.746,
+            681.945
+          ],
+          "context_rect": [
+            85.858,
+            542.057,
+            475.746,
+            791.945
+          ]
+        },
+        {
+          "id": "q3_10",
+          "type": "digit",
+          "label": "次の2つのうち、どちらを選びますか。",
+          "choices": [
+            "今すぐ300円相当の割引",
+            "5年後に600円相当の割引"
+          ],
+          "min": 1,
+          "max": 2,
+          "multiple": false,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            731.246,
+            295.746,
+            761.134
+          ],
+          "context_rect": [
+            85.858,
+            621.246,
+            475.746,
+            841.8900146484375
+          ]
+        },
+        {
+          "id": "q4_commute_1",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 1",
+          "scenario_macro": "commuteScenarioOne",
+          "scenario_text": "ドライバー報酬 距離比例100円/km（2kmなら200円） 追加時間 ＋約20分 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            463.691,
+            554.263,
+            582.322,
+            570.846
+          ],
+          "context_rect": [
+            163.69099999999997,
+            469.26300000000003,
+            882.322,
+            655.846
+          ],
+          "cells": [
+            [
+              463.691,
+              554.263,
+              480.274,
+              570.846
+            ],
+            [
+              489.203,
+              554.263,
+              505.786,
+              570.846
+            ],
+            [
+              514.715,
+              554.263,
+              531.298,
+              570.846
+            ],
+            [
+              540.227,
+              554.263,
+              556.81,
+              570.846
+            ],
+            [
+              565.739,
+              554.263,
+              582.322,
+              570.846
+            ]
+          ],
+          "context_text": "回答欄移動では、多少不便でも時間どおり着くことを重4やや重視する5非常に重視するつの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）追加時間＋約20分拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高いドライバー報酬定額300円追加時間＋約20分拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例20円/km（4kmなら80円）拒否"
+        },
+        {
+          "id": "q4_commute_2",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 2",
+          "scenario_macro": "commuteScenarioTwo",
+          "scenario_text": "ドライバー報酬 定額300円 追加時間 ＋約20分 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            463.691,
+            645.798,
+            582.322,
+            662.381
+          ],
+          "context_rect": [
+            163.69099999999997,
+            560.798,
+            882.322,
+            747.381
+          ],
+          "cells": [
+            [
+              463.691,
+              645.798,
+              480.274,
+              662.381
+            ],
+            [
+              489.203,
+              645.798,
+              505.786,
+              662.381
+            ],
+            [
+              514.715,
+              645.798,
+              531.298,
+              662.381
+            ],
+            [
+              540.227,
+              645.798,
+              556.81,
+              662.381
+            ],
+            [
+              565.739,
+              645.798,
+              582.322,
+              662.381
+            ]
+          ],
+          "context_text": "つの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引引き受けたい度（5段階）12345ドライバー報酬定額300円追加時間＋約20分拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高いドライバー報酬距離比例140円/km（4kmなら560円）追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額100円拒否権成立したら断れないNG設定NG時間帯のみ引き受"
+        },
+        {
+          "id": "q4_commute_3",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 3",
+          "scenario_macro": "commuteScenarioFour",
+          "scenario_text": "ドライバー報酬 距離比例140円/km（4kmなら560円） 追加時間 追加ほぼなし 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            463.691,
+            737.333,
+            582.322,
+            753.916
+          ],
+          "context_rect": [
+            163.69099999999997,
+            652.333,
+            882.322,
+            838.916
+          ],
+          "cells": [
+            [
+              463.691,
+              737.333,
+              480.274,
+              753.916
+            ],
+            [
+              489.203,
+              737.333,
+              505.786,
+              753.916
+            ],
+            [
+              514.715,
+              737.333,
+              531.298,
+              753.916
+            ],
+            [
+              540.227,
+              737.333,
+              556.81,
+              753.916
+            ],
+            [
+              565.739,
+              737.333,
+              582.322,
+              753.916
+            ]
+          ],
+          "context_text": "回答欄円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引引き受けたい度（5段階）12345ドライバー報酬距離比例140円/km（4kmなら560円）追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高いページ2/4"
+        },
+        {
+          "id": "q4_commute_4",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 4",
+          "scenario_macro": "commuteScenarioSeven",
+          "scenario_text": "ドライバー報酬 定額300円 追加時間 ＋約20分 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            749.282,
+            92.581,
+            867.912,
+            109.164
+          ],
+          "context_rect": [
+            449.28200000000004,
+            7.581000000000003,
+            1167.912,
+            194.164
+          ],
+          "cells": [
+            [
+              749.282,
+              92.581,
+              765.865,
+              109.164
+            ],
+            [
+              774.794,
+              92.581,
+              791.377,
+              109.164
+            ],
+            [
+              800.306,
+              92.581,
+              816.889,
+              109.164
+            ],
+            [
+              825.818,
+              92.581,
+              842.401,
+              109.164
+            ],
+            [
+              851.33,
+              92.581,
+              867.912,
+              109.164
+            ]
+          ],
+          "context_text": "1枚目/2枚ドライバーとしてのシナリオ評価「ノッカル」にドライバーとして参加する場合について、各カードの条件を読み、引き受けたい度を1〜5でお答えくだ参加意向（設問3.1）で「絶対に引き受けたくない」を選んだ方は回答不要です。また、免許をお持ちでない、または返納条件を読んで、当てはまる段階に○を付けてくだドライバー報酬定額300円追加時間＋約20分拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高い4.2ご自宅にいる場合あなたがご自宅にいて時間に余裕があるときに、利用者の求めに応じて送迎する場合についてお尋ねします。以下の各条件を見て、「引き受けたい度」を1（まったく引き"
+        },
+        {
+          "id": "q4_home_1",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 1",
+          "scenario_macro": "ondemandScenarioOne",
+          "scenario_text": "ドライバー報酬 定額300円 拒否権 条件確認後も断れる NG設定 NG時間帯のみ",
+          "min": 1,
+          "max": 5,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            749.282,
+            460.096,
+            867.912,
+            476.679
+          ],
+          "context_rect": [
+            449.28200000000004,
+            375.096,
+            1167.912,
+            561.679
+          ],
+          "cells": [
+            [
+              749.282,
+              460.096,
+              765.865,
+              476.679
+            ],
+            [
+              774.794,
+              460.096,
+              791.377,
+              476.679
+            ],
+            [
+              800.306,
+              460.096,
+              816.889,
+              476.679
+            ],
+            [
+              825.818,
+              460.096,
+              842.401,
+              476.679
+            ],
+            [
+              851.33,
+              460.096,
+              867.912,
+              476.679
+            ]
+          ],
+          "context_text": "回の送迎を引き受けた際にドライバーが受け取る金額（定額または距離比例）利用者を同乗させることによって、普段の通勤所要時間に対して追加でかかる時間マッチング成立後に、乗客の条件（乗車地・目的地・時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）拒否権条件を見て成立後でも断れる12345低い高い迎を引き受けない設定ドライバー報酬定額300円拒否権条件確認後も断れるNG設定NG時間帯のみ引き受けたい度（5段階）12345低い高いドライバー報酬距離比例20円/km（4kmなら80円）拒否権条件確認後も断れるNG設定NGエリアのみ引き受けたい度（5段階）1"
+        },
+        {
+          "id": "q4_home_2",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 2",
+          "scenario_macro": "ondemandScenarioFour",
+          "scenario_text": "ドライバー報酬 距離比例20円/km（4kmなら80円） 拒否権 条件確認後も断れる NG設定 NGエリアのみ",
+          "min": 1,
+          "max": 5,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            749.282,
+            551.631,
+            867.912,
+            568.214
+          ],
+          "context_rect": [
+            449.28200000000004,
+            466.631,
+            1167.912,
+            653.214
+          ],
+          "cells": [
+            [
+              749.282,
+              551.631,
+              765.865,
+              568.214
+            ],
+            [
+              774.794,
+              551.631,
+              791.377,
+              568.214
+            ],
+            [
+              800.306,
+              551.631,
+              816.889,
+              568.214
+            ],
+            [
+              825.818,
+              551.631,
+              842.401,
+              568.214
+            ],
+            [
+              851.33,
+              551.631,
+              867.912,
+              568.214
+            ]
+          ],
+          "context_text": "時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）拒否権条件を見て成立後でも断れる12345低い高い拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例20円/km（4kmなら80円）拒否権条件確認後も断れるNG設定NGエリアのみ引き受けたい度（5段階）12345低い高いドライバー報酬定額100円拒否権成立したら断れないNG設定NG時間帯のみ引き受けたい度（5段階）12345低い高い運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃距離に比例1"
+        },
+        {
+          "id": "q4_home_3",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 3",
+          "scenario_macro": "ondemandScenarioSeven",
+          "scenario_text": "ドライバー報酬 定額100円 拒否権 成立したら断れない NG設定 NG時間帯のみ",
+          "min": 1,
+          "max": 5,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            749.282,
+            643.166,
+            867.912,
+            659.749
+          ],
+          "context_rect": [
+            449.28200000000004,
+            558.166,
+            1167.912,
+            744.749
+          ],
+          "cells": [
+            [
+              749.282,
+              643.166,
+              765.865,
+              659.749
+            ],
+            [
+              774.794,
+              643.166,
+              791.377,
+              659.749
+            ],
+            [
+              800.306,
+              643.166,
+              816.889,
+              659.749
+            ],
+            [
+              825.818,
+              643.166,
+              842.401,
+              659.749
+            ],
+            [
+              851.33,
+              643.166,
+              867.912,
+              659.749
+            ]
+          ],
+          "context_text": "12345拒否権稼働時間内で成立したら断れない12345低い高いドライバー報酬距離比例140円/km（4kmなら560円）拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額100円拒否権成立したら断れないNG設定NG時間帯のみ引き受けたい度（5段階）12345低い高いドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い運賃距離に比例60円/km（4k"
+        },
+        {
+          "id": "q4_home_4",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 4",
+          "scenario_macro": "ondemandScenarioNine",
+          "scenario_text": "ドライバー報酬 定額300円 拒否権 成立したら断れない NG設定 NGエリア＋時間",
+          "min": 1,
+          "max": 5,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            749.282,
+            734.701,
+            867.912,
+            751.284
+          ],
+          "context_rect": [
+            449.28200000000004,
+            649.701,
+            1167.912,
+            836.284
+          ],
+          "cells": [
+            [
+              749.282,
+              734.701,
+              765.865,
+              751.284
+            ],
+            [
+              774.794,
+              734.701,
+              791.377,
+              751.284
+            ],
+            [
+              800.306,
+              734.701,
+              816.889,
+              751.284
+            ],
+            [
+              825.818,
+              734.701,
+              842.401,
+              751.284
+            ],
+            [
+              851.33,
+              734.701,
+              867.912,
+              751.284
+            ]
+          ],
+          "context_text": "12345ドライバー報酬距離比例140円/km（4kmなら560円）拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃距離に比例60円/km（4kmなら240円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高いページ2/42枚目に続きます"
+        },
+        {
+          "id": "q5_passenger_1",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 1",
+          "scenario_macro": "passengerScenarioOne",
+          "scenario_text": "運賃 距離に比例 140円/km（4kmなら560円） 呼び出し 15分程度 相乗り 顔見知りの住民とだけ相乗り",
+          "min": 1,
+          "max": 5,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            1034.872,
+            449.947,
+            1153.502,
+            466.53
+          ],
+          "context_rect": [
+            734.8720000000001,
+            364.947,
+            1190.551025390625,
+            551.53
+          ],
+          "cells": [
+            [
+              1034.872,
+              449.947,
+              1051.455,
+              466.53
+            ],
+            [
+              1060.384,
+              449.947,
+              1076.967,
+              466.53
+            ],
+            [
+              1085.896,
+              449.947,
+              1102.479,
+              466.53
+            ],
+            [
+              1111.408,
+              449.947,
+              1127.991,
+              466.53
+            ],
+            [
+              1136.92,
+              449.947,
+              1153.502,
+              466.53
+            ]
+          ],
+          "context_text": "迎を引き受けない設定12345低い高い円/km（4kmなら80円）低い高い常に貸し切り他の利用者とは相乗りしない運賃距離に比例140円/km（4kmなら560円）呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い"
+        },
+        {
+          "id": "q5_passenger_2",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 2",
+          "scenario_macro": "passengerScenarioThree",
+          "scenario_text": "運賃 定額300円 呼び出し 5分程度 相乗り 常に貸し切り",
+          "min": 1,
+          "max": 5,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            1034.872,
+            541.482,
+            1153.502,
+            558.065
+          ],
+          "context_rect": [
+            734.8720000000001,
+            456.48199999999997,
+            1190.551025390625,
+            643.065
+          ],
+          "cells": [
+            [
+              1034.872,
+              541.482,
+              1051.455,
+              558.065
+            ],
+            [
+              1060.384,
+              541.482,
+              1076.967,
+              558.065
+            ],
+            [
+              1085.896,
+              541.482,
+              1102.479,
+              558.065
+            ],
+            [
+              1111.408,
+              541.482,
+              1127.991,
+              558.065
+            ],
+            [
+              1136.92,
+              541.482,
+              1153.502,
+              558.065
+            ]
+          ],
+          "context_text": "12345低い高い円/km（4kmなら80円）12345低い高い低い高い引き受けたい度（5段階）12345運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い"
+        },
+        {
+          "id": "q5_passenger_3",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 3",
+          "scenario_macro": "passengerScenarioSix",
+          "scenario_text": "運賃 距離に比例 100円/km（2kmなら200円） 呼び出し 5分程度 相乗り 誰とでも相乗り",
+          "min": 1,
+          "max": 5,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            1034.872,
+            633.017,
+            1153.502,
+            649.6
+          ],
+          "context_rect": [
+            734.8720000000001,
+            548.017,
+            1190.551025390625,
+            734.6
+          ],
+          "cells": [
+            [
+              1034.872,
+              633.017,
+              1051.455,
+              649.6
+            ],
+            [
+              1060.384,
+              633.017,
+              1076.967,
+              649.6
+            ],
+            [
+              1085.896,
+              633.017,
+              1102.479,
+              649.6
+            ],
+            [
+              1111.408,
+              633.017,
+              1127.991,
+              649.6
+            ],
+            [
+              1136.92,
+              633.017,
+              1153.502,
+              649.6
+            ]
+          ],
+          "context_text": "12345低い高い12345低い高い低い高い引き受けたい度（5段階）12345運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い運賃距離に比例60円/km（4kmなら240円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い"
+        },
+        {
+          "id": "q5_passenger_4",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 4",
+          "scenario_macro": "passengerScenarioNine",
+          "scenario_text": "運賃 距離に比例 60円/km（4kmなら240円） 呼び出し 5分程度 相乗り 顔見知りの住民とだけ相乗り",
+          "min": 1,
+          "max": 5,
+          "version": "A",
+          "template_page_index": 1,
+          "local_page_index": 1,
+          "rect": [
+            1034.872,
+            724.552,
+            1153.502,
+            741.135
+          ],
+          "context_rect": [
+            734.8720000000001,
+            639.552,
+            1190.551025390625,
+            826.135
+          ],
+          "cells": [
+            [
+              1034.872,
+              724.552,
+              1051.455,
+              741.135
+            ],
+            [
+              1060.384,
+              724.552,
+              1076.967,
+              741.135
+            ],
+            [
+              1085.896,
+              724.552,
+              1102.479,
+              741.135
+            ],
+            [
+              1111.408,
+              724.552,
+              1127.991,
+              741.135
+            ],
+            [
+              1136.92,
+              724.552,
+              1153.502,
+              741.135
+            ]
+          ],
+          "context_text": "12345低い高い12345低い高い引き受けたい度（5段階）12345運賃距離に比例60円/km（4kmなら240円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い2枚目に続きます"
+        }
+      ]
+    },
+    {
+      "template_page_index": 2,
+      "version": "A",
+      "local_page_index": 2,
+      "page_width_pt": 1190.551025390625,
+      "page_height_pt": 841.8900146484375,
+      "items": [
+        {
+          "id": "activity_月曜日",
+          "type": "activity_day",
+          "label": "月曜日の活動",
+          "day": "月曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "A",
+          "template_page_index": 2,
+          "local_page_index": 2,
+          "rect": [
+            28.346,
+            241.812,
+            578.275,
+            485.16
+          ],
+          "context_rect": [
+            28.346,
+            241.812,
+            578.275,
+            485.16
+          ],
+          "table_rect": [
+            28.794,
+            260.333,
+            577.827,
+            484.712
+          ]
+        },
+        {
+          "id": "activity_水曜日",
+          "type": "activity_day",
+          "label": "水曜日の活動",
+          "day": "水曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "A",
+          "template_page_index": 2,
+          "local_page_index": 2,
+          "rect": [
+            592.442,
+            241.812,
+            1142.371,
+            485.16
+          ],
+          "context_rect": [
+            592.442,
+            241.812,
+            1142.371,
+            485.16
+          ],
+          "table_rect": [
+            592.89,
+            260.333,
+            1141.923,
+            484.712
+          ]
+        },
+        {
+          "id": "activity_火曜日",
+          "type": "activity_day",
+          "label": "火曜日の活動",
+          "day": "火曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "A",
+          "template_page_index": 2,
+          "local_page_index": 2,
+          "rect": [
+            28.346,
+            504.412,
+            578.275,
+            747.76
+          ],
+          "context_rect": [
+            28.346,
+            504.412,
+            578.275,
+            747.76
+          ],
+          "table_rect": [
+            28.794,
+            522.933,
+            577.827,
+            747.312
+          ]
+        },
+        {
+          "id": "activity_木曜日",
+          "type": "activity_day",
+          "label": "木曜日の活動",
+          "day": "木曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "A",
+          "template_page_index": 2,
+          "local_page_index": 2,
+          "rect": [
+            592.442,
+            504.412,
+            1142.371,
+            747.76
+          ],
+          "context_rect": [
+            592.442,
+            504.412,
+            1142.371,
+            747.76
+          ],
+          "table_rect": [
+            592.89,
+            522.933,
+            1141.923,
+            747.312
+          ]
+        }
+      ]
+    },
+    {
+      "template_page_index": 3,
+      "version": "A",
+      "local_page_index": 3,
+      "page_width_pt": 1190.551025390625,
+      "page_height_pt": 841.8900146484375,
+      "items": [
+        {
+          "id": "activity_金曜日",
+          "type": "activity_day",
+          "label": "金曜日の活動",
+          "day": "金曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "A",
+          "template_page_index": 3,
+          "local_page_index": 3,
+          "rect": [
+            28.346,
+            27.148,
+            591.03,
+            270.496
+          ],
+          "context_rect": [
+            28.346,
+            27.148,
+            591.03,
+            270.496
+          ],
+          "table_rect": [
+            28.794,
+            45.669,
+            590.582,
+            270.048
+          ]
+        },
+        {
+          "id": "activity_土曜日",
+          "type": "activity_day",
+          "label": "土曜日の活動",
+          "day": "土曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "A",
+          "template_page_index": 3,
+          "local_page_index": 3,
+          "rect": [
+            28.346,
+            284.499,
+            591.03,
+            527.847
+          ],
+          "context_rect": [
+            28.346,
+            284.499,
+            591.03,
+            527.847
+          ],
+          "table_rect": [
+            28.794,
+            303.02,
+            590.582,
+            527.399
+          ]
+        },
+        {
+          "id": "activity_日曜日",
+          "type": "activity_day",
+          "label": "日曜日の活動",
+          "day": "日曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "A",
+          "template_page_index": 3,
+          "local_page_index": 3,
+          "rect": [
+            28.346,
+            541.849,
+            591.03,
+            785.197
+          ],
+          "context_rect": [
+            28.346,
+            541.849,
+            591.03,
+            785.197
+          ],
+          "table_rect": [
+            28.794,
+            560.37,
+            590.582,
+            784.749
+          ]
+        }
+      ]
+    },
+    {
+      "template_page_index": 4,
+      "version": "B",
+      "local_page_index": 0,
+      "page_width_pt": 1190.551025390625,
+      "page_height_pt": 841.8900146484375,
+      "items": [
+        {
+          "id": "q1_1",
+          "type": "digit",
+          "label": "性別を教えてください。",
+          "choices": [
+            "男性",
+            "女性",
+            "その他",
+            "回答しない"
+          ],
+          "min": 1,
+          "max": 4,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            107.1,
+            581.336,
+            136.988
+          ],
+          "context_rect": [
+            371.448,
+            0.0,
+            761.336,
+            246.988
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "digit",
+          "label": "年齢を教えてください。",
+          "choices": [
+            "10歳未満",
+            "10〜19歳",
+            "20〜29歳",
+            "30〜39歳",
+            "40〜49歳",
+            "50〜59歳",
+            "60〜64歳",
+            "65〜69歳",
+            "70〜74歳",
+            "75〜79歳",
+            "80〜84歳",
+            "85〜89歳",
+            "90歳以上"
+          ],
+          "min": 1,
+          "max": 13,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            244.456,
+            581.336,
+            274.344
+          ],
+          "context_rect": [
+            371.448,
+            134.456,
+            761.336,
+            384.344
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "digit",
+          "label": "現在お住まいの地区を教えてください。",
+          "choices": [
+            "下島",
+            "三之瀬",
+            "大地蔵"
+          ],
+          "min": 1,
+          "max": 3,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            328.015,
+            581.336,
+            357.903
+          ],
+          "context_rect": [
+            371.448,
+            218.015,
+            761.336,
+            467.903
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "digit",
+          "label": "現在の就業形態について、最もあてはまるものを教えてください。",
+          "choices": [
+            "常勤（正社員・正職員）",
+            "パート・アルバイト",
+            "自営業・自由業",
+            "退職している",
+            "学生",
+            "その他"
+          ],
+          "min": 1,
+          "max": 6,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            446.442,
+            581.336,
+            476.33
+          ],
+          "context_rect": [
+            371.448,
+            336.442,
+            761.336,
+            586.3299999999999
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "digit",
+          "label": "日常生活で、杖や歩行器、車椅子などを使っていますか。",
+          "choices": [
+            "はい",
+            "いいえ"
+          ],
+          "min": 1,
+          "max": 2,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            529.004,
+            581.336,
+            558.892
+          ],
+          "context_rect": [
+            371.448,
+            419.004,
+            761.336,
+            668.892
+          ]
+        },
+        {
+          "id": "q2_1",
+          "type": "digit",
+          "label": "自動車の運転免許を持っていますか。",
+          "choices": [
+            "持っている",
+            "持っていない",
+            "持っていたが 返納した"
+          ],
+          "min": 1,
+          "max": 3,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            658.59,
+            581.336,
+            688.478
+          ],
+          "context_rect": [
+            371.448,
+            548.59,
+            761.336,
+            798.478
+          ]
+        },
+        {
+          "id": "q2_2",
+          "type": "digit",
+          "label": "（免許をお持ちの方へ）ご自身で自由に使える自動車はありますか。",
+          "choices": [
+            "ある",
+            "ない"
+          ],
+          "min": 1,
+          "max": 2,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            94.048,
+            866.927,
+            123.936
+          ],
+          "context_rect": [
+            657.039,
+            0.0,
+            1046.9270000000001,
+            233.936
+          ]
+        },
+        {
+          "id": "q2_3",
+          "type": "digit",
+          "label": "（免許をお持ちの方へ）週に何回くらい自動車を運転しますか。",
+          "choices": [
+            "ほとんどしない",
+            "週に1〜2回",
+            "週に3〜4回",
+            "ほぼ毎日"
+          ],
+          "min": 1,
+          "max": 4,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            194.543,
+            866.927,
+            224.431
+          ],
+          "context_rect": [
+            657.039,
+            84.543,
+            1046.9270000000001,
+            334.43100000000004
+          ]
+        },
+        {
+          "id": "q2_4",
+          "type": "digit",
+          "label": "（免許をお持ちでない、または返納された方へ）あなたの送迎をしてくれるご家族や身寄りの方は、近くにいらっしゃいますか。",
+          "choices": [
+            "いる",
+            "いない"
+          ],
+          "min": 1,
+          "max": 2,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            294.042,
+            866.927,
+            323.93
+          ],
+          "context_rect": [
+            657.039,
+            184.04199999999997,
+            1046.9270000000001,
+            433.93
+          ]
+        },
+        {
+          "id": "q2_5",
+          "type": "digit",
+          "label": "食料品や日用品は、主にどこで購入しますか。",
+          "choices": [
+            "本土（広など）の スーパー",
+            "島内の商店",
+            "移動販売・宅配",
+            "家族・ 友人に頼む",
+            "その他"
+          ],
+          "min": 1,
+          "max": 5,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            412.469,
+            866.927,
+            442.357
+          ],
+          "context_rect": [
+            657.039,
+            302.469,
+            1046.9270000000001,
+            552.357
+          ]
+        },
+        {
+          "id": "q2_6",
+          "type": "digit",
+          "label": "本土（広方面）へ行くバス（沖友天満宮〜中国労災病院線）と、その先のJRや他のバスとの乗り継ぎについてどう感じますか。",
+          "choices": [
+            "便利",
+            "普通",
+            "少し不便",
+            "非常に不便",
+            "わからない"
+          ],
+          "min": 1,
+          "max": 5,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            547.833,
+            866.927,
+            577.721
+          ],
+          "context_rect": [
+            657.039,
+            437.83299999999997,
+            1046.9270000000001,
+            687.721
+          ]
+        },
+        {
+          "id": "q2_7",
+          "type": "digit",
+          "label": "スマートフォンをお持ちですか。",
+          "choices": [
+            "持っており、日常的に使う",
+            "持っているが、電話くらいしか使わない",
+            "持っていない"
+          ],
+          "min": 1,
+          "max": 3,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            645.054,
+            866.927,
+            674.942
+          ],
+          "context_rect": [
+            657.039,
+            535.054,
+            1046.9270000000001,
+            784.942
+          ]
+        },
+        {
+          "id": "q3_1",
+          "type": "digit",
+          "label": "（免許をお持ちの方へ）あなたがドライバーとしてライドシェアに参加することについて、現時点の気持ちに近いものを教えてください。",
+          "choices": [
+            "絶対に引き受けたくない",
+            "条件によっては引き受けてもよい",
+            "ぜひ引き受けたい"
+          ],
+          "min": 1,
+          "max": 3,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            1122.63,
+            242.306,
+            1152.518,
+            272.194
+          ],
+          "context_rect": [
+            942.6300000000001,
+            132.306,
+            1190.551025390625,
+            382.194
+          ]
+        },
+        {
+          "id": "q3_2",
+          "type": "digit",
+          "label": "あなたが乗客としてライドシェアを利用することについて、現時点の気持ちに近いものを教えてください。",
+          "choices": [
+            "絶対に利用したくない",
+            "条件によっては利用してもよい",
+            "ぜひ利用したい"
+          ],
+          "min": 1,
+          "max": 3,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            1122.63,
+            373.399,
+            1152.518,
+            403.287
+          ],
+          "context_rect": [
+            942.6300000000001,
+            263.399,
+            1190.551025390625,
+            513.287
+          ]
+        },
+        {
+          "id": "q3_3",
+          "type": "digit",
+          "label": "島内で安価で手軽に利用できるライドシェアがあった場合、どのようなときに使ってみたいですか。",
+          "choices": [
+            "雨や荷物が多いとき",
+            "島内の病院",
+            "島内の買い物・用事",
+            "島内の友人宅や集まりへの訪問",
+            "本土の駅や病院など、バス停から離れた場所への接続",
+            "その他",
+            "利用したくない"
+          ],
+          "min": 1,
+          "max": 7,
+          "multiple": true,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            1122.63,
+            560.569,
+            1152.518,
+            590.457
+          ],
+          "context_rect": [
+            942.6300000000001,
+            450.56899999999996,
+            1190.551025390625,
+            700.457
+          ]
+        },
+        {
+          "id": "q3_4",
+          "type": "digit",
+          "label": "もし相乗りになった場合、病院の予約など時間が厳密に決まっている用事で、同乗によってどれくらい到着が遅くなることを許容できますか。",
+          "choices": [
+            "遠回りしてほしくない",
+            "10分くらい",
+            "20分くらい",
+            "30分以上"
+          ],
+          "min": 1,
+          "max": 4,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 4,
+          "local_page_index": 0,
+          "rect": [
+            1122.63,
+            678.0,
+            1152.518,
+            707.888
+          ],
+          "context_rect": [
+            942.6300000000001,
+            568.0,
+            1190.551025390625,
+            817.888
+          ]
+        }
+      ]
+    },
+    {
+      "template_page_index": 5,
+      "version": "B",
+      "local_page_index": 1,
+      "page_width_pt": 1190.551025390625,
+      "page_height_pt": 841.8900146484375,
+      "items": [
+        {
+          "id": "q3_5",
+          "type": "digit",
+          "label": "島内で、約2km程度の移動をする場合についてお聞きします。バスより便利で、タクシーよりは簡単なサービスだとしたとき、「高いと感じ始める金額」はいくらくらいですか。",
+          "choices": [
+            "100円未満",
+            "100円",
+            "200円",
+            "300円",
+            "400円",
+            "500円",
+            "600円以上"
+          ],
+          "min": 1,
+          "max": 7,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            129.914,
+            295.746,
+            159.802
+          ],
+          "context_rect": [
+            85.858,
+            19.913999999999987,
+            475.746,
+            269.802
+          ]
+        },
+        {
+          "id": "q3_6",
+          "type": "digit",
+          "label": "ふだんの移動に比べて、約20分余計に時間がかかるとした場合、ドライバーとして「これくらいなら引き受けてもよい」と感じる最低限の報酬はいくらですか。",
+          "choices": [
+            "もらえなくてもよい",
+            "100円",
+            "300円",
+            "500円",
+            "700円",
+            "1,000円以上"
+          ],
+          "min": 1,
+          "max": 6,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            282.215,
+            295.746,
+            312.103
+          ],
+          "context_rect": [
+            85.858,
+            172.21499999999997,
+            475.746,
+            422.103
+          ]
+        },
+        {
+          "id": "q3_7",
+          "type": "digit",
+          "label": "島内の他の住民と同じ車に乗って移動することに、抵抗を感じますか。",
+          "choices": [
+            "まったく感じない",
+            "あまり感じない",
+            "どちらともいえない",
+            "少し感じる",
+            "強く感じる"
+          ],
+          "min": 1,
+          "max": 5,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            400.642,
+            295.746,
+            430.53
+          ],
+          "context_rect": [
+            85.858,
+            290.642,
+            475.746,
+            540.53
+          ]
+        },
+        {
+          "id": "q3_8",
+          "type": "digit",
+          "label": "病院の予約や仕事など、到着時刻が決まっている移動では、多少不便でも時間どおり着くことを重視しますか。",
+          "choices": [
+            "まったく重視しない",
+            "あまり重視しない",
+            "どちらともいえない",
+            "やや重視する",
+            "非常に重視する"
+          ],
+          "min": 1,
+          "max": 5,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            536.006,
+            295.746,
+            565.894
+          ],
+          "context_rect": [
+            85.858,
+            426.006,
+            475.746,
+            675.894
+          ]
+        },
+        {
+          "id": "q3_9",
+          "type": "digit",
+          "label": "次の2つのうち、どちらを選びますか。",
+          "choices": [
+            "今すぐ300円相当の割引",
+            "1年後に360円相当の割引"
+          ],
+          "min": 1,
+          "max": 2,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            652.057,
+            295.746,
+            681.945
+          ],
+          "context_rect": [
+            85.858,
+            542.057,
+            475.746,
+            791.945
+          ]
+        },
+        {
+          "id": "q3_10",
+          "type": "digit",
+          "label": "次の2つのうち、どちらを選びますか。",
+          "choices": [
+            "今すぐ300円相当の割引",
+            "5年後に600円相当の割引"
+          ],
+          "min": 1,
+          "max": 2,
+          "multiple": false,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            731.246,
+            295.746,
+            761.134
+          ],
+          "context_rect": [
+            85.858,
+            621.246,
+            475.746,
+            841.8900146484375
+          ]
+        },
+        {
+          "id": "q4_commute_1",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 1",
+          "scenario_macro": "commuteScenarioThree",
+          "scenario_text": "ドライバー報酬 距離比例100円/km（2kmなら200円） 追加時間 ＋約20分 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            463.691,
+            554.263,
+            582.322,
+            570.846
+          ],
+          "context_rect": [
+            163.69099999999997,
+            469.26300000000003,
+            882.322,
+            655.846
+          ],
+          "cells": [
+            [
+              463.691,
+              554.263,
+              480.274,
+              570.846
+            ],
+            [
+              489.203,
+              554.263,
+              505.786,
+              570.846
+            ],
+            [
+              514.715,
+              554.263,
+              531.298,
+              570.846
+            ],
+            [
+              540.227,
+              554.263,
+              556.81,
+              570.846
+            ],
+            [
+              565.739,
+              554.263,
+              582.322,
+              570.846
+            ]
+          ],
+          "context_text": "回答欄移動では、多少不便でも時間どおり着くことを重4やや重視する5非常に重視するつの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）追加時間＋約20分拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高いドライバー報酬距離比例60円/km（4kmなら240円）追加時間＋約10分拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例2"
+        },
+        {
+          "id": "q4_commute_2",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 2",
+          "scenario_macro": "commuteScenarioFive",
+          "scenario_text": "ドライバー報酬 距離比例60円/km（4kmなら240円） 追加時間 ＋約10分 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            463.691,
+            645.798,
+            582.322,
+            662.381
+          ],
+          "context_rect": [
+            163.69099999999997,
+            560.798,
+            882.322,
+            747.381
+          ],
+          "cells": [
+            [
+              463.691,
+              645.798,
+              480.274,
+              662.381
+            ],
+            [
+              489.203,
+              645.798,
+              505.786,
+              662.381
+            ],
+            [
+              514.715,
+              645.798,
+              531.298,
+              662.381
+            ],
+            [
+              540.227,
+              645.798,
+              556.81,
+              662.381
+            ],
+            [
+              565.739,
+              645.798,
+              582.322,
+              662.381
+            ]
+          ],
+          "context_text": "つの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（4kmなら240円）追加時間＋約10分拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高いドライバー報酬定額300円追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリアのみ引き受け"
+        },
+        {
+          "id": "q4_commute_3",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 3",
+          "scenario_macro": "commuteScenarioSix",
+          "scenario_text": "ドライバー報酬 定額300円 追加時間 追加ほぼなし 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            463.691,
+            737.333,
+            582.322,
+            753.916
+          ],
+          "context_rect": [
+            163.69099999999997,
+            652.333,
+            882.322,
+            838.916
+          ],
+          "cells": [
+            [
+              463.691,
+              737.333,
+              480.274,
+              753.916
+            ],
+            [
+              489.203,
+              737.333,
+              505.786,
+              753.916
+            ],
+            [
+              514.715,
+              737.333,
+              531.298,
+              753.916
+            ],
+            [
+              540.227,
+              737.333,
+              556.81,
+              753.916
+            ],
+            [
+              565.739,
+              737.333,
+              582.322,
+              753.916
+            ]
+          ],
+          "context_text": "回答欄円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引引き受けたい度（5段階）12345ドライバー報酬定額300円追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高いページ2/4"
+        },
+        {
+          "id": "q4_commute_4",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 4",
+          "scenario_macro": "commuteScenarioEleven",
+          "scenario_text": "ドライバー報酬 定額300円 追加時間 追加ほぼなし 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            749.282,
+            92.581,
+            867.912,
+            109.164
+          ],
+          "context_rect": [
+            449.28200000000004,
+            7.581000000000003,
+            1167.912,
+            194.164
+          ],
+          "cells": [
+            [
+              749.282,
+              92.581,
+              765.865,
+              109.164
+            ],
+            [
+              774.794,
+              92.581,
+              791.377,
+              109.164
+            ],
+            [
+              800.306,
+              92.581,
+              816.889,
+              109.164
+            ],
+            [
+              825.818,
+              92.581,
+              842.401,
+              109.164
+            ],
+            [
+              851.33,
+              92.581,
+              867.912,
+              109.164
+            ]
+          ],
+          "context_text": "1枚目/2枚ドライバーとしてのシナリオ評価「ノッカル」にドライバーとして参加する場合について、各カードの条件を読み、引き受けたい度を1〜5でお答えくだ参加意向（設問3.1）で「絶対に引き受けたくない」を選んだ方は回答不要です。また、免許をお持ちでない、または返納条件を読んで、当てはまる段階に○を付けてくだドライバー報酬定額300円追加時間追加ほぼなし拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高い4.2ご自宅にいる場合あなたがご自宅にいて時間に余裕があるときに、利用者の求めに応じて送迎する場合についてお尋ねします。以下の各条件を見て、「引き受けたい度」を1（まったく引"
+        },
+        {
+          "id": "q4_home_1",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 1",
+          "scenario_macro": "ondemandScenarioTwo",
+          "scenario_text": "ドライバー報酬 定額100円 拒否権 条件確認後も断れる NG設定 NG設定なし",
+          "min": 1,
+          "max": 5,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            749.282,
+            460.096,
+            867.912,
+            476.679
+          ],
+          "context_rect": [
+            449.28200000000004,
+            375.096,
+            1167.912,
+            561.679
+          ],
+          "cells": [
+            [
+              749.282,
+              460.096,
+              765.865,
+              476.679
+            ],
+            [
+              774.794,
+              460.096,
+              791.377,
+              476.679
+            ],
+            [
+              800.306,
+              460.096,
+              816.889,
+              476.679
+            ],
+            [
+              825.818,
+              460.096,
+              842.401,
+              476.679
+            ],
+            [
+              851.33,
+              460.096,
+              867.912,
+              476.679
+            ]
+          ],
+          "context_text": "回の送迎を引き受けた際にドライバーが受け取る金額（定額または距離比例）利用者を同乗させることによって、普段の通勤所要時間に対して追加でかかる時間マッチング成立後に、乗客の条件（乗車地・目的地・時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）拒否権稼働時間内で成立したら断れない12345低い高い迎を引き受けない設定ドライバー報酬定額100円拒否権条件確認後も断れるNG設定NG設定なし引き受けたい度（5段階）12345低い高いドライバー報酬距離比例20円/km（2kmなら40円）拒否権成立したら断れないNG設定NGエリア＋時間引き受けたい度（5段階"
+        },
+        {
+          "id": "q4_home_2",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 2",
+          "scenario_macro": "ondemandScenarioFive",
+          "scenario_text": "ドライバー報酬 距離比例20円/km（2kmなら40円） 拒否権 成立したら断れない NG設定 NGエリア＋時間",
+          "min": 1,
+          "max": 5,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            749.282,
+            551.631,
+            867.912,
+            568.214
+          ],
+          "context_rect": [
+            449.28200000000004,
+            466.631,
+            1167.912,
+            653.214
+          ],
+          "cells": [
+            [
+              749.282,
+              551.631,
+              765.865,
+              568.214
+            ],
+            [
+              774.794,
+              551.631,
+              791.377,
+              568.214
+            ],
+            [
+              800.306,
+              551.631,
+              816.889,
+              568.214
+            ],
+            [
+              825.818,
+              551.631,
+              842.401,
+              568.214
+            ],
+            [
+              851.33,
+              551.631,
+              867.912,
+              568.214
+            ]
+          ],
+          "context_text": "時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例100円/km（2kmなら200円）拒否権稼働時間内で成立したら断れない12345低い高い円/km（4kmなら240円）拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例20円/km（2kmなら40円）拒否権成立したら断れないNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高いドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリアのみ引き受けたい度（5段階）12345低い高い運賃距離に比例140円/km（4kmなら560円）呼び出し15分程度相乗"
+        },
+        {
+          "id": "q4_home_3",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 3",
+          "scenario_macro": "ondemandScenarioEight",
+          "scenario_text": "ドライバー報酬 定額300円 拒否権 成立したら断れない NG設定 NGエリアのみ",
+          "min": 1,
+          "max": 5,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            749.282,
+            643.166,
+            867.912,
+            659.749
+          ],
+          "context_rect": [
+            449.28200000000004,
+            558.166,
+            1167.912,
+            744.749
+          ],
+          "cells": [
+            [
+              749.282,
+              643.166,
+              765.865,
+              659.749
+            ],
+            [
+              774.794,
+              643.166,
+              791.377,
+              659.749
+            ],
+            [
+              800.306,
+              643.166,
+              816.889,
+              659.749
+            ],
+            [
+              825.818,
+              643.166,
+              842.401,
+              659.749
+            ],
+            [
+              851.33,
+              643.166,
+              867.912,
+              659.749
+            ]
+          ],
+          "context_text": "12345円/km（4kmなら240円）拒否権稼働時間内で成立したら断れない12345低い高い拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権成立したら断れないNG設定NGエリアのみ引き受けたい度（5段階）12345低い高いドライバー報酬定額300円拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃距離に比例140円/km（4kmなら560円）呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相"
+        },
+        {
+          "id": "q4_home_4",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 4",
+          "scenario_macro": "ondemandScenarioTen",
+          "scenario_text": "ドライバー報酬 定額300円 拒否権 条件確認後も断れる NG設定 NGエリア＋時間",
+          "min": 1,
+          "max": 5,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            749.282,
+            734.701,
+            867.912,
+            751.284
+          ],
+          "context_rect": [
+            449.28200000000004,
+            649.701,
+            1167.912,
+            836.284
+          ],
+          "cells": [
+            [
+              749.282,
+              734.701,
+              765.865,
+              751.284
+            ],
+            [
+              774.794,
+              734.701,
+              791.377,
+              751.284
+            ],
+            [
+              800.306,
+              734.701,
+              816.889,
+              751.284
+            ],
+            [
+              825.818,
+              734.701,
+              842.401,
+              751.284
+            ],
+            [
+              851.33,
+              734.701,
+              867.912,
+              751.284
+            ]
+          ],
+          "context_text": "12345拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額300円拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高いページ2/42枚目に続きます"
+        },
+        {
+          "id": "q5_passenger_1",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 1",
+          "scenario_macro": "passengerScenarioTwo",
+          "scenario_text": "運賃 距離に比例 60円/km（2kmなら120円） 呼び出し 15分程度 相乗り 誰とでも相乗り",
+          "min": 1,
+          "max": 5,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            1034.872,
+            449.947,
+            1153.502,
+            466.53
+          ],
+          "context_rect": [
+            734.8720000000001,
+            364.947,
+            1190.551025390625,
+            551.53
+          ],
+          "cells": [
+            [
+              1034.872,
+              449.947,
+              1051.455,
+              466.53
+            ],
+            [
+              1060.384,
+              449.947,
+              1076.967,
+              466.53
+            ],
+            [
+              1085.896,
+              449.947,
+              1102.479,
+              466.53
+            ],
+            [
+              1111.408,
+              449.947,
+              1127.991,
+              466.53
+            ],
+            [
+              1136.92,
+              449.947,
+              1153.502,
+              466.53
+            ]
+          ],
+          "context_text": "迎を引き受けない設定12345低い高い円/km（2kmなら40円）低い高い常に貸し切り他の利用者とは相乗りしない運賃距離に比例60円/km（2kmなら120円）呼び出し15分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い運賃距離に比例140円/km（4kmなら560円）呼び出し15分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い"
+        },
+        {
+          "id": "q5_passenger_2",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 2",
+          "scenario_macro": "passengerScenarioFive",
+          "scenario_text": "運賃 距離に比例 140円/km（4kmなら560円） 呼び出し 15分程度 相乗り 誰とでも相乗り",
+          "min": 1,
+          "max": 5,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            1034.872,
+            541.482,
+            1153.502,
+            558.065
+          ],
+          "context_rect": [
+            734.8720000000001,
+            456.48199999999997,
+            1190.551025390625,
+            643.065
+          ],
+          "cells": [
+            [
+              1034.872,
+              541.482,
+              1051.455,
+              558.065
+            ],
+            [
+              1060.384,
+              541.482,
+              1076.967,
+              558.065
+            ],
+            [
+              1085.896,
+              541.482,
+              1102.479,
+              558.065
+            ],
+            [
+              1111.408,
+              541.482,
+              1127.991,
+              558.065
+            ],
+            [
+              1136.92,
+              541.482,
+              1153.502,
+              558.065
+            ]
+          ],
+          "context_text": "12345低い高い円/km（2kmなら40円）12345低い高い低い高い引き受けたい度（5段階）12345運賃距離に比例140円/km（4kmなら560円）呼び出し15分程度相乗り誰とでも相乗り引き受けたい度（5段階）12345低い高い運賃距離に比例140円/km（4kmなら560円）呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い"
+        },
+        {
+          "id": "q5_passenger_3",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 3",
+          "scenario_macro": "passengerScenarioSeven",
+          "scenario_text": "運賃 距離に比例 140円/km（4kmなら560円） 呼び出し 5分程度 相乗り 常に貸し切り",
+          "min": 1,
+          "max": 5,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            1034.872,
+            633.017,
+            1153.502,
+            649.6
+          ],
+          "context_rect": [
+            734.8720000000001,
+            548.017,
+            1190.551025390625,
+            734.6
+          ],
+          "cells": [
+            [
+              1034.872,
+              633.017,
+              1051.455,
+              649.6
+            ],
+            [
+              1060.384,
+              633.017,
+              1076.967,
+              649.6
+            ],
+            [
+              1085.896,
+              633.017,
+              1102.479,
+              649.6
+            ],
+            [
+              1111.408,
+              633.017,
+              1127.991,
+              649.6
+            ],
+            [
+              1136.92,
+              633.017,
+              1153.502,
+              649.6
+            ]
+          ],
+          "context_text": "12345低い高い12345低い高い低い高い引き受けたい度（5段階）12345運賃距離に比例140円/km（4kmなら560円）呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い"
+        },
+        {
+          "id": "q5_passenger_4",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 4",
+          "scenario_macro": "passengerScenarioEight",
+          "scenario_text": "運賃 定額500円 呼び出し 15分程度 相乗り 顔見知りの住民とだけ相乗り",
+          "min": 1,
+          "max": 5,
+          "version": "B",
+          "template_page_index": 5,
+          "local_page_index": 1,
+          "rect": [
+            1034.872,
+            724.552,
+            1153.502,
+            741.135
+          ],
+          "context_rect": [
+            734.8720000000001,
+            639.552,
+            1190.551025390625,
+            826.135
+          ],
+          "cells": [
+            [
+              1034.872,
+              724.552,
+              1051.455,
+              741.135
+            ],
+            [
+              1060.384,
+              724.552,
+              1076.967,
+              741.135
+            ],
+            [
+              1085.896,
+              724.552,
+              1102.479,
+              741.135
+            ],
+            [
+              1111.408,
+              724.552,
+              1127.991,
+              741.135
+            ],
+            [
+              1136.92,
+              724.552,
+              1153.502,
+              741.135
+            ]
+          ],
+          "context_text": "12345低い高い12345低い高い引き受けたい度（5段階）12345運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い2枚目に続きます"
+        }
+      ]
+    },
+    {
+      "template_page_index": 6,
+      "version": "B",
+      "local_page_index": 2,
+      "page_width_pt": 1190.551025390625,
+      "page_height_pt": 841.8900146484375,
+      "items": [
+        {
+          "id": "activity_月曜日",
+          "type": "activity_day",
+          "label": "月曜日の活動",
+          "day": "月曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "B",
+          "template_page_index": 6,
+          "local_page_index": 2,
+          "rect": [
+            28.346,
+            241.812,
+            578.275,
+            485.16
+          ],
+          "context_rect": [
+            28.346,
+            241.812,
+            578.275,
+            485.16
+          ],
+          "table_rect": [
+            28.794,
+            260.333,
+            577.827,
+            484.712
+          ]
+        },
+        {
+          "id": "activity_水曜日",
+          "type": "activity_day",
+          "label": "水曜日の活動",
+          "day": "水曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "B",
+          "template_page_index": 6,
+          "local_page_index": 2,
+          "rect": [
+            592.442,
+            241.812,
+            1142.371,
+            485.16
+          ],
+          "context_rect": [
+            592.442,
+            241.812,
+            1142.371,
+            485.16
+          ],
+          "table_rect": [
+            592.89,
+            260.333,
+            1141.923,
+            484.712
+          ]
+        },
+        {
+          "id": "activity_火曜日",
+          "type": "activity_day",
+          "label": "火曜日の活動",
+          "day": "火曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "B",
+          "template_page_index": 6,
+          "local_page_index": 2,
+          "rect": [
+            28.346,
+            504.412,
+            578.275,
+            747.76
+          ],
+          "context_rect": [
+            28.346,
+            504.412,
+            578.275,
+            747.76
+          ],
+          "table_rect": [
+            28.794,
+            522.933,
+            577.827,
+            747.312
+          ]
+        },
+        {
+          "id": "activity_木曜日",
+          "type": "activity_day",
+          "label": "木曜日の活動",
+          "day": "木曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "B",
+          "template_page_index": 6,
+          "local_page_index": 2,
+          "rect": [
+            592.442,
+            504.412,
+            1142.371,
+            747.76
+          ],
+          "context_rect": [
+            592.442,
+            504.412,
+            1142.371,
+            747.76
+          ],
+          "table_rect": [
+            592.89,
+            522.933,
+            1141.923,
+            747.312
+          ]
+        }
+      ]
+    },
+    {
+      "template_page_index": 7,
+      "version": "B",
+      "local_page_index": 3,
+      "page_width_pt": 1190.551025390625,
+      "page_height_pt": 841.8900146484375,
+      "items": [
+        {
+          "id": "activity_金曜日",
+          "type": "activity_day",
+          "label": "金曜日の活動",
+          "day": "金曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "B",
+          "template_page_index": 7,
+          "local_page_index": 3,
+          "rect": [
+            28.346,
+            27.148,
+            591.03,
+            270.496
+          ],
+          "context_rect": [
+            28.346,
+            27.148,
+            591.03,
+            270.496
+          ],
+          "table_rect": [
+            28.794,
+            45.669,
+            590.582,
+            270.048
+          ]
+        },
+        {
+          "id": "activity_土曜日",
+          "type": "activity_day",
+          "label": "土曜日の活動",
+          "day": "土曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "B",
+          "template_page_index": 7,
+          "local_page_index": 3,
+          "rect": [
+            28.346,
+            284.499,
+            591.03,
+            527.847
+          ],
+          "context_rect": [
+            28.346,
+            284.499,
+            591.03,
+            527.847
+          ],
+          "table_rect": [
+            28.794,
+            303.02,
+            590.582,
+            527.399
+          ]
+        },
+        {
+          "id": "activity_日曜日",
+          "type": "activity_day",
+          "label": "日曜日の活動",
+          "day": "日曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "B",
+          "template_page_index": 7,
+          "local_page_index": 3,
+          "rect": [
+            28.346,
+            541.849,
+            591.03,
+            785.197
+          ],
+          "context_rect": [
+            28.346,
+            541.849,
+            591.03,
+            785.197
+          ],
+          "table_rect": [
+            28.794,
+            560.37,
+            590.582,
+            784.749
+          ]
+        }
+      ]
+    },
+    {
+      "template_page_index": 8,
+      "version": "C",
+      "local_page_index": 0,
+      "page_width_pt": 1190.551025390625,
+      "page_height_pt": 841.8900146484375,
+      "items": [
+        {
+          "id": "q1_1",
+          "type": "digit",
+          "label": "性別を教えてください。",
+          "choices": [
+            "男性",
+            "女性",
+            "その他",
+            "回答しない"
+          ],
+          "min": 1,
+          "max": 4,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            107.1,
+            581.336,
+            136.988
+          ],
+          "context_rect": [
+            371.448,
+            0.0,
+            761.336,
+            246.988
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "digit",
+          "label": "年齢を教えてください。",
+          "choices": [
+            "10歳未満",
+            "10〜19歳",
+            "20〜29歳",
+            "30〜39歳",
+            "40〜49歳",
+            "50〜59歳",
+            "60〜64歳",
+            "65〜69歳",
+            "70〜74歳",
+            "75〜79歳",
+            "80〜84歳",
+            "85〜89歳",
+            "90歳以上"
+          ],
+          "min": 1,
+          "max": 13,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            244.456,
+            581.336,
+            274.344
+          ],
+          "context_rect": [
+            371.448,
+            134.456,
+            761.336,
+            384.344
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "digit",
+          "label": "現在お住まいの地区を教えてください。",
+          "choices": [
+            "下島",
+            "三之瀬",
+            "大地蔵"
+          ],
+          "min": 1,
+          "max": 3,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            328.015,
+            581.336,
+            357.903
+          ],
+          "context_rect": [
+            371.448,
+            218.015,
+            761.336,
+            467.903
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "digit",
+          "label": "現在の就業形態について、最もあてはまるものを教えてください。",
+          "choices": [
+            "常勤（正社員・正職員）",
+            "パート・アルバイト",
+            "自営業・自由業",
+            "退職している",
+            "学生",
+            "その他"
+          ],
+          "min": 1,
+          "max": 6,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            446.442,
+            581.336,
+            476.33
+          ],
+          "context_rect": [
+            371.448,
+            336.442,
+            761.336,
+            586.3299999999999
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "digit",
+          "label": "日常生活で、杖や歩行器、車椅子などを使っていますか。",
+          "choices": [
+            "はい",
+            "いいえ"
+          ],
+          "min": 1,
+          "max": 2,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            529.004,
+            581.336,
+            558.892
+          ],
+          "context_rect": [
+            371.448,
+            419.004,
+            761.336,
+            668.892
+          ]
+        },
+        {
+          "id": "q2_1",
+          "type": "digit",
+          "label": "自動車の運転免許を持っていますか。",
+          "choices": [
+            "持っている",
+            "持っていない",
+            "持っていたが 返納した"
+          ],
+          "min": 1,
+          "max": 3,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            551.448,
+            658.59,
+            581.336,
+            688.478
+          ],
+          "context_rect": [
+            371.448,
+            548.59,
+            761.336,
+            798.478
+          ]
+        },
+        {
+          "id": "q2_2",
+          "type": "digit",
+          "label": "（免許をお持ちの方へ）ご自身で自由に使える自動車はありますか。",
+          "choices": [
+            "ある",
+            "ない"
+          ],
+          "min": 1,
+          "max": 2,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            94.048,
+            866.927,
+            123.936
+          ],
+          "context_rect": [
+            657.039,
+            0.0,
+            1046.9270000000001,
+            233.936
+          ]
+        },
+        {
+          "id": "q2_3",
+          "type": "digit",
+          "label": "（免許をお持ちの方へ）週に何回くらい自動車を運転しますか。",
+          "choices": [
+            "ほとんどしない",
+            "週に1〜2回",
+            "週に3〜4回",
+            "ほぼ毎日"
+          ],
+          "min": 1,
+          "max": 4,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            194.543,
+            866.927,
+            224.431
+          ],
+          "context_rect": [
+            657.039,
+            84.543,
+            1046.9270000000001,
+            334.43100000000004
+          ]
+        },
+        {
+          "id": "q2_4",
+          "type": "digit",
+          "label": "（免許をお持ちでない、または返納された方へ）あなたの送迎をしてくれるご家族や身寄りの方は、近くにいらっしゃいますか。",
+          "choices": [
+            "いる",
+            "いない"
+          ],
+          "min": 1,
+          "max": 2,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            294.042,
+            866.927,
+            323.93
+          ],
+          "context_rect": [
+            657.039,
+            184.04199999999997,
+            1046.9270000000001,
+            433.93
+          ]
+        },
+        {
+          "id": "q2_5",
+          "type": "digit",
+          "label": "食料品や日用品は、主にどこで購入しますか。",
+          "choices": [
+            "本土（広など）の スーパー",
+            "島内の商店",
+            "移動販売・宅配",
+            "家族・ 友人に頼む",
+            "その他"
+          ],
+          "min": 1,
+          "max": 5,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            412.469,
+            866.927,
+            442.357
+          ],
+          "context_rect": [
+            657.039,
+            302.469,
+            1046.9270000000001,
+            552.357
+          ]
+        },
+        {
+          "id": "q2_6",
+          "type": "digit",
+          "label": "本土（広方面）へ行くバス（沖友天満宮〜中国労災病院線）と、その先のJRや他のバスとの乗り継ぎについてどう感じますか。",
+          "choices": [
+            "便利",
+            "普通",
+            "少し不便",
+            "非常に不便",
+            "わからない"
+          ],
+          "min": 1,
+          "max": 5,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            547.833,
+            866.927,
+            577.721
+          ],
+          "context_rect": [
+            657.039,
+            437.83299999999997,
+            1046.9270000000001,
+            687.721
+          ]
+        },
+        {
+          "id": "q2_7",
+          "type": "digit",
+          "label": "スマートフォンをお持ちですか。",
+          "choices": [
+            "持っており、日常的に使う",
+            "持っているが、電話くらいしか使わない",
+            "持っていない"
+          ],
+          "min": 1,
+          "max": 3,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            837.039,
+            645.054,
+            866.927,
+            674.942
+          ],
+          "context_rect": [
+            657.039,
+            535.054,
+            1046.9270000000001,
+            784.942
+          ]
+        },
+        {
+          "id": "q3_1",
+          "type": "digit",
+          "label": "（免許をお持ちの方へ）あなたがドライバーとしてライドシェアに参加することについて、現時点の気持ちに近いものを教えてください。",
+          "choices": [
+            "絶対に引き受けたくない",
+            "条件によっては引き受けてもよい",
+            "ぜひ引き受けたい"
+          ],
+          "min": 1,
+          "max": 3,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            1122.63,
+            242.306,
+            1152.518,
+            272.194
+          ],
+          "context_rect": [
+            942.6300000000001,
+            132.306,
+            1190.551025390625,
+            382.194
+          ]
+        },
+        {
+          "id": "q3_2",
+          "type": "digit",
+          "label": "あなたが乗客としてライドシェアを利用することについて、現時点の気持ちに近いものを教えてください。",
+          "choices": [
+            "絶対に利用したくない",
+            "条件によっては利用してもよい",
+            "ぜひ利用したい"
+          ],
+          "min": 1,
+          "max": 3,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            1122.63,
+            373.399,
+            1152.518,
+            403.287
+          ],
+          "context_rect": [
+            942.6300000000001,
+            263.399,
+            1190.551025390625,
+            513.287
+          ]
+        },
+        {
+          "id": "q3_3",
+          "type": "digit",
+          "label": "島内で安価で手軽に利用できるライドシェアがあった場合、どのようなときに使ってみたいですか。",
+          "choices": [
+            "雨や荷物が多いとき",
+            "島内の病院",
+            "島内の買い物・用事",
+            "島内の友人宅や集まりへの訪問",
+            "本土の駅や病院など、バス停から離れた場所への接続",
+            "その他",
+            "利用したくない"
+          ],
+          "min": 1,
+          "max": 7,
+          "multiple": true,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            1122.63,
+            560.569,
+            1152.518,
+            590.457
+          ],
+          "context_rect": [
+            942.6300000000001,
+            450.56899999999996,
+            1190.551025390625,
+            700.457
+          ]
+        },
+        {
+          "id": "q3_4",
+          "type": "digit",
+          "label": "もし相乗りになった場合、病院の予約など時間が厳密に決まっている用事で、同乗によってどれくらい到着が遅くなることを許容できますか。",
+          "choices": [
+            "遠回りしてほしくない",
+            "10分くらい",
+            "20分くらい",
+            "30分以上"
+          ],
+          "min": 1,
+          "max": 4,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 8,
+          "local_page_index": 0,
+          "rect": [
+            1122.63,
+            678.0,
+            1152.518,
+            707.888
+          ],
+          "context_rect": [
+            942.6300000000001,
+            568.0,
+            1190.551025390625,
+            817.888
+          ]
+        }
+      ]
+    },
+    {
+      "template_page_index": 9,
+      "version": "C",
+      "local_page_index": 1,
+      "page_width_pt": 1190.551025390625,
+      "page_height_pt": 841.8900146484375,
+      "items": [
+        {
+          "id": "q3_5",
+          "type": "digit",
+          "label": "島内で、約2km程度の移動をする場合についてお聞きします。バスより便利で、タクシーよりは簡単なサービスだとしたとき、「高いと感じ始める金額」はいくらくらいですか。",
+          "choices": [
+            "100円未満",
+            "100円",
+            "200円",
+            "300円",
+            "400円",
+            "500円",
+            "600円以上"
+          ],
+          "min": 1,
+          "max": 7,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            129.914,
+            295.746,
+            159.802
+          ],
+          "context_rect": [
+            85.858,
+            19.913999999999987,
+            475.746,
+            269.802
+          ]
+        },
+        {
+          "id": "q3_6",
+          "type": "digit",
+          "label": "ふだんの移動に比べて、約20分余計に時間がかかるとした場合、ドライバーとして「これくらいなら引き受けてもよい」と感じる最低限の報酬はいくらですか。",
+          "choices": [
+            "もらえなくてもよい",
+            "100円",
+            "300円",
+            "500円",
+            "700円",
+            "1,000円以上"
+          ],
+          "min": 1,
+          "max": 6,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            282.215,
+            295.746,
+            312.103
+          ],
+          "context_rect": [
+            85.858,
+            172.21499999999997,
+            475.746,
+            422.103
+          ]
+        },
+        {
+          "id": "q3_7",
+          "type": "digit",
+          "label": "島内の他の住民と同じ車に乗って移動することに、抵抗を感じますか。",
+          "choices": [
+            "まったく感じない",
+            "あまり感じない",
+            "どちらともいえない",
+            "少し感じる",
+            "強く感じる"
+          ],
+          "min": 1,
+          "max": 5,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            400.642,
+            295.746,
+            430.53
+          ],
+          "context_rect": [
+            85.858,
+            290.642,
+            475.746,
+            540.53
+          ]
+        },
+        {
+          "id": "q3_8",
+          "type": "digit",
+          "label": "病院の予約や仕事など、到着時刻が決まっている移動では、多少不便でも時間どおり着くことを重視しますか。",
+          "choices": [
+            "まったく重視しない",
+            "あまり重視しない",
+            "どちらともいえない",
+            "やや重視する",
+            "非常に重視する"
+          ],
+          "min": 1,
+          "max": 5,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            536.006,
+            295.746,
+            565.894
+          ],
+          "context_rect": [
+            85.858,
+            426.006,
+            475.746,
+            675.894
+          ]
+        },
+        {
+          "id": "q3_9",
+          "type": "digit",
+          "label": "次の2つのうち、どちらを選びますか。",
+          "choices": [
+            "今すぐ300円相当の割引",
+            "1年後に360円相当の割引"
+          ],
+          "min": 1,
+          "max": 2,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            652.057,
+            295.746,
+            681.945
+          ],
+          "context_rect": [
+            85.858,
+            542.057,
+            475.746,
+            791.945
+          ]
+        },
+        {
+          "id": "q3_10",
+          "type": "digit",
+          "label": "次の2つのうち、どちらを選びますか。",
+          "choices": [
+            "今すぐ300円相当の割引",
+            "5年後に600円相当の割引"
+          ],
+          "min": 1,
+          "max": 2,
+          "multiple": false,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            265.858,
+            731.246,
+            295.746,
+            761.134
+          ],
+          "context_rect": [
+            85.858,
+            621.246,
+            475.746,
+            841.8900146484375
+          ]
+        },
+        {
+          "id": "q4_commute_1",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 1",
+          "scenario_macro": "commuteScenarioEight",
+          "scenario_text": "ドライバー報酬 距離比例140円/km（4kmなら560円） 追加時間 ＋約20分 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            463.691,
+            554.263,
+            582.322,
+            570.846
+          ],
+          "context_rect": [
+            163.69099999999997,
+            469.26300000000003,
+            882.322,
+            655.846
+          ],
+          "cells": [
+            [
+              463.691,
+              554.263,
+              480.274,
+              570.846
+            ],
+            [
+              489.203,
+              554.263,
+              505.786,
+              570.846
+            ],
+            [
+              514.715,
+              554.263,
+              531.298,
+              570.846
+            ],
+            [
+              540.227,
+              554.263,
+              556.81,
+              570.846
+            ],
+            [
+              565.739,
+              554.263,
+              582.322,
+              570.846
+            ]
+          ],
+          "context_text": "回答欄移動では、多少不便でも時間どおり着くことを重4やや重視する5非常に重視するつの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例140円/km（4kmなら560円）追加時間＋約20分拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高いドライバー報酬定額700円追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額100円拒否権条件確認後も断れるNG設"
+        },
+        {
+          "id": "q4_commute_2",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 2",
+          "scenario_macro": "commuteScenarioNine",
+          "scenario_text": "ドライバー報酬 定額700円 追加時間 追加ほぼなし 拒否権 稼働時間内で成立したら断れない",
+          "min": 1,
+          "max": 5,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            463.691,
+            645.798,
+            582.322,
+            662.381
+          ],
+          "context_rect": [
+            163.69099999999997,
+            560.798,
+            882.322,
+            747.381
+          ],
+          "cells": [
+            [
+              463.691,
+              645.798,
+              480.274,
+              662.381
+            ],
+            [
+              489.203,
+              645.798,
+              505.786,
+              662.381
+            ],
+            [
+              514.715,
+              645.798,
+              531.298,
+              662.381
+            ],
+            [
+              540.227,
+              645.798,
+              556.81,
+              662.381
+            ],
+            [
+              565.739,
+              645.798,
+              582.322,
+              662.381
+            ]
+          ],
+          "context_text": "つの報酬条件を比較して、より望ましい報酬の受け取り方をお伺いします。回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引引き受けたい度（5段階）12345ドライバー報酬定額700円追加時間追加ほぼなし拒否権稼働時間内で成立したら断れない引き受けたい度（5段階）12345低い高いドライバー報酬距離比例60円/km（2kmなら120円）追加時間追加ほぼなし拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（4kmなら240円）拒否権条件確認後も断れるN"
+        },
+        {
+          "id": "q4_commute_3",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 3",
+          "scenario_macro": "commuteScenarioTen",
+          "scenario_text": "ドライバー報酬 距離比例60円/km（2kmなら120円） 追加時間 追加ほぼなし 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            463.691,
+            737.333,
+            582.322,
+            753.916
+          ],
+          "context_rect": [
+            163.69099999999997,
+            652.333,
+            882.322,
+            838.916
+          ],
+          "cells": [
+            [
+              463.691,
+              737.333,
+              480.274,
+              753.916
+            ],
+            [
+              489.203,
+              737.333,
+              505.786,
+              753.916
+            ],
+            [
+              514.715,
+              737.333,
+              531.298,
+              753.916
+            ],
+            [
+              540.227,
+              737.333,
+              556.81,
+              753.916
+            ],
+            [
+              565.739,
+              737.333,
+              582.322,
+              753.916
+            ]
+          ],
+          "context_text": "回答欄円相当の割引円相当の割引回答欄つのうち、どちらを選びますか。円相当の割引円相当の割引引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（2kmなら120円）追加時間追加ほぼなし拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（4kmなら240円）拒否権成立したら断れないNG設定NGエリアのみ引き受けたい度（5段階）12345低い高いページ2/4"
+        },
+        {
+          "id": "q4_commute_4",
+          "type": "rating5",
+          "part": "driver_commute",
+          "label": "ドライバー・通勤中 4",
+          "scenario_macro": "commuteScenarioEleven",
+          "scenario_text": "ドライバー報酬 定額300円 追加時間 追加ほぼなし 拒否権 条件を見て成立後でも断れる",
+          "min": 1,
+          "max": 5,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            749.282,
+            92.581,
+            867.912,
+            109.164
+          ],
+          "context_rect": [
+            449.28200000000004,
+            7.581000000000003,
+            1167.912,
+            194.164
+          ],
+          "cells": [
+            [
+              749.282,
+              92.581,
+              765.865,
+              109.164
+            ],
+            [
+              774.794,
+              92.581,
+              791.377,
+              109.164
+            ],
+            [
+              800.306,
+              92.581,
+              816.889,
+              109.164
+            ],
+            [
+              825.818,
+              92.581,
+              842.401,
+              109.164
+            ],
+            [
+              851.33,
+              92.581,
+              867.912,
+              109.164
+            ]
+          ],
+          "context_text": "1枚目/2枚ドライバーとしてのシナリオ評価「ノッカル」にドライバーとして参加する場合について、各カードの条件を読み、引き受けたい度を1〜5でお答えくだ参加意向（設問3.1）で「絶対に引き受けたくない」を選んだ方は回答不要です。また、免許をお持ちでない、または返納条件を読んで、当てはまる段階に○を付けてくだドライバー報酬定額300円追加時間追加ほぼなし拒否権条件を見て成立後でも断れる引き受けたい度（5段階）12345低い高い4.2ご自宅にいる場合あなたがご自宅にいて時間に余裕があるときに、利用者の求めに応じて送迎する場合についてお尋ねします。以下の各条件を見て、「引き受けたい度」を1（まったく引"
+        },
+        {
+          "id": "q4_home_1",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 1",
+          "scenario_macro": "ondemandScenarioThree",
+          "scenario_text": "ドライバー報酬 定額300円 拒否権 成立したら断れない NG設定 NG設定なし",
+          "min": 1,
+          "max": 5,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            749.282,
+            460.096,
+            867.912,
+            476.679
+          ],
+          "context_rect": [
+            449.28200000000004,
+            375.096,
+            1167.912,
+            561.679
+          ],
+          "cells": [
+            [
+              749.282,
+              460.096,
+              765.865,
+              476.679
+            ],
+            [
+              774.794,
+              460.096,
+              791.377,
+              476.679
+            ],
+            [
+              800.306,
+              460.096,
+              816.889,
+              476.679
+            ],
+            [
+              825.818,
+              460.096,
+              842.401,
+              476.679
+            ],
+            [
+              851.33,
+              460.096,
+              867.912,
+              476.679
+            ]
+          ],
+          "context_text": "回の送迎を引き受けた際にドライバーが受け取る金額（定額または距離比例）利用者を同乗させることによって、普段の通勤所要時間に対して追加でかかる時間マッチング成立後に、乗客の条件（乗車地・目的地・時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例140円/km（4kmなら560円）拒否権条件を見て成立後でも断れる12345低い高い迎を引き受けない設定ドライバー報酬定額300円拒否権成立したら断れないNG設定NG設定なし引き受けたい度（5段階）12345低い高いドライバー報酬定額100円拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃距離に比"
+        },
+        {
+          "id": "q4_home_2",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 2",
+          "scenario_macro": "ondemandScenarioSix",
+          "scenario_text": "ドライバー報酬 定額100円 拒否権 条件確認後も断れる NG設定 NGエリア＋時間",
+          "min": 1,
+          "max": 5,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            749.282,
+            551.631,
+            867.912,
+            568.214
+          ],
+          "context_rect": [
+            449.28200000000004,
+            466.631,
+            1167.912,
+            653.214
+          ],
+          "cells": [
+            [
+              749.282,
+              551.631,
+              765.865,
+              568.214
+            ],
+            [
+              774.794,
+              551.631,
+              791.377,
+              568.214
+            ],
+            [
+              800.306,
+              551.631,
+              816.889,
+              568.214
+            ],
+            [
+              825.818,
+              551.631,
+              842.401,
+              568.214
+            ],
+            [
+              851.33,
+              551.631,
+              867.912,
+              568.214
+            ]
+          ],
+          "context_text": "時間帯など）を確認して辞退できるかどうかドライバー報酬距離比例140円/km（4kmなら560円）拒否権条件を見て成立後でも断れる12345低い高い拒否権稼働時間内で成立したら断れない12345低い高い引き受けたい度（5段階）12345ドライバー報酬定額100円拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高いドライバー報酬距離比例60円/km（4kmなら240円）拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高い運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き"
+        },
+        {
+          "id": "q4_home_3",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 3",
+          "scenario_macro": "ondemandScenarioEleven",
+          "scenario_text": "ドライバー報酬 距離比例60円/km（4kmなら240円） 拒否権 条件確認後も断れる NG設定 NGエリア＋時間",
+          "min": 1,
+          "max": 5,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            749.282,
+            643.166,
+            867.912,
+            659.749
+          ],
+          "context_rect": [
+            449.28200000000004,
+            558.166,
+            1167.912,
+            744.749
+          ],
+          "cells": [
+            [
+              749.282,
+              643.166,
+              765.865,
+              659.749
+            ],
+            [
+              774.794,
+              643.166,
+              791.377,
+              659.749
+            ],
+            [
+              800.306,
+              643.166,
+              816.889,
+              659.749
+            ],
+            [
+              825.818,
+              643.166,
+              842.401,
+              659.749
+            ],
+            [
+              851.33,
+              643.166,
+              867.912,
+              659.749
+            ]
+          ],
+          "context_text": "12345拒否権稼働時間内で成立したら断れない12345低い高い円/km（2kmなら120円）拒否権条件を見て成立後でも断れる12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（4kmなら240円）拒否権条件確認後も断れるNG設定NGエリア＋時間引き受けたい度（5段階）12345低い高いドライバー報酬距離比例60円/km（4kmなら240円）拒否権成立したら断れないNG設定NGエリアのみ引き受けたい度（5段階）12345低い高い運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り"
+        },
+        {
+          "id": "q4_home_4",
+          "type": "rating5",
+          "part": "driver_home",
+          "label": "ドライバー・自宅 4",
+          "scenario_macro": "ondemandScenarioTwelve",
+          "scenario_text": "ドライバー報酬 距離比例60円/km（4kmなら240円） 拒否権 成立したら断れない NG設定 NGエリアのみ",
+          "min": 1,
+          "max": 5,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            749.282,
+            734.701,
+            867.912,
+            751.284
+          ],
+          "context_rect": [
+            449.28200000000004,
+            649.701,
+            1167.912,
+            836.284
+          ],
+          "cells": [
+            [
+              749.282,
+              734.701,
+              765.865,
+              751.284
+            ],
+            [
+              774.794,
+              734.701,
+              791.377,
+              751.284
+            ],
+            [
+              800.306,
+              734.701,
+              816.889,
+              751.284
+            ],
+            [
+              825.818,
+              734.701,
+              842.401,
+              751.284
+            ],
+            [
+              851.33,
+              734.701,
+              867.912,
+              751.284
+            ]
+          ],
+          "context_text": "12345円/km（2kmなら120円）拒否権条件を見て成立後でも断れる12345低い高い引き受けたい度（5段階）12345ドライバー報酬距離比例60円/km（4kmなら240円）拒否権成立したら断れないNG設定NGエリアのみ引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高いページ2/42枚目に続きます"
+        },
+        {
+          "id": "q5_passenger_1",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 1",
+          "scenario_macro": "passengerScenarioFour",
+          "scenario_text": "運賃 距離に比例 60円/km（2kmなら120円） 呼び出し 15分程度 相乗り 常に貸し切り",
+          "min": 1,
+          "max": 5,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            1034.872,
+            449.947,
+            1153.502,
+            466.53
+          ],
+          "context_rect": [
+            734.8720000000001,
+            364.947,
+            1190.551025390625,
+            551.53
+          ],
+          "cells": [
+            [
+              1034.872,
+              449.947,
+              1051.455,
+              466.53
+            ],
+            [
+              1060.384,
+              449.947,
+              1076.967,
+              466.53
+            ],
+            [
+              1085.896,
+              449.947,
+              1102.479,
+              466.53
+            ],
+            [
+              1111.408,
+              449.947,
+              1127.991,
+              466.53
+            ],
+            [
+              1136.92,
+              449.947,
+              1153.502,
+              466.53
+            ]
+          ],
+          "context_text": "迎を引き受けない設定12345低い高い低い高い常に貸し切り他の利用者とは相乗りしない運賃距離に比例60円/km（2kmなら120円）呼び出し15分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い"
+        },
+        {
+          "id": "q5_passenger_2",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 2",
+          "scenario_macro": "passengerScenarioTen",
+          "scenario_text": "運賃 距離に比例 100円/km（2kmなら200円） 呼び出し 5分程度 相乗り 顔見知りの住民とだけ相乗り",
+          "min": 1,
+          "max": 5,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            1034.872,
+            541.482,
+            1153.502,
+            558.065
+          ],
+          "context_rect": [
+            734.8720000000001,
+            456.48199999999997,
+            1190.551025390625,
+            643.065
+          ],
+          "cells": [
+            [
+              1034.872,
+              541.482,
+              1051.455,
+              558.065
+            ],
+            [
+              1060.384,
+              541.482,
+              1076.967,
+              558.065
+            ],
+            [
+              1085.896,
+              541.482,
+              1102.479,
+              558.065
+            ],
+            [
+              1111.408,
+              541.482,
+              1127.991,
+              558.065
+            ],
+            [
+              1136.92,
+              541.482,
+              1153.502,
+              558.065
+            ]
+          ],
+          "context_text": "12345低い高い12345低い高い円/km（4kmなら240円）低い高い引き受けたい度（5段階）12345運賃距離に比例100円/km（2kmなら200円）呼び出し5分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い"
+        },
+        {
+          "id": "q5_passenger_3",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 3",
+          "scenario_macro": "passengerScenarioThree",
+          "scenario_text": "運賃 定額300円 呼び出し 5分程度 相乗り 常に貸し切り",
+          "min": 1,
+          "max": 5,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            1034.872,
+            633.017,
+            1153.502,
+            649.6
+          ],
+          "context_rect": [
+            734.8720000000001,
+            548.017,
+            1190.551025390625,
+            734.6
+          ],
+          "cells": [
+            [
+              1034.872,
+              633.017,
+              1051.455,
+              649.6
+            ],
+            [
+              1060.384,
+              633.017,
+              1076.967,
+              649.6
+            ],
+            [
+              1085.896,
+              633.017,
+              1102.479,
+              649.6
+            ],
+            [
+              1111.408,
+              633.017,
+              1127.991,
+              649.6
+            ],
+            [
+              1136.92,
+              633.017,
+              1153.502,
+              649.6
+            ]
+          ],
+          "context_text": "12345低い高い円/km（4kmなら240円）12345低い高い円/km（4kmなら240円）低い高い引き受けたい度（5段階）12345運賃定額300円呼び出し5分程度相乗り常に貸し切り引き受けたい度（5段階）12345低い高い運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い"
+        },
+        {
+          "id": "q5_passenger_4",
+          "type": "rating5",
+          "part": "passenger",
+          "label": "乗客 4",
+          "scenario_macro": "passengerScenarioEight",
+          "scenario_text": "運賃 定額500円 呼び出し 15分程度 相乗り 顔見知りの住民とだけ相乗り",
+          "min": 1,
+          "max": 5,
+          "version": "C",
+          "template_page_index": 9,
+          "local_page_index": 1,
+          "rect": [
+            1034.872,
+            724.552,
+            1153.502,
+            741.135
+          ],
+          "context_rect": [
+            734.8720000000001,
+            639.552,
+            1190.551025390625,
+            826.135
+          ],
+          "cells": [
+            [
+              1034.872,
+              724.552,
+              1051.455,
+              741.135
+            ],
+            [
+              1060.384,
+              724.552,
+              1076.967,
+              741.135
+            ],
+            [
+              1085.896,
+              724.552,
+              1102.479,
+              741.135
+            ],
+            [
+              1111.408,
+              724.552,
+              1127.991,
+              741.135
+            ],
+            [
+              1136.92,
+              724.552,
+              1153.502,
+              741.135
+            ]
+          ],
+          "context_text": "12345低い高い円/km（4kmなら240円）12345低い高い引き受けたい度（5段階）12345運賃定額500円呼び出し15分程度相乗り顔見知りの住民とだけ相乗り引き受けたい度（5段階）12345低い高い2枚目に続きます"
+        }
+      ]
+    },
+    {
+      "template_page_index": 10,
+      "version": "C",
+      "local_page_index": 2,
+      "page_width_pt": 1190.551025390625,
+      "page_height_pt": 841.8900146484375,
+      "items": [
+        {
+          "id": "activity_月曜日",
+          "type": "activity_day",
+          "label": "月曜日の活動",
+          "day": "月曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "C",
+          "template_page_index": 10,
+          "local_page_index": 2,
+          "rect": [
+            28.346,
+            241.812,
+            578.275,
+            485.16
+          ],
+          "context_rect": [
+            28.346,
+            241.812,
+            578.275,
+            485.16
+          ],
+          "table_rect": [
+            28.794,
+            260.333,
+            577.827,
+            484.712
+          ]
+        },
+        {
+          "id": "activity_水曜日",
+          "type": "activity_day",
+          "label": "水曜日の活動",
+          "day": "水曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "C",
+          "template_page_index": 10,
+          "local_page_index": 2,
+          "rect": [
+            592.442,
+            241.812,
+            1142.371,
+            485.16
+          ],
+          "context_rect": [
+            592.442,
+            241.812,
+            1142.371,
+            485.16
+          ],
+          "table_rect": [
+            592.89,
+            260.333,
+            1141.923,
+            484.712
+          ]
+        },
+        {
+          "id": "activity_火曜日",
+          "type": "activity_day",
+          "label": "火曜日の活動",
+          "day": "火曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "C",
+          "template_page_index": 10,
+          "local_page_index": 2,
+          "rect": [
+            28.346,
+            504.412,
+            578.275,
+            747.76
+          ],
+          "context_rect": [
+            28.346,
+            504.412,
+            578.275,
+            747.76
+          ],
+          "table_rect": [
+            28.794,
+            522.933,
+            577.827,
+            747.312
+          ]
+        },
+        {
+          "id": "activity_木曜日",
+          "type": "activity_day",
+          "label": "木曜日の活動",
+          "day": "木曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "C",
+          "template_page_index": 10,
+          "local_page_index": 2,
+          "rect": [
+            592.442,
+            504.412,
+            1142.371,
+            747.76
+          ],
+          "context_rect": [
+            592.442,
+            504.412,
+            1142.371,
+            747.76
+          ],
+          "table_rect": [
+            592.89,
+            522.933,
+            1141.923,
+            747.312
+          ]
+        }
+      ]
+    },
+    {
+      "template_page_index": 11,
+      "version": "C",
+      "local_page_index": 3,
+      "page_width_pt": 1190.551025390625,
+      "page_height_pt": 841.8900146484375,
+      "items": [
+        {
+          "id": "activity_金曜日",
+          "type": "activity_day",
+          "label": "金曜日の活動",
+          "day": "金曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "C",
+          "template_page_index": 11,
+          "local_page_index": 3,
+          "rect": [
+            28.346,
+            27.148,
+            591.03,
+            270.496
+          ],
+          "context_rect": [
+            28.346,
+            27.148,
+            591.03,
+            270.496
+          ],
+          "table_rect": [
+            28.794,
+            45.669,
+            590.582,
+            270.048
+          ]
+        },
+        {
+          "id": "activity_土曜日",
+          "type": "activity_day",
+          "label": "土曜日の活動",
+          "day": "土曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "C",
+          "template_page_index": 11,
+          "local_page_index": 3,
+          "rect": [
+            28.346,
+            284.499,
+            591.03,
+            527.847
+          ],
+          "context_rect": [
+            28.346,
+            284.499,
+            591.03,
+            527.847
+          ],
+          "table_rect": [
+            28.794,
+            303.02,
+            590.582,
+            527.399
+          ]
+        },
+        {
+          "id": "activity_日曜日",
+          "type": "activity_day",
+          "label": "日曜日の活動",
+          "day": "日曜日",
+          "rows": 7,
+          "columns": [
+            "dep_time",
+            "dep_place",
+            "arr_time",
+            "arr_place",
+            "purpose",
+            "mode",
+            "tolerance_min"
+          ],
+          "version": "C",
+          "template_page_index": 11,
+          "local_page_index": 3,
+          "rect": [
+            28.346,
+            541.849,
+            591.03,
+            785.197
+          ],
+          "context_rect": [
+            28.346,
+            541.849,
+            591.03,
+            785.197
+          ],
+          "table_rect": [
+            28.794,
+            560.37,
+            590.582,
+            784.749
+          ]
+        }
+      ]
+    }
+  ]
+}

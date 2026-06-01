@@ -1,0 +1,23 @@
+[project]
+name = "survey-input-system"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.4.6",
+    "opencv-python>=4.13.0.92",
+    "pandas>=3.0.3",
+    "pillow>=12.2.0",
+    "pymupdf>=1.27.2.3",
+    "pytesseract>=0.3.13",
+    "streamlit>=1.58.0",
+    "torch>=2.12.0",
+    "torchvision>=0.27.0",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=2.1.0",
+    "ruff>=0.15.15",
+]
