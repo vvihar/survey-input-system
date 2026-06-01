@@ -394,31 +394,6 @@ def edit_activity_item(workdir: Path, item: dict[str, Any]) -> dict[str, Any]:
     return item
 
 
-def autofocus_input(input_key: str) -> None:
-    components.html(
-        f"""
-        <script>
-          const key = {json.dumps(input_key)};
-          const focus = () => {{
-            const el = window.parent.document.querySelector(`[data-testid="stTextInput"] input[key="${{key}}"]`);
-            if (el) {{
-              el.focus();
-              el.select?.();
-              return true;
-            }}
-            return false;
-          }};
-          let n = 0;
-          const timer = setInterval(() => {{
-            n += 1;
-            if (focus() || n > 25) clearInterval(timer);
-          }}, 80);
-        </script>
-        """,
-        height=0,
-    )
-
-
 def main() -> None:
     args = parse_args()
     workdir = args.workdir
@@ -458,10 +433,12 @@ def main() -> None:
     item = items[idx]
 
     b1, b2, b3, b4 = st.columns(4)
-    if b1.button("← 前"):
+    prev_key = f"nav_prev_{item['item_uid']}"
+    next_key = f"nav_next_{item['item_uid']}"
+    if b1.button("← 前", key=prev_key):
         st.session_state["current_pos"] = max(0, st.session_state["current_pos"] - 1)
         st.rerun()
-    if b2.button("次 →"):
+    if b2.button("次 →", key=next_key):
         st.session_state["current_pos"] = min(
             max_pos, st.session_state["current_pos"] + 1
         )
@@ -508,7 +485,6 @@ def main() -> None:
     st.divider()
     if item["type"] in ("digit", "rating5"):
         items[idx] = edit_simple_item(workdir, item)
-        autofocus_input(f"val_{item['item_uid']}")
     elif item["type"] == "activity_day":
         items[idx] = edit_activity_item(workdir, item)
     else:
