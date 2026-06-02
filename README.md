@@ -6,44 +6,21 @@
 
 ```bash
 uv sync
-mkdir -p outputs/answers
 
-# 1. テンプレートPDFとTeXからレイアウトJSONを作る
-uv run python -m scripts.build_layout \
-  --template-pdf survey-sheet.pdf \
-  --tex survey-sheet.tex \
-  --out outputs/layout_survey.json
+# スキャン済みPDFから暫定読取と確認GUI用データセット作成まで実行
+uv run python -m main prepare -p scanned/scanned-sheet.pdf
 
-# 2. スキャン済みPDFから調査票ID・数字記入欄を暫定読取してJSONへ
-uv run python -m scripts.read_scan \
-  --answered-pdf scanned/scanned-sheet.pdf \
-  --template-pdf survey-sheet.pdf \
-  --layout outputs/layout_survey.json \
-  --model models/mnist.pt \
-  --out outputs/answers/scanned-sheet.json
+# ディレクトリ単位で処理する場合
+uv run python -m main prepare -d scanned/
 
-# 3. 確認GUI用データセットを作る
-uv run python -m scripts.make_review_dataset \
-  --answered-pdf scanned/scanned-sheet.pdf \
-  --template-pdf survey-sheet.pdf \
-  --layout outputs/layout_survey.json \
-  --answers outputs/answers/scanned-sheet.json \
-  --workdir outputs/review/scanned-sheet
+# GUIで確認・訂正
+uv run streamlit run app_streamlit.py -- --workdir <prepareで表示されたreviewディレクトリ>
 
-# 複数PDF/ディレクトリ単位の一括作成
-uv run python -m scripts.make_review_dataset_batch \
-  --answered-dir scanned/ \
-  --template-pdf survey-sheet.pdf \
-  --layout outputs/layout_survey.json \
-  --answers-dir outputs/answers/ \
-  --workdir outputs/review_batch
-
-# 4. GUIで確認・訂正
-uv run streamlit run app_streamlit.py -- --workdir outputs/review/scanned-sheet
-
-# 5. CSV出力
-uv run python -m scripts.export_csv --workdir outputs/review/scanned-sheet --out-dir outputs/review/scanned-sheet/exports
+# CSV出力
+uv run python -m scripts.export_csv --workdir <reviewディレクトリ> --out-dir <reviewディレクトリ>/exports
 ```
+
+`prepare` は、既定で `survey-sheet.pdf`、`survey-sheet.tex`、`models/mnist.pt` を使います。レイアウトJSONがなければ `outputs/layout_survey.json` を自動生成し、読取結果を `outputs/answers/`、確認GUI用データを `outputs/review/` または `outputs/review_merged/` に保存します。別のテンプレートや出力先を使う場合だけ `--template-pdf`、`--tex`、`--model`、`--out-dir` を指定してください。
 
 ## 想定する入力
 
