@@ -5,7 +5,7 @@ from pathlib import Path
 import typer
 
 from survey_pipeline.common import read_initial_answers, read_layout
-from survey_pipeline.review_dataset import make_review_dataset
+from survey_pipeline.review_dataset import make_review_dataset, source_pdf_key
 
 app = typer.Typer(add_completion=False)
 
@@ -38,10 +38,13 @@ def main(
 
     layout_model = read_layout(layout).model_dump()
     for pdf in pdfs:
-        answers_path = answers_dir / f"{pdf.stem}.json"
+        pdf_key = source_pdf_key(pdf)
+        answers_path = answers_dir / f"{pdf_key}.json"
+        if not answers_path.exists():
+            answers_path = answers_dir / f"{pdf.stem}.json"
         if not answers_path.exists():
             continue
-        out = workdir / pdf.stem
+        out = workdir / pdf_key
         manifest = make_review_dataset(
             answered_pdf=pdf,
             template_pdf=template_pdf,

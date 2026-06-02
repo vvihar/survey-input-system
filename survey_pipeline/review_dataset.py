@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 from pathlib import Path
 from typing import Any
 
@@ -15,6 +16,12 @@ from .common import (
     write_jsonl,
 )
 from .models import Manifest, ReviewActivityRow, ReviewItem
+
+
+def source_pdf_key(path: Path) -> str:
+    stem = "".join(ch if ch.isalnum() or ch in ("-", "_") else "_" for ch in path.stem)
+    digest = hashlib.sha1(str(path.resolve()).encode("utf-8")).hexdigest()[:10]
+    return f"{stem}_{digest}"
 
 
 def _answer_lookup(
@@ -57,6 +64,7 @@ def _make_review_dataset_one(
     rows: list[ReviewItem] = []
 
     source_pdf = str(answered_pdf)
+    source_key = source_pdf_key(answered_pdf)
     for booklet_index in sorted(meta):
         bmeta = meta.get(booklet_index)
         if bmeta is None:
@@ -72,7 +80,9 @@ def _make_review_dataset_one(
             scan_img, _ = render_pdf_page(answered_pdf, answered_page, dpi=dpi)
             tmpl_img, _ = render_pdf_page(template_pdf, template_page, dpi=dpi)
             page_img, measured_ecc = align_ecc_affine(scan_img, tmpl_img)
-            page_image_path = pages_dir / f"b{booklet_index:04d}_p{local_page + 1}.png"
+            page_image_path = (
+                pages_dir / f"{source_key}_b{booklet_index:04d}_p{local_page + 1}.png"
+            )
             cv2.imwrite(str(page_image_path), page_img)
             layout_page = next(
                 p for p in layout["pages"] if p["template_page_index"] == template_page
@@ -86,7 +96,7 @@ def _make_review_dataset_one(
 
             for item in layout_page.get("items", []):
                 field_id = item["id"]
-                stem = f"b{booklet_index:04d}_{respondent_id}_{field_id}"
+                stem = f"{source_key}_b{booklet_index:04d}_{respondent_id}_{field_id}"
                 pred = lookup.get((booklet_index, field_id), {})
                 row = ReviewItem(
                     item_uid=stem,

@@ -273,6 +273,23 @@ def apply_booklet_meta(
                 x.version = version
 
 
+def persist_booklet_meta(
+    workdir: Path,
+    items: list[ReviewItem],
+    booklet_index: int,
+    respondent_id: str,
+    version: str,
+) -> None:
+    apply_booklet_meta(items, booklet_index, respondent_id, version)
+    save_items(workdir, items)
+    ia = st.session_state.get("initial_answers", {})
+    if ia:
+        st.session_state["initial_answers"] = update_booklet_meta(
+            ia, booklet_index, respondent_id, version
+        )
+        save_initial_answers(workdir, st.session_state["initial_answers"])
+
+
 def booklet_editor(workdir: Path, items: list[ReviewItem]) -> None:
     st.sidebar.divider()
     st.sidebar.header("冊子メタ情報")
@@ -333,8 +350,8 @@ def booklet_editor(workdir: Path, items: list[ReviewItem]) -> None:
                 key=f"bm_ver_{bi}",
             )
             if st.button("適用", key=f"bm_apply_{bi}") and new_rid:
-                apply_booklet_meta(items, bi, new_rid, new_ver)
-                st.success(f"冊子 #{bi} を更新しました")
+                persist_booklet_meta(workdir, items, bi, new_rid, new_ver)
+                st.success(f"冊子 #{bi} を更新・保存しました")
 
 
 def edit_simple_item(
@@ -539,27 +556,6 @@ def main() -> None:
             max_pos, st.session_state["current_pos"] + 1
         )
         st.rerun()
-
-    with st.expander("現在の冊子メタ情報", expanded=False):
-        current_bi = int(item.booklet_index)
-        cur_rid = st.text_input(
-            "respondent_id", value=item.respondent_id, key=f"current_rid_{current_bi}"
-        )
-        cur_ver = st.selectbox(
-            "version",
-            VERSIONS,
-            index=VERSIONS.index(item.version) if item.version in VERSIONS else 0,
-            key=f"current_ver_{current_bi}",
-        )
-        if st.button("今の冊子に反映", key=f"current_apply_{current_bi}") and cur_rid:
-            apply_booklet_meta(items, current_bi, cur_rid, cur_ver)
-            ia = st.session_state.get("initial_answers", {})
-            if ia:
-                st.session_state["initial_answers"] = update_booklet_meta(
-                    ia, current_bi, cur_rid, cur_ver
-                )
-                save_initial_answers(workdir, st.session_state["initial_answers"])
-            st.success(f"冊子 #{current_bi} を更新しました", icon="✅")
 
     st.divider()
     if item.type in ("digit", "rating5"):

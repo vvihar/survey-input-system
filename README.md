@@ -1,6 +1,6 @@
 # survey_input_system
 
-手書き済み調査票PDFから、調査票ID・数字記入式設問を自動で暫定読取し、Streamlit GUIで確認・訂正するための最小構成です。確認画面では調査票ページ全体の画像を保存し、設問ごとの表示範囲はブラウザ側で制御します。
+手書き済み調査票PDFから、調査票ID・数字記入式設問を自動で暫定読取し、Streamlit GUIで確認・訂正するための最小構成です。確認画面では調査票ページ全体の画像を保存し、設問ごとの表示範囲はページ画像からメモリ上で一時的に切り出して表示します。
 
 ## 典型的な実行順序
 
@@ -59,6 +59,8 @@ uv run python -m scripts.export_csv --workdir outputs/review/scanned-sheet --out
 - `outputs/review/*/review_items.jsonl`: GUI用の設問単位データ
 - `outputs/review/*/pages/*.png`: 確認GUIで表示する調査票ページ画像
 - `outputs/review/*/exports/*.csv`: 確定後CSV
+
+複数PDFを扱う場合、PDF由来の中間生成物名には `PDF名_パス由来ハッシュ` のキーを使います。同じファイル名のPDFが別ディレクトリにあっても、`review_batch` のサブディレクトリ、ページ画像、Streamlit widget IDが衝突しないようにしています。
 
 ## 確認画面の画像表示
 
