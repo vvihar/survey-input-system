@@ -7,8 +7,16 @@ from typing import Any
 
 import pandas as pd
 import streamlit as st
+from PIL import Image, ImageDraw
 
-from survey_pipeline.common import VERSIONS, iter_review_items, read_json, write_jsonl
+from survey_pipeline.common import (
+    DEFAULT_RESPONDENT_ID_RECT_PT,
+    VERSION_LABEL_SEARCH_RECT_PT,
+    VERSIONS,
+    iter_review_items,
+    read_json,
+    write_jsonl,
+)
 from survey_pipeline.models import ReviewActivityRow, ReviewItem
 from survey_pipeline.review_dataset import update_booklet_meta
 
@@ -42,6 +50,13 @@ def load_initial_answers(workdir: Path) -> dict[str, Any]:
     return read_json(path)
 
 
+def load_layout(workdir: Path) -> dict[str, Any]:
+    path = workdir / "layout.json"
+    if not path.exists():
+        return {}
+    return read_json(path)
+
+
 def save_items(workdir: Path, items: list[ReviewItem]) -> None:
     write_jsonl(
         workdir / "review_items.jsonl", [x.model_dump(mode="json") for x in items]
@@ -63,6 +78,123 @@ def save_initial_answers(workdir: Path, initial_answers: dict[str, Any]) -> None
 def item_image_path(workdir: Path, item: ReviewItem, context: bool = False) -> Path:
     key = "context_path" if context else "crop_path"
     return workdir / getattr(item, key)
+
+
+@st.cache_resource(show_spinner=False)
+def page_image(path: str) -> Image.Image:
+    return Image.open(path).convert("RGB")
+
+
+@st.cache_data(show_spinner=False)
+def cropped_page_image(
+    path: str,
+    rect: tuple[float, float, float, float],
+    highlight_rect: tuple[float, float, float, float] | None,
+    page_width_px: int,
+    page_height_px: int,
+    page_width_pt: float,
+    page_height_pt: float,
+    pad_px: int,
+) -> Image.Image:
+    img = page_image(path)
+    sx = page_width_px / page_width_pt
+    sy = page_height_px / page_height_pt
+    x0 = max(0, int(round(rect[0] * sx)) - pad_px)
+    y0 = max(0, int(round(rect[1] * sy)) - pad_px)
+    x1 = min(page_width_px, int(round(rect[2] * sx)) + pad_px)
+    y1 = min(page_height_px, int(round(rect[3] * sy)) + pad_px)
+    if x1 <= x0 or y1 <= y0:
+        return Image.new("RGB", (1, 1), "white")
+    cropped = img.crop((x0, y0, x1, y1))
+    if highlight_rect is None:
+        return cropped
+
+    hx0 = max(0, int(round(highlight_rect[0] * sx)) - x0)
+    hy0 = max(0, int(round(highlight_rect[1] * sy)) - y0)
+    hx1 = min(cropped.width, int(round(highlight_rect[2] * sx)) - x0)
+    hy1 = min(cropped.height, int(round(highlight_rect[3] * sy)) - y0)
+    if hx1 <= hx0 or hy1 <= hy0:
+        return cropped
+
+    overlay = Image.new("RGBA", cropped.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+    draw.rectangle(
+        (hx0, hy0, hx1, hy1),
+        fill=(255, 237, 0, 72),
+        outline=(255, 237, 0, 230),
+        width=4,
+    )
+    return Image.alpha_composite(cropped.convert("RGBA"), overlay).convert("RGB")
+
+
+def current_layout_page(
+    layout: dict[str, Any], item: ReviewItem
+) -> dict[str, Any] | None:
+    for page in layout.get("pages", []):
+        if (
+            page.get("version") == item.version
+            and int(page.get("local_page_index", -1)) == item.local_page_index
+        ):
+            return page
+    return None
+
+
+def current_layout_item(layout: dict[str, Any], item: ReviewItem) -> dict[str, Any]:
+    page = current_layout_page(layout, item)
+    if page is not None:
+        for candidate in page.get("items", []):
+            if candidate.get("id") == item.field_id:
+                return candidate
+    return item.model_dump(mode="json")
+
+
+def render_page_window(
+    workdir: Path,
+    item: ReviewItem,
+    layout: dict[str, Any],
+    rect: list[float] | None,
+    highlight_rect: list[float] | None = None,
+    caption: str = "",
+    pad_px: int = 12,
+    target_width_px: int = 760,
+) -> None:
+    if not item.page_image_path:
+        st.image(str(item_image_path(workdir, item, context=True)), caption=caption)
+        return
+    if rect is None:
+        st.warning("表示範囲がありません。")
+        return
+    if (
+        item.page_width_px is None
+        or item.page_height_px is None
+        or item.page_width_pt is None
+        or item.page_height_pt is None
+    ):
+        st.warning("ページ画像の寸法情報がありません。")
+        return
+
+    img_path = workdir / item.page_image_path
+    if not img_path.exists():
+        st.warning(f"ページ画像がありません: {img_path}")
+        return
+
+    rect_tuple = (rect[0], rect[1], rect[2], rect[3])
+    highlight_tuple = (
+        (highlight_rect[0], highlight_rect[1], highlight_rect[2], highlight_rect[3])
+        if highlight_rect is not None
+        else None
+    )
+    img = cropped_page_image(
+        str(img_path),
+        rect_tuple,
+        highlight_tuple,
+        item.page_width_px,
+        item.page_height_px,
+        item.page_width_pt,
+        item.page_height_pt,
+        pad_px,
+    )
+    st.image(img, caption=caption or None, width="stretch")
 
 
 def validate_value(value: str, item: ReviewItem) -> tuple[bool, str]:
@@ -169,22 +301,30 @@ def booklet_editor(workdir: Path, items: list[ReviewItem]) -> None:
             st.caption(f"PDF: {Path(b['source_pdf']).name}")
             st.caption(f"進捗: {b['confirmed']}/{b['n_items']}")
             first_item = next((x for x in items if x.booklet_index == bi), None)
-            if first_item and first_item.meta_respondent_id_path:
+            if first_item:
                 st.caption("調査票ID")
-                st.image(
-                    str(workdir / first_item.meta_respondent_id_path),
-                    use_container_width=True,
+                render_page_window(
+                    workdir,
+                    first_item,
+                    {},
+                    DEFAULT_RESPONDENT_ID_RECT_PT,
+                    pad_px=12,
+                    target_width_px=260,
                 )
             new_rid = st.text_input(
                 "respondent_id", value=b["respondent_id"], key=f"bm_rid_{bi}"
             )
             if new_rid:
                 st.caption(new_rid)
-            if first_item and first_item.meta_version_path:
+            if first_item:
                 st.caption("版")
-                st.image(
-                    str(workdir / first_item.meta_version_path),
-                    use_container_width=True,
+                render_page_window(
+                    workdir,
+                    first_item,
+                    {},
+                    VERSION_LABEL_SEARCH_RECT_PT,
+                    pad_px=12,
+                    target_width_px=260,
                 )
             new_ver = st.selectbox(
                 "version",
@@ -197,31 +337,49 @@ def booklet_editor(workdir: Path, items: list[ReviewItem]) -> None:
                 st.success(f"冊子 #{bi} を更新しました")
 
 
-def edit_simple_item(workdir: Path, item: ReviewItem) -> ReviewItem:
+def edit_simple_item(
+    workdir: Path, item: ReviewItem, layout: dict[str, Any]
+) -> ReviewItem:
+    layout_item = current_layout_item(layout, item)
+    label = str(layout_item.get("label", item.label))
+    context_rect = layout_item.get("context_rect") or item.context_rect or item.rect
+    answer_rect = layout_item.get("rect") or item.rect or context_rect
+    scenario_text = layout_item.get("scenario_text") or item.scenario_text
     c1, c2 = st.columns([1.2, 1])
     with c1:
-        st.image(
-            str(item_image_path(workdir, item, context=True)), caption="context crop"
+        render_page_window(
+            workdir,
+            item,
+            layout,
+            context_rect,
+            highlight_rect=answer_rect,
+            caption="設問",
+            pad_px=12,
         )
-        with st.expander("回答欄だけ"):
-            st.image(str(item_image_path(workdir, item, context=False)))
+        # 区切り線
+        st.markdown("---")
+        render_page_window(
+            workdir, item, layout, answer_rect, caption="回答欄", pad_px=12
+        )
     with c2:
-        st.write(f"**{item.field_id}** / {item.label}")
+        st.write(f"**{item.field_id}** / {label}")
         st.caption(
             f"respondent={item.respondent_id}  version={item.version}  page={item.local_page_index + 1}  PDF={Path(item.source_pdf).name}"
         )
-        if item.scenario_text:
-            st.text_area("scenario", item.scenario_text, height=120, disabled=True)
+        if scenario_text:
+            st.text_area("scenario", str(scenario_text), height=120, disabled=True)
         help_text = (
             f"range: {item.min}〜{item.max}, multiple={item.multiple}"
             if item.type == "digit"
             else "rating5: 1〜5"
         )
         st.caption(help_text)
-        if item.pred_value != "":
-            st.write(f"予測値: `{item.pred_value}`  /  conf: `{item.pred_confidence}`")
+        if item.pred_value not in (None, "") and item.pred_confidence is not None:
+            st.write(
+                f"予測値: `{item.pred_value}`  /  信頼度 `{round(item.pred_confidence * 100, 2)}%`"
+            )
         else:
-            st.write("予測失敗")
+            st.write("予測値なし")
         value_key = f"val_{item.item_uid}"
         save_next_key = f"save_next_{item.item_uid}"
         st.session_state.setdefault(
@@ -234,7 +392,6 @@ def edit_simple_item(workdir: Path, item: ReviewItem) -> ReviewItem:
 
         value = st.text_input(
             "value",
-            value=st.session_state[value_key],
             key=value_key,
             on_change=_save_and_advance,
         )
@@ -269,10 +426,26 @@ def edit_simple_item(workdir: Path, item: ReviewItem) -> ReviewItem:
     return item
 
 
-def edit_activity_item(workdir: Path, item: ReviewItem) -> ReviewItem:
-    st.image(
-        str(item_image_path(workdir, item, context=True)),
+def edit_activity_item(
+    workdir: Path, item: ReviewItem, layout: dict[str, Any]
+) -> ReviewItem:
+    layout_item = current_layout_item(layout, item)
+    rect = (
+        layout_item.get("table_rect")
+        or layout_item.get("context_rect")
+        or item.table_rect
+        or item.context_rect
+        or item.rect
+    )
+    highlight_rect = layout_item.get("table_rect") or item.table_rect or rect
+    render_page_window(
+        workdir,
+        item,
+        layout,
+        rect,
+        highlight_rect=highlight_rect,
         caption=f"{item.day} activity table",
+        pad_px=12,
     )
     df = pd.DataFrame([r.model_dump() for r in item.activity_rows])
     ordered_cols = [
@@ -317,8 +490,10 @@ def main() -> None:
         st.session_state["current_pos"] = 0
         st.session_state["manifest"] = load_manifest(workdir)
         st.session_state["initial_answers"] = load_initial_answers(workdir)
+        st.session_state["layout"] = load_layout(workdir)
 
     items: list[ReviewItem] = st.session_state["review_items"]
+    layout: dict[str, Any] = st.session_state.get("layout", {})
     if not items:
         st.error("項目がありません。")
         return
@@ -388,9 +563,9 @@ def main() -> None:
 
     st.divider()
     if item.type in ("digit", "rating5"):
-        items[idx] = edit_simple_item(workdir, item)
+        items[idx] = edit_simple_item(workdir, item, layout)
     elif item.type == "activity_day":
-        items[idx] = edit_activity_item(workdir, item)
+        items[idx] = edit_activity_item(workdir, item, layout)
     else:
         st.json(item.model_dump(mode="json"))
 

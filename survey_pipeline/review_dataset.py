@@ -6,12 +6,10 @@ from typing import Any
 import cv2
 
 from .common import (
-    BOOKLET_META_RECT_BY_KIND,
     LOCAL_PAGES_PER_BOOKLET,
     VERSION_BASE_PAGE,
     VERSIONS,
     align_ecc_affine,
-    crop_by_rect_pt,
     render_pdf_page,
     write_json,
     write_jsonl,
@@ -34,6 +32,14 @@ def _booklet_meta(initial_answers: dict[str, Any]) -> dict[int, dict[str, Any]]:
     return {int(b["booklet_index"]): b for b in initial_answers.get("booklets", [])}
 
 
+def _alignment_ecc(bmeta: dict[str, Any], answered_page: int) -> float | None:
+    for row in bmeta.get("alignments", []):
+        if int(row.get("answered_page_index", -1)) == answered_page:
+            ecc = row.get("ecc")
+            return float(ecc) if ecc is not None else None
+    return None
+
+
 def _make_review_dataset_one(
     answered_pdf: Path,
     template_pdf: Path,
@@ -43,20 +49,15 @@ def _make_review_dataset_one(
     dpi: int = 220,
 ) -> list[ReviewItem]:
     """Process one answered PDF and return list of review items (does NOT write to disk)."""
-    crops_dir = workdir / "crops"
-    contexts_dir = workdir / "contexts"
-    crops_dir.mkdir(parents=True, exist_ok=True)
-    contexts_dir.mkdir(parents=True, exist_ok=True)
+    pages_dir = workdir / "pages"
+    pages_dir.mkdir(parents=True, exist_ok=True)
 
     lookup = _answer_lookup(initial_answers)
     meta = _booklet_meta(initial_answers)
     rows: list[ReviewItem] = []
-    meta_dir = workdir / "meta"
-    meta_dir.mkdir(parents=True, exist_ok=True)
 
     source_pdf = str(answered_pdf)
-    n_booklets = len(initial_answers.get("booklets", []))
-    for booklet_index in range(n_booklets):
+    for booklet_index in sorted(meta):
         bmeta = meta.get(booklet_index)
         if bmeta is None:
             continue
@@ -65,50 +66,27 @@ def _make_review_dataset_one(
         page_start = int(bmeta["answered_page_start"])
         bkl_source_pdf = bmeta.get("source_pdf", source_pdf)
 
-        meta_scan_img, _ = render_pdf_page(answered_pdf, page_start, dpi=dpi)
-        rid_crop = crop_by_rect_pt(
-            meta_scan_img,
-            BOOKLET_META_RECT_BY_KIND["respondent_id"],
-            dpi=dpi,
-            pad_px=12,
-        )
-        ver_crop = crop_by_rect_pt(
-            meta_scan_img, BOOKLET_META_RECT_BY_KIND["version"], dpi=dpi, pad_px=12
-        )
-        rid_meta_path = meta_dir / f"b{booklet_index:04d}_respondent_id.png"
-        ver_meta_path = meta_dir / f"b{booklet_index:04d}_version.png"
-        cv2.imwrite(str(rid_meta_path), rid_crop)
-        cv2.imwrite(str(ver_meta_path), ver_crop)
-
         for local_page in range(LOCAL_PAGES_PER_BOOKLET):
             answered_page = page_start + local_page
             template_page = VERSION_BASE_PAGE[version] + local_page
             scan_img, _ = render_pdf_page(answered_pdf, answered_page, dpi=dpi)
             tmpl_img, _ = render_pdf_page(template_pdf, template_page, dpi=dpi)
-            aligned, ecc = align_ecc_affine(scan_img, tmpl_img)
+            page_img, measured_ecc = align_ecc_affine(scan_img, tmpl_img)
+            page_image_path = pages_dir / f"b{booklet_index:04d}_p{local_page + 1}.png"
+            cv2.imwrite(str(page_image_path), page_img)
             layout_page = next(
                 p for p in layout["pages"] if p["template_page_index"] == template_page
             )
+            page_h_px, page_w_px = page_img.shape[:2]
+            page_width_pt = float(layout_page["page_width_pt"])
+            page_height_pt = float(layout_page["page_height_pt"])
+            ecc = _alignment_ecc(bmeta, answered_page)
+            if ecc is None:
+                ecc = measured_ecc
 
             for item in layout_page.get("items", []):
                 field_id = item["id"]
                 stem = f"b{booklet_index:04d}_{respondent_id}_{field_id}"
-                crop_path = crops_dir / f"{stem}.png"
-                context_path = contexts_dir / f"{stem}.png"
-                crop = crop_by_rect_pt(
-                    aligned,
-                    item.get("rect", item.get("context_rect")),
-                    dpi=dpi,
-                    pad_px=12,
-                )
-                context = crop_by_rect_pt(
-                    aligned,
-                    item.get("context_rect", item.get("rect")),
-                    dpi=dpi,
-                    pad_px=12,
-                )
-                cv2.imwrite(str(crop_path), crop)
-                cv2.imwrite(str(context_path), context)
                 pred = lookup.get((booklet_index, field_id), {})
                 row = ReviewItem(
                     item_uid=stem,
@@ -132,8 +110,14 @@ def _make_review_dataset_one(
                     else None,
                     scenario_macro=item.get("scenario_macro"),
                     scenario_text=item.get("scenario_text"),
-                    crop_path=str(crop_path.relative_to(workdir)),
-                    context_path=str(context_path.relative_to(workdir)),
+                    page_image_path=str(page_image_path.relative_to(workdir)),
+                    page_width_px=page_w_px,
+                    page_height_px=page_h_px,
+                    page_width_pt=page_width_pt,
+                    page_height_pt=page_height_pt,
+                    rect=item.get("rect"),
+                    context_rect=item.get("context_rect"),
+                    table_rect=item.get("table_rect"),
                     pred_value=pred.get("pred_value"),
                     pred_confidence=pred.get("pred_confidence"),
                     value=pred.get("pred_value") if item["type"] == "digit" else None,
@@ -141,8 +125,6 @@ def _make_review_dataset_one(
                         "status", "needs_review" if item["type"] != "digit" else "blank"
                     ),
                     ecc=ecc,
-                    meta_respondent_id_path=str(rid_meta_path.relative_to(workdir)),
-                    meta_version_path=str(ver_meta_path.relative_to(workdir)),
                     activity_rows=[
                         ReviewActivityRow(row_no=i + 1)
                         for i in range(int(item.get("rows", 7)))

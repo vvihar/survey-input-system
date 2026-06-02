@@ -126,8 +126,16 @@ class ReviewItem(BaseModel):
     columns: list[str] | None = None
     scenario_macro: str | None = None
     scenario_text: str | None = None
-    crop_path: str
-    context_path: str
+    crop_path: str = ""
+    context_path: str = ""
+    page_image_path: str = ""
+    page_width_px: int | None = None
+    page_height_px: int | None = None
+    page_width_pt: float | None = None
+    page_height_pt: float | None = None
+    rect: list[float] | None = None
+    context_rect: list[float] | None = None
+    table_rect: list[float] | None = None
     pred_value: str | None = None
     pred_confidence: float | None = None
     value: str | None = None
