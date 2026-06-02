@@ -112,7 +112,9 @@ def render_pdf_page(
     return img, rect
 
 
-def resize_uint8(img: npt.NDArray[np.uint8], size: tuple[int, int]) -> npt.NDArray[np.uint8]:
+def resize_uint8(
+    img: npt.NDArray[np.uint8], size: tuple[int, int]
+) -> npt.NDArray[np.uint8]:
     return cv2.resize(img, size, interpolation=cv2.INTER_AREA).astype(np.uint8)
 
 
@@ -142,7 +144,9 @@ def rect_pt_to_px(
     )
 
 
-def crop_px(img: npt.NDArray[np.uint8], rect_px: tuple[int, int, int, int]) -> npt.NDArray[np.uint8]:
+def crop_px(
+    img: npt.NDArray[np.uint8], rect_px: tuple[int, int, int, int]
+) -> npt.NDArray[np.uint8]:
     h, w = img.shape[:2]
     x0, y0, x1, y1 = rect_px
     x0 = max(0, min(w, x0))
@@ -167,6 +171,13 @@ def to_gray_float(img_bgr: npt.NDArray[np.uint8]) -> npt.NDArray[np.float32]:
 def align_ecc_affine(
     scan_img: npt.NDArray[np.uint8], template_img: npt.NDArray[np.uint8]
 ) -> tuple[npt.NDArray[np.uint8], float]:
+    aligned, score, _ = align_ecc_affine_with_matrix(scan_img, template_img)
+    return aligned, score
+
+
+def align_ecc_affine_with_matrix(
+    scan_img: npt.NDArray[np.uint8], template_img: npt.NDArray[np.uint8]
+) -> tuple[npt.NDArray[np.uint8], float, list[list[float]] | None]:
     h, w = template_img.shape[:2]
     if scan_img.shape[:2] != (h, w):
         scan_img = resize_uint8(scan_img, (w, h))
@@ -177,20 +188,19 @@ def align_ecc_affine(
     criteria = (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 800, 1e-6)
 
     try:
-        cc, warp = cv2.findTransformECC(  # type: ignore[assignment, call-overload]
+        cc, warp = cv2.findTransformECC(  # type: ignore[assignment]
             tmpl_gray,
             scan_gray,
             warp,
             cv2.MOTION_AFFINE,
             criteria,
             inputMask=None,
-            gaussFiltSize=5,
         )
         aligned: npt.NDArray[np.uint8] = warp_affine_uint8(scan_img, warp, (w, h))
-        return aligned, float(cc)
+        return aligned, float(cc), warp.astype(float).tolist()
     except cv2.error:
         fallback: npt.NDArray[np.uint8] = resize_uint8(scan_img, (w, h))
-        return fallback, -1.0
+        return fallback, -1.0, None
 
 
 def match_template_score(

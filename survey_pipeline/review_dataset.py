@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import hashlib
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 import cv2
+import numpy as np
+import numpy.typing as npt
 
 from .common import (
     LOCAL_PAGES_PER_BOOKLET,
@@ -12,6 +14,8 @@ from .common import (
     VERSIONS,
     align_ecc_affine,
     render_pdf_page,
+    resize_uint8,
+    warp_affine_uint8,
     write_json,
     write_jsonl,
 )
@@ -47,6 +51,19 @@ def _alignment_ecc(bmeta: dict[str, Any], answered_page: int) -> float | None:
     return None
 
 
+def _alignment_warp_matrix(
+    bmeta: dict[str, Any], answered_page: int
+) -> npt.NDArray[np.float32] | None:
+    for row in bmeta.get("alignments", []):
+        if int(row.get("answered_page_index", -1)) != answered_page:
+            continue
+        raw = row.get("warp_matrix")
+        if raw is None:
+            return None
+        return cast(npt.NDArray[np.float32], np.array(raw, dtype=np.float32))
+    return None
+
+
 def _make_review_dataset_one(
     answered_pdf: Path,
     template_pdf: Path,
@@ -79,7 +96,15 @@ def _make_review_dataset_one(
             template_page = VERSION_BASE_PAGE[version] + local_page
             scan_img, _ = render_pdf_page(answered_pdf, answered_page, dpi=dpi)
             tmpl_img, _ = render_pdf_page(template_pdf, template_page, dpi=dpi)
-            page_img, measured_ecc = align_ecc_affine(scan_img, tmpl_img)
+            warp_matrix = _alignment_warp_matrix(bmeta, answered_page)
+            measured_ecc: float | None = None
+            if warp_matrix is None:
+                page_img, measured_ecc = align_ecc_affine(scan_img, tmpl_img)
+            else:
+                h, w = tmpl_img.shape[:2]
+                if scan_img.shape[:2] != (h, w):
+                    scan_img = resize_uint8(scan_img, (w, h))
+                page_img = warp_affine_uint8(scan_img, warp_matrix, (w, h))
             page_image_path = (
                 pages_dir / f"{source_key}_b{booklet_index:04d}_p{local_page + 1}.png"
             )

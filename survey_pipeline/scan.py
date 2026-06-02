@@ -24,7 +24,7 @@ from .digit_model import (
     extract_ink,
     load_model,
     normalize_digit_for_mnist,
-    predict_digit,
+    predict_digits,
     split_digit_components,
     validate_value,
 )
@@ -119,13 +119,10 @@ def read_digit_item(
     pred_value = ""
     confs: list[float] = []
     if model is not None and components:
-        chars = []
-        for comp in components:
-            img28 = normalize_digit_for_mnist(comp)
-            d, conf = predict_digit(model, img28, device)
-            chars.append(str(d))
-            confs.append(conf)
-        pred_value = "".join(chars)
+        images28 = [normalize_digit_for_mnist(comp) for comp in components]
+        preds = predict_digits(model, images28, device)
+        pred_value = "".join(str(d) for d, _ in preds)
+        confs = [conf for _, conf in preds]
     ink_ratio = float(np.count_nonzero(binary) / max(1, binary.size))
     if ink_ratio < 0.0015:
         pred_value = ""
@@ -183,14 +180,15 @@ def read_scanned_pdf(
             tmpl_page_index = VERSION_BASE_PAGE[version] + local_page
             scan_img, _ = render_pdf_page(answered_pdf, ans_page_index, dpi=dpi)
             tmpl_img, _ = render_pdf_page(template_pdf, tmpl_page_index, dpi=dpi)
-            from .common import align_ecc_affine
+            from .common import align_ecc_affine_with_matrix
 
-            aligned, score = align_ecc_affine(scan_img, tmpl_img)
+            aligned, score, warp_matrix = align_ecc_affine_with_matrix(scan_img, tmpl_img)
             alignments.append(
                 {
                     "answered_page_index": ans_page_index,
                     "template_page_index": tmpl_page_index,
                     "ecc": score,
+                    "warp_matrix": warp_matrix,
                 }
             )
             layout_page = next(

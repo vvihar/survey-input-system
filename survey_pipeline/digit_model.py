@@ -316,6 +316,24 @@ def predict_digit(
     return int(pred.item()), float(conf.item())
 
 
+def predict_digits(
+    model: nn.Module, images28: list[npt.NDArray[np.float32]], device: torch.device
+) -> list[tuple[int, float]]:
+    if not images28:
+        return []
+    x_np = np.stack(images28).astype(np.float32, copy=False)
+    x = torch.from_numpy(x_np).float().unsqueeze(1)
+    x = (x - 0.1307) / 0.3081
+    x = x.to(device)
+    with torch.no_grad():
+        probs = torch.softmax(model(x), dim=1)
+        confs, preds = torch.max(probs, dim=1)
+    return [
+        (int(pred.item()), float(conf.item()))
+        for pred, conf in zip(preds.cpu(), confs.cpu(), strict=True)
+    ]
+
+
 def validate_value(value: str | None, item: dict) -> str:
     if value is None or value == "":
         return "blank"
