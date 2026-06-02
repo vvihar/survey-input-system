@@ -2,6 +2,15 @@
 __pycache__/
 *.py[codz]
 *$py.class
+.mypy_cache/
+
+# Generated survey workflow outputs
+outputs/
+review_work_batch/
+review_work/
+answers/
+answers_initial.json
+layout_survey.json
 
 # C extensions
 *.so

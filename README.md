@@ -5,43 +5,44 @@
 ## 典型的な実行順序
 
 ```bash
-pip install -r requirements.txt
+uv sync
+mkdir -p outputs/answers
 
 # 1. テンプレートPDFとTeXからレイアウトJSONを作る
-python -m scripts.build_layout \
+uv run python -m scripts.build_layout \
   --template-pdf survey-sheet.pdf \
   --tex survey-sheet.tex \
-  --out layout_survey.json
+  --out outputs/layout_survey.json
 
 # 2. スキャン済みPDFから調査票ID・数字記入欄を暫定読取してJSONへ
-python -m scripts.read_scan \
-  --answered-pdf scanned/scanned1.pdf \
+uv run python -m scripts.read_scan \
+  --answered-pdf scanned/scanned-sheet.pdf \
   --template-pdf survey-sheet.pdf \
-  --layout layout_survey.json \
+  --layout outputs/layout_survey.json \
   --model models/mnist.pt \
-  --out answers_initial.json
+  --out outputs/answers/scanned-sheet.json
 
 # 3. 確認GUI用データセットを作る
-python -m scripts.make_review_dataset \
-  --answered-pdf scanned/scanned1.pdf \
+uv run python -m scripts.make_review_dataset \
+  --answered-pdf scanned/scanned-sheet.pdf \
   --template-pdf survey-sheet.pdf \
-  --layout layout_survey.json \
-  --answers answers_initial.json \
-  --workdir review_work
+  --layout outputs/layout_survey.json \
+  --answers outputs/answers/scanned-sheet.json \
+  --workdir outputs/review/scanned-sheet
 
 # 複数PDF/ディレクトリ単位の一括作成
-python -m scripts.make_review_dataset_batch \
+uv run python -m scripts.make_review_dataset_batch \
   --answered-dir scanned/ \
   --template-pdf survey-sheet.pdf \
-  --layout layout_survey.json \
-  --answers-dir answers/ \
-  --workdir review_work_batch
+  --layout outputs/layout_survey.json \
+  --answers-dir outputs/answers/ \
+  --workdir outputs/review_batch
 
 # 4. GUIで確認・訂正
-streamlit run app_streamlit.py -- --workdir review_work
+uv run streamlit run app_streamlit.py -- --workdir outputs/review/scanned-sheet
 
 # 5. CSV出力
-python -m scripts.export_csv --workdir review_work --out-dir review_work/exports
+uv run python -m scripts.export_csv --workdir outputs/review/scanned-sheet --out-dir outputs/review/scanned-sheet/exports
 ```
 
 ## 想定する入力
@@ -49,18 +50,18 @@ python -m scripts.export_csv --workdir review_work --out-dir review_work/exports
 - `template-pdf`: A/B/C 版を各4ページずつ含む空欄テンプレートPDF
 - `answered-pdf`: スキャン済み回答PDF。4ページで1冊子。複数冊子連結PDFでも可
 - `tex`: 調査票のTeXソース
-- `model`: 学習済みMNIST風数字分類モデル。不要なら `--model` は省略可
+- `model`: 学習済みMNIST数字分類モデル。不要なら `--model` は省略可
 
 ## 出力
 
-- `layout_survey.json`: テンプレートPDF上の設問座標とTeX由来の設問メタデータ
-- `answers_initial.json`: 調査票ID、版、数字記入式設問の暫定読取結果
-- `review_work/review_items.jsonl`: GUI用の設問単位データ
-- `review_work/pages/*.png`: 確認GUIで表示する調査票ページ画像
-- `exports/*.csv`: 確定後CSV
+- `outputs/layout_survey.json`: テンプレートPDF上の設問座標とTeX由来の設問メタデータ
+- `outputs/answers/*.json`: 調査票ID、版、数字記入式設問の暫定読取結果
+- `outputs/review/*/review_items.jsonl`: GUI用の設問単位データ
+- `outputs/review/*/pages/*.png`: 確認GUIで表示する調査票ページ画像
+- `outputs/review/*/exports/*.csv`: 確定後CSV
 
 ## 確認画面の画像表示
 
-`make_review_dataset` は設問ごとの切り出し画像を保存しません。冊子ページ単位の画像だけを `review_work/pages/` に保存し、各設問の `rect` / `context_rect` / `table_rect` を `review_items.jsonl` に記録します。Streamlit は現在の冊子の版と設問IDから `layout.json` の矩形を引き直し、CSS のクリップ表示でページ画像の該当範囲だけを表示します。
+`make_review_dataset` は設問ごとの切り出し画像を保存しません。冊子ページ単位の画像だけを `outputs/review/.../pages/` に保存し、各設問の `rect` / `context_rect` / `table_rect` を `review_items.jsonl` に記録します。Streamlit は現在の冊子の版と設問IDから `layout.json` の矩形を引き直し、ページ画像から該当範囲をメモリ上で一時的に切り出して表示します。
 
 このため、Streamlit 上で冊子の版を訂正すると、同じページ画像に対して訂正版のレイアウト矩形が使われ、確認用の表示範囲も自動的に切り替わります。
