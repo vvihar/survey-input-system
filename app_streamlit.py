@@ -213,31 +213,44 @@ def render_page_window(
     st.image(img, caption=caption or None, width="stretch")
 
 
-def validate_value(value: str, item: ReviewItem) -> tuple[bool, str]:
+def normalize_multiple_value(value: str, item: ReviewItem) -> tuple[bool, str, str]:
+    text = value.strip().replace("，", ",").replace("、", ",")
+    if "," in text:
+        parts = [part.strip() for part in text.split(",")]
+    elif text.isdigit() and len(text) > 1 and item.max is not None and item.max <= 9:
+        parts = list(text)
+    else:
+        parts = [text]
+    if any(part == "" for part in parts):
+        return False, "カンマ区切りの各値を入力してください。", value
+    if not all(part.isdigit() for part in parts):
+        return False, "複数回答は 1,3,5 のようにカンマ区切りの数字で入力してください。", value
+    values = [int(part) for part in parts]
+    if item.min is not None and any(v < item.min for v in values):
+        return False, f"最小値は{item.min}です。", value
+    if item.max is not None and any(v > item.max for v in values):
+        return False, f"最大値は{item.max}です。", value
+    return True, "ok", ",".join(str(v) for v in values)
+
+
+def validate_value(value: str, item: ReviewItem) -> tuple[bool, str, str]:
     if value in ("", "?", "NA"):
-        return True, "blank_or_unknown"
+        return True, "blank_or_unknown", value
     if item.type == "rating5":
         if value.isdigit() and 1 <= int(value) <= 5:
-            return True, "ok"
-        return False, "5段階評価は1〜5で入力してください。"
+            return True, "ok", value
+        return False, "5段階評価は1〜5で入力してください。", value
     if item.type == "digit":
         if item.multiple:
-            xs = [ch for ch in value if ch.isdigit()]
-            if (
-                item.min is None
-                or item.max is None
-                or all(item.min <= int(ch) <= item.max for ch in xs)
-            ):
-                return True, "ok"
-            return False, f"許容範囲は{item.min}〜{item.max}です。"
+            return normalize_multiple_value(value, item)
         if not value.isdigit():
-            return False, "数字で入力してください。"
+            return False, "数字で入力してください。", value
         v = int(value)
         if item.min is not None and v < item.min:
-            return False, f"最小値は{item.min}です。"
+            return False, f"最小値は{item.min}です。", value
         if item.max is not None and v > item.max:
-            return False, f"最大値は{item.max}です。"
-    return True, "ok"
+            return False, f"最大値は{item.max}です。", value
+    return True, "ok", value
 
 
 def sidebar_filters(items: list[ReviewItem]) -> list[int]:
@@ -246,7 +259,7 @@ def sidebar_filters(items: list[ReviewItem]) -> list[int]:
     def reset_position() -> None:
         st.session_state["current_pos"] = 0
 
-    booklet_options: dict[str, int | None] = {"すべて": None}
+    booklet_options: list[int | None] = [None]
     booklet_meta: dict[int, dict[str, Any]] = {}
     for item in items:
         booklet_index = int(item.booklet_index)
@@ -261,7 +274,11 @@ def sidebar_filters(items: list[ReviewItem]) -> list[int]:
         meta["total"] += 1
         if item.status == "confirmed":
             meta["confirmed"] += 1
-    for booklet_index in sorted(booklet_meta):
+    booklet_options.extend(sorted(booklet_meta))
+
+    def format_booklet_option(booklet_index: int | None) -> str:
+        if booklet_index is None:
+            return "すべて"
         meta = booklet_meta[booklet_index]
         item = meta["item"]
         total = int(meta["total"])
@@ -272,15 +289,22 @@ def sidebar_filters(items: list[ReviewItem]) -> list[int]:
             progress_label = "完了"
         else:
             progress_label = "進行中"
-        label = f"[{progress_label}] #{booklet_index} / {item.respondent_id} / {confirmed}/{total}"
-        booklet_options[label] = booklet_index
-    selected_booklet_label = st.sidebar.selectbox(
+        return (
+            f"[{progress_label}] #{booklet_index} / "
+            f"{item.respondent_id} / {confirmed}/{total}"
+        )
+
+    selected_booklet = st.sidebar.selectbox(
         "冊子",
-        list(booklet_options.keys()),
-        key="filter_booklet",
+        booklet_options,
+        format_func=format_booklet_option,
+        key="filter_booklet_index",
         on_change=reset_position,
     )
-    selected_booklet = booklet_options[selected_booklet_label]
+    if selected_booklet is not None and selected_booklet not in booklet_meta:
+        selected_booklet = None
+    if "filter_booklet" in st.session_state:
+        del st.session_state["filter_booklet"]
 
     source_pdfs = sorted({x.source_pdf for x in items if x.source_pdf})
     selected_sources = (
@@ -471,9 +495,12 @@ def edit_simple_item(
             st.write("予測値なし")
         value_key = f"val_{item.item_uid}"
         save_next_key = f"save_next_{item.item_uid}"
-        st.session_state.setdefault(
-            value_key, "" if item.value is None else str(item.value)
-        )
+        initial_value = "" if item.value is None else str(item.value)
+        if item.multiple and initial_value not in ("", "?", "NA"):
+            initial_ok, _, initial_normalized = validate_value(initial_value, item)
+            if initial_ok:
+                initial_value = initial_normalized
+        st.session_state.setdefault(value_key, initial_value)
         st.session_state.setdefault(save_next_key, False)
 
         def _save_and_advance() -> None:
@@ -484,12 +511,12 @@ def edit_simple_item(
             key=value_key,
             on_change=_save_and_advance,
         )
-        ok, msg = validate_value(value, item)
+        ok, msg, normalized_value = validate_value(value, item)
         if not ok:
             st.error(msg)
         col_a, col_b, col_c = st.columns(3)
         if col_a.button("確定", key=f"confirm_{item.item_uid}", disabled=not ok):
-            item.value = value
+            item.value = normalized_value
             item.status = "confirmed"
             st.success("confirmed")
         if col_b.button("空欄", key=f"blank_{item.item_uid}"):
@@ -501,7 +528,7 @@ def edit_simple_item(
             item.status = "unknown"
             st.success("unknown")
         if st.session_state.get(save_next_key) and ok:
-            item.value = value
+            item.value = normalized_value
             item.status = "confirmed"
             save_items(workdir, st.session_state["review_items"])
             save_manifest(workdir, st.session_state.get("manifest", {}))

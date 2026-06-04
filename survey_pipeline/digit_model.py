@@ -337,17 +337,28 @@ def predict_digits(
 def validate_value(value: str | None, item: dict) -> str:
     if value is None or value == "":
         return "blank"
-    if not value.isdigit():
-        return "needs_review"
     lo, hi = item.get("min"), item.get("max")
     if item.get("multiple"):
+        text = value.strip().replace("，", ",").replace("、", ",")
+        if "," in text:
+            parts = [part.strip() for part in text.split(",")]
+        elif text.isdigit() and len(text) > 1 and hi is not None and hi <= 9:
+            parts = list(text)
+        else:
+            parts = [text]
+        if any(part == "" for part in parts) or not all(
+            part.isdigit() for part in parts
+        ):
+            return "needs_review"
         if lo is None or hi is None:
             return "auto"
         return (
             "auto"
-            if all(int(ch) >= lo and int(ch) <= hi for ch in value)
+            if all(int(part) >= lo and int(part) <= hi for part in parts)
             else "needs_review"
         )
+    if not value.isdigit():
+        return "needs_review"
     iv = int(value)
     if lo is not None and iv < lo:
         return "needs_review"
