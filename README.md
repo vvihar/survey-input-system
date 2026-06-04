@@ -44,3 +44,5 @@ uv run python -m scripts.export_csv --workdir <reviewディレクトリ> --out-d
 `make_review_dataset` は設問ごとの切り出し画像を保存しません。冊子ページ単位の画像だけを `outputs/review/.../pages/` に保存し、各設問の `rect` / `context_rect` / `table_rect` を `review_items.jsonl` に記録します。Streamlit は現在の冊子の版と設問IDから `layout.json` の矩形を引き直し、ページ画像から該当範囲をメモリ上で一時的に切り出して表示します。
 
 このため、Streamlit 上で冊子の版を訂正すると、同じページ画像に対して訂正版のレイアウト矩形が使われ、確認用の表示範囲も自動的に切り替わります。
+
+通常の設問確認では context 画像内の回答欄をハイライト表示します。回答欄だけを拡大確認したい場合は、各設問の「回答欄を単独表示」を有効にしてください。冊子メタ情報の該当部分画像も、上部パネル内の「該当部分の画像を表示」を有効にした場合だけ読み込みます。

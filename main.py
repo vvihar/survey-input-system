@@ -57,6 +57,7 @@ def prepare(
         pdf_key = source_pdf_key(pdf)
         answers_path = answers_dir / f"{pdf_key}.json"
         review_dir = out_dir / "review" / pdf_key
+        typer.echo(f"scanning: {pdf.name}")
         result = read_scanned_pdf(
             answered_pdf=pdf,
             template_pdf=template_pdf,
@@ -67,6 +68,7 @@ def prepare(
         )
         answers = result.model_dump(mode="json")
         write_json(answers_path, answers)
+        typer.echo(f"building review dataset: {pdf.name}")
         manifest = make_review_dataset(
             answered_pdf=pdf,
             template_pdf=template_pdf,
@@ -79,18 +81,18 @@ def prepare(
         typer.echo(f"review:  {review_dir} ({manifest['n_items']} items)")
         return
 
-    merged = read_scanned_pdfs(
+    answers = read_scanned_pdfs(
         answered_pdfs=pdfs,
         template_pdf=template_pdf,
         layout=layout,
         model_path=model if model is not None and model.exists() else None,
         dpi=dpi,
         use_id_ocr=not no_id_ocr,
-    )
-    answers = merged.model_dump(mode="json")
+    ).model_dump(mode="json")
     answers_path = answers_dir / "merged.json"
     review_dir = out_dir / "review_merged"
     write_json(answers_path, answers)
+    typer.echo("building review dataset: merged PDFs")
     manifest = make_review_datasets(
         answered_pdfs=pdfs,
         template_pdf=template_pdf,

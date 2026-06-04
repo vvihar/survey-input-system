@@ -3,12 +3,14 @@ from __future__ import annotations
 import re
 from pathlib import Path
 from typing import Any, cast
+from concurrent.futures import ProcessPoolExecutor, as_completed
 
 import cv2
 import fitz
 import numpy as np
 import torch
 from PIL import Image
+from rich.progress import Progress, TaskID
 
 from .common import (
     DEFAULT_RESPONDENT_ID_RECT_PT,
@@ -153,11 +155,15 @@ def read_scanned_pdf(
     n_pages = len(doc)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = load_model(model_path, device) if model_path else None
+    page_cache: dict[tuple[str, int, int], np.ndarray] = {}
 
     booklets: list[dict[str, Any]] = []
     layout_data = (
         layout.model_dump(mode="json") if isinstance(layout, LayoutDocument) else layout
     )
+    layout_pages = {
+        int(p["template_page_index"]): p for p in layout_data.get("pages", [])
+    }
     for start in range(0, n_pages, LOCAL_PAGES_PER_BOOKLET):
         if start + LOCAL_PAGES_PER_BOOKLET > n_pages:
             break
@@ -178,8 +184,16 @@ def read_scanned_pdf(
         for local_page in range(LOCAL_PAGES_PER_BOOKLET):
             ans_page_index = start + local_page
             tmpl_page_index = VERSION_BASE_PAGE[version] + local_page
-            scan_img, _ = render_pdf_page(answered_pdf, ans_page_index, dpi=dpi)
-            tmpl_img, _ = render_pdf_page(template_pdf, tmpl_page_index, dpi=dpi)
+            scan_key = (str(answered_pdf.resolve()), ans_page_index, dpi)
+            tmpl_key = (str(template_pdf.resolve()), tmpl_page_index, dpi)
+            scan_img = page_cache.get(scan_key)
+            if scan_img is None:
+                scan_img, _ = render_pdf_page(answered_pdf, ans_page_index, dpi=dpi)
+                page_cache[scan_key] = scan_img
+            tmpl_img = page_cache.get(tmpl_key)
+            if tmpl_img is None:
+                tmpl_img, _ = render_pdf_page(template_pdf, tmpl_page_index, dpi=dpi)
+                page_cache[tmpl_key] = tmpl_img
             from .common import align_ecc_affine_with_matrix
 
             aligned, score, warp_matrix = align_ecc_affine_with_matrix(scan_img, tmpl_img)
@@ -191,11 +205,7 @@ def read_scanned_pdf(
                     "warp_matrix": warp_matrix,
                 }
             )
-            layout_page = next(
-                p
-                for p in layout_data["pages"]
-                if p["template_page_index"] == tmpl_page_index
-            )
+            layout_page = layout_pages[tmpl_page_index]
             for item in layout_page.get("items", []):
                 if item.get("type") != "digit":
                     continue
@@ -227,6 +237,19 @@ def read_scanned_pdf(
     )
 
 
+def _read_scanned_pdf_worker(args: tuple[Path, Path, LayoutDocument | dict[str, Any], Path | None, int, bool, int]) -> dict[str, Any]:
+    answered_pdf, template_pdf, layout, model_path, dpi, use_id_ocr, booklet_offset = args
+    return read_scanned_pdf(
+        answered_pdf=answered_pdf,
+        template_pdf=template_pdf,
+        layout=layout,
+        model_path=model_path,
+        dpi=dpi,
+        use_id_ocr=use_id_ocr,
+        booklet_offset=booklet_offset,
+    ).model_dump(mode="json")
+
+
 def read_scanned_pdfs(
     answered_pdfs: list[Path],
     template_pdf: Path,
@@ -235,21 +258,38 @@ def read_scanned_pdfs(
     dpi: int = 220,
     use_id_ocr: bool = True,
 ) -> InitialAnswers:
-    all_booklets: list[dict[str, Any]] = []
-    booklet_offset = 0
-    for pdf_path in answered_pdfs:
-        result = read_scanned_pdf(
-            answered_pdf=pdf_path,
+    if len(answered_pdfs) == 1:
+        return read_scanned_pdf(
+            answered_pdf=answered_pdfs[0],
             template_pdf=template_pdf,
             layout=layout,
             model_path=model_path,
             dpi=dpi,
             use_id_ocr=use_id_ocr,
-            booklet_offset=booklet_offset,
         )
-        result_data = result.model_dump(mode="json")
-        all_booklets.extend(result_data["booklets"])
-        booklet_offset += len(result_data["booklets"])
+
+    offsets: list[tuple[Path, int]] = []
+    booklet_offset = 0
+    for pdf_path in answered_pdfs:
+        offsets.append((pdf_path, booklet_offset))
+        with fitz.open(pdf_path) as doc:
+            booklet_offset += len(doc) // LOCAL_PAGES_PER_BOOKLET
+
+    all_booklets: list[dict[str, Any]] = []
+    with Progress(transient=True) as progress:
+        task_id: TaskID = progress.add_task("Scanning PDFs", total=len(answered_pdfs))
+        with ProcessPoolExecutor(max_workers=min(8, len(answered_pdfs))) as ex:
+            futures = [
+                ex.submit(
+                    _read_scanned_pdf_worker,
+                    (pdf_path, template_pdf, layout, model_path, dpi, use_id_ocr, booklet_offset),
+                )
+                for pdf_path, booklet_offset in offsets
+            ]
+            for fut in as_completed(futures):
+                result_data = fut.result()
+                all_booklets.extend(result_data["booklets"])
+                progress.advance(task_id)
     source_pdfs = [str(p) for p in answered_pdfs]
     return InitialAnswers.model_validate(
         {

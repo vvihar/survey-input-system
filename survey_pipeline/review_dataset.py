@@ -3,10 +3,12 @@ from __future__ import annotations
 import hashlib
 from pathlib import Path
 from typing import Any, cast
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import cv2
 import numpy as np
 import numpy.typing as npt
+from rich.progress import Progress, TaskID
 
 from .common import (
     LOCAL_PAGES_PER_BOOKLET,
@@ -79,6 +81,8 @@ def _make_review_dataset_one(
     lookup = _answer_lookup(initial_answers)
     meta = _booklet_meta(initial_answers)
     rows: list[ReviewItem] = []
+    page_cache: dict[tuple[str, int, int], npt.NDArray[np.uint8]] = {}
+    layout_pages = {int(p["template_page_index"]): p for p in layout.get("pages", [])}
 
     source_pdf = str(answered_pdf)
     source_key = source_pdf_key(answered_pdf)
@@ -94,8 +98,16 @@ def _make_review_dataset_one(
         for local_page in range(LOCAL_PAGES_PER_BOOKLET):
             answered_page = page_start + local_page
             template_page = VERSION_BASE_PAGE[version] + local_page
-            scan_img, _ = render_pdf_page(answered_pdf, answered_page, dpi=dpi)
-            tmpl_img, _ = render_pdf_page(template_pdf, template_page, dpi=dpi)
+            scan_key = (str(answered_pdf.resolve()), answered_page, dpi)
+            tmpl_key = (str(template_pdf.resolve()), template_page, dpi)
+            scan_img = page_cache.get(scan_key)
+            if scan_img is None:
+                scan_img, _ = render_pdf_page(answered_pdf, answered_page, dpi=dpi)
+                page_cache[scan_key] = scan_img
+            tmpl_img = page_cache.get(tmpl_key)
+            if tmpl_img is None:
+                tmpl_img, _ = render_pdf_page(template_pdf, template_page, dpi=dpi)
+                page_cache[tmpl_key] = tmpl_img
             warp_matrix = _alignment_warp_matrix(bmeta, answered_page)
             measured_ecc: float | None = None
             if warp_matrix is None:
@@ -109,9 +121,7 @@ def _make_review_dataset_one(
                 pages_dir / f"{source_key}_b{booklet_index:04d}_p{local_page + 1}.png"
             )
             cv2.imwrite(str(page_image_path), page_img)
-            layout_page = next(
-                p for p in layout["pages"] if p["template_page_index"] == template_page
-            )
+            layout_page = layout_pages[template_page]
             page_h_px, page_w_px = page_img.shape[:2]
             page_width_pt = float(layout_page["page_width_pt"])
             page_height_pt = float(layout_page["page_height_pt"])
@@ -208,6 +218,8 @@ def make_review_datasets(
     merged_initial_answers: dict[str, Any],
     workdir: Path,
     dpi: int = 220,
+    progress: Progress | None = None,
+    progress_task_id: TaskID | None = None,
 ) -> dict[str, Any]:
     """Process multiple answered PDFs into a single review workdir.
 
@@ -222,24 +234,35 @@ def make_review_datasets(
         sp = b.get("source_pdf", "")
         booklets_by_pdf.setdefault(sp, []).append(b)
 
+    tasks: list[tuple[Path, dict[str, Any]]] = []
     for pdf in answered_pdfs:
         sp = str(pdf)
         pdf_booklets = booklets_by_pdf.get(sp, [])
         if not pdf_booklets:
             continue
-        # Build a partial initial_answers dict for this PDF
-        partial_answers: dict[str, Any] = {
-            "source_pdf": sp,
-            "template_pdf": merged_initial_answers.get(
-                "template_pdf", str(template_pdf)
-            ),
-            "dpi": merged_initial_answers.get("dpi", dpi),
-            "booklets": pdf_booklets,
-        }
-        rows = _make_review_dataset_one(
-            pdf, template_pdf, layout, partial_answers, workdir, dpi
+        tasks.append(
+            (
+                pdf,
+                {
+                    "source_pdf": sp,
+                    "template_pdf": merged_initial_answers.get(
+                        "template_pdf", str(template_pdf)
+                    ),
+                    "dpi": merged_initial_answers.get("dpi", dpi),
+                    "booklets": pdf_booklets,
+                },
+            )
         )
-        all_rows.extend(rows)
+
+    with ThreadPoolExecutor(max_workers=min(8, len(tasks) or 1)) as ex:
+        futures = [
+            ex.submit(_make_review_dataset_one, pdf, template_pdf, layout, partial, workdir, dpi)
+            for pdf, partial in tasks
+        ]
+        for fut in as_completed(futures):
+            all_rows.extend(fut.result())
+            if progress is not None and progress_task_id is not None:
+                progress.advance(progress_task_id)
 
     source_pdfs = [str(p) for p in answered_pdfs]
 

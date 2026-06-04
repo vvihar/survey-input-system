@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from io import BytesIO
 from pathlib import Path
 from typing import Any
 
@@ -86,7 +87,7 @@ def page_image(path: str) -> Image.Image:
 
 
 @st.cache_data(show_spinner=False)
-def cropped_page_image(
+def cropped_page_image_bytes(
     path: str,
     rect: tuple[float, float, float, float],
     highlight_rect: tuple[float, float, float, float] | None,
@@ -95,7 +96,8 @@ def cropped_page_image(
     page_width_pt: float,
     page_height_pt: float,
     pad_px: int,
-) -> Image.Image:
+    target_width_px: int,
+) -> bytes:
     img = page_image(path)
     sx = page_width_px / page_width_pt
     sy = page_height_px / page_height_pt
@@ -104,27 +106,40 @@ def cropped_page_image(
     x1 = min(page_width_px, int(round(rect[2] * sx)) + pad_px)
     y1 = min(page_height_px, int(round(rect[3] * sy)) + pad_px)
     if x1 <= x0 or y1 <= y0:
-        return Image.new("RGB", (1, 1), "white")
+        cropped = Image.new("RGB", (1, 1), "white")
+        buf = BytesIO()
+        cropped.save(buf, format="PNG", compress_level=1)
+        return buf.getvalue()
     cropped = img.crop((x0, y0, x1, y1))
-    if highlight_rect is None:
-        return cropped
+    if highlight_rect is not None:
+        hx0 = max(0, int(round(highlight_rect[0] * sx)) - x0)
+        hy0 = max(0, int(round(highlight_rect[1] * sy)) - y0)
+        hx1 = min(cropped.width, int(round(highlight_rect[2] * sx)) - x0)
+        hy1 = min(cropped.height, int(round(highlight_rect[3] * sy)) - y0)
+        if hx1 > hx0 and hy1 > hy0:
+            overlay = Image.new("RGBA", cropped.size, (0, 0, 0, 0))
+            draw = ImageDraw.Draw(overlay)
+            draw.rectangle(
+                (hx0, hy0, hx1, hy1),
+                fill=(255, 237, 0, 72),
+                outline=(255, 237, 0, 240),
+                width=4,
+            )
+            cropped = Image.alpha_composite(cropped.convert("RGBA"), overlay).convert(
+                "RGB"
+            )
 
-    hx0 = max(0, int(round(highlight_rect[0] * sx)) - x0)
-    hy0 = max(0, int(round(highlight_rect[1] * sy)) - y0)
-    hx1 = min(cropped.width, int(round(highlight_rect[2] * sx)) - x0)
-    hy1 = min(cropped.height, int(round(highlight_rect[3] * sy)) - y0)
-    if hx1 <= hx0 or hy1 <= hy0:
-        return cropped
+    if target_width_px > 0 and cropped.width > target_width_px:
+        target_height_px = max(
+            1, round(cropped.height * target_width_px / cropped.width)
+        )
+        cropped = cropped.resize(
+            (target_width_px, target_height_px), Image.Resampling.BILINEAR
+        )
 
-    overlay = Image.new("RGBA", cropped.size, (0, 0, 0, 0))
-    draw = ImageDraw.Draw(overlay)
-    draw.rectangle(
-        (hx0, hy0, hx1, hy1),
-        fill=(255, 237, 0, 72),
-        outline=(255, 237, 0, 230),
-        width=4,
-    )
-    return Image.alpha_composite(cropped.convert("RGBA"), overlay).convert("RGB")
+    buf = BytesIO()
+    cropped.save(buf, format="JPEG", quality=86)
+    return buf.getvalue()
 
 
 def current_layout_page(
@@ -184,7 +199,7 @@ def render_page_window(
         if highlight_rect is not None
         else None
     )
-    img = cropped_page_image(
+    img = cropped_page_image_bytes(
         str(img_path),
         rect_tuple,
         highlight_tuple,
@@ -193,6 +208,7 @@ def render_page_window(
         item.page_width_pt,
         item.page_height_pt,
         pad_px,
+        target_width_px,
     )
     st.image(img, caption=caption or None, width="stretch")
 
@@ -226,6 +242,46 @@ def validate_value(value: str, item: ReviewItem) -> tuple[bool, str]:
 
 def sidebar_filters(items: list[ReviewItem]) -> list[int]:
     st.sidebar.header("絞り込み")
+
+    def reset_position() -> None:
+        st.session_state["current_pos"] = 0
+
+    booklet_options: dict[str, int | None] = {"すべて": None}
+    booklet_meta: dict[int, dict[str, Any]] = {}
+    for item in items:
+        booklet_index = int(item.booklet_index)
+        meta = booklet_meta.setdefault(
+            booklet_index,
+            {
+                "item": item,
+                "total": 0,
+                "confirmed": 0,
+            },
+        )
+        meta["total"] += 1
+        if item.status == "confirmed":
+            meta["confirmed"] += 1
+    for booklet_index in sorted(booklet_meta):
+        meta = booklet_meta[booklet_index]
+        item = meta["item"]
+        total = int(meta["total"])
+        confirmed = int(meta["confirmed"])
+        if confirmed == 0:
+            progress_label = "未着手"
+        elif confirmed == total:
+            progress_label = "完了"
+        else:
+            progress_label = "進行中"
+        label = f"[{progress_label}] #{booklet_index} / {item.respondent_id} / {confirmed}/{total}"
+        booklet_options[label] = booklet_index
+    selected_booklet_label = st.sidebar.selectbox(
+        "冊子",
+        list(booklet_options.keys()),
+        key="filter_booklet",
+        on_change=reset_position,
+    )
+    selected_booklet = booklet_options[selected_booklet_label]
+
     source_pdfs = sorted({x.source_pdf for x in items if x.source_pdf})
     selected_sources = (
         st.sidebar.multiselect(
@@ -248,6 +304,8 @@ def sidebar_filters(items: list[ReviewItem]) -> list[int]:
     )
     idxs: list[int] = []
     for i, x in enumerate(items):
+        if selected_booklet is not None and x.booklet_index != selected_booklet:
+            continue
         if selected_sources is not None and x.source_pdf not in selected_sources:
             continue
         if x.type not in selected_types:
@@ -290,68 +348,72 @@ def persist_booklet_meta(
         save_initial_answers(workdir, st.session_state["initial_answers"])
 
 
-def booklet_editor(workdir: Path, items: list[ReviewItem]) -> None:
-    st.sidebar.divider()
-    st.sidebar.header("冊子メタ情報")
-    booklets: dict[int, dict[str, Any]] = {}
-    for x in items:
-        bi = int(x.booklet_index)
-        booklets.setdefault(
-            bi,
-            {
-                "booklet_index": bi,
-                "respondent_id": x.respondent_id,
-                "version": x.version,
-                "source_pdf": x.source_pdf,
-                "n_items": 0,
-                "confirmed": 0,
-            },
-        )
-        booklets[bi]["n_items"] += 1
-        if x.status == "confirmed":
-            booklets[bi]["confirmed"] += 1
-    if not booklets:
+def current_booklet_meta_panel(
+    workdir: Path, items: list[ReviewItem], current_item: ReviewItem
+) -> None:
+    booklet_index = int(current_item.booklet_index)
+    booklet_items = [x for x in items if int(x.booklet_index) == booklet_index]
+    if not booklet_items:
         return
-    for bi in sorted(booklets):
-        b = booklets[bi]
-        with st.sidebar.expander(f"冊子 #{bi} ({b['respondent_id']})", expanded=False):
-            st.caption(f"PDF: {Path(b['source_pdf']).name}")
-            st.caption(f"進捗: {b['confirmed']}/{b['n_items']}")
-            first_item = next((x for x in items if x.booklet_index == bi), None)
-            if first_item:
-                st.caption("調査票ID")
+    total = len(booklet_items)
+    confirmed = sum(1 for x in booklet_items if x.status == "confirmed")
+    first_item = next(
+        (x for x in booklet_items if x.local_page_index == 0), booklet_items[0]
+    )
+    title = (
+        f"冊子 #{booklet_index} / {current_item.respondent_id} / {confirmed}/{total}"
+    )
+    with st.expander(title, expanded=False):
+        c1, c2, c3 = st.columns([1.2, 1.2, 1])
+        with c1:
+            st.caption("調査票ID")
+            show_meta_images = st.checkbox(
+                "該当部分の画像を表示",
+                value=False,
+                key=f"current_meta_images_{booklet_index}",
+            )
+            if show_meta_images:
                 render_page_window(
                     workdir,
                     first_item,
                     {},
                     DEFAULT_RESPONDENT_ID_RECT_PT,
                     pad_px=12,
-                    target_width_px=260,
+                    target_width_px=320,
                 )
-            new_rid = st.text_input(
-                "respondent_id", value=b["respondent_id"], key=f"bm_rid_{bi}"
-            )
-            if new_rid:
-                st.caption(new_rid)
-            if first_item:
-                st.caption("版")
+        with c2:
+            st.caption("版")
+            if show_meta_images:
                 render_page_window(
                     workdir,
                     first_item,
                     {},
                     VERSION_LABEL_SEARCH_RECT_PT,
                     pad_px=12,
-                    target_width_px=260,
+                    target_width_px=320,
                 )
+        with c3:
+            st.caption(f"PDF: {Path(current_item.source_pdf).name}")
+            st.caption(f"進捗: {confirmed}/{total}")
+            new_rid = st.text_input(
+                "respondent_id",
+                value=current_item.respondent_id,
+                key=f"current_meta_rid_{booklet_index}",
+            )
             new_ver = st.selectbox(
                 "version",
                 VERSIONS,
-                index=VERSIONS.index(b["version"]) if b["version"] in VERSIONS else 0,
-                key=f"bm_ver_{bi}",
+                index=VERSIONS.index(current_item.version)
+                if current_item.version in VERSIONS
+                else 0,
+                key=f"current_meta_ver_{booklet_index}",
             )
-            if st.button("適用", key=f"bm_apply_{bi}") and new_rid:
-                persist_booklet_meta(workdir, items, bi, new_rid, new_ver)
-                st.success(f"冊子 #{bi} を更新・保存しました")
+            if (
+                st.button("更新して保存", key=f"current_meta_apply_{booklet_index}")
+                and new_rid
+            ):
+                persist_booklet_meta(workdir, items, booklet_index, new_rid, new_ver)
+                st.success("冊子メタ情報を保存しました")
 
 
 def edit_simple_item(
@@ -373,11 +435,21 @@ def edit_simple_item(
             caption="設問",
             pad_px=12,
         )
-        # 区切り線
-        st.markdown("---")
-        render_page_window(
-            workdir, item, layout, answer_rect, caption="回答欄", pad_px=12
+        show_answer_image = st.checkbox(
+            "回答欄だけを拡大して表示",
+            value=False,
+            key=f"show_answer_image_{item.item_uid}",
         )
+        if show_answer_image:
+            render_page_window(
+                workdir,
+                item,
+                layout,
+                answer_rect,
+                caption="回答欄",
+                pad_px=12,
+                target_width_px=520,
+            )
     with c2:
         st.write(f"**{item.field_id}** / {label}")
         st.caption(
@@ -516,7 +588,6 @@ def main() -> None:
         return
 
     idxs = sidebar_filters(items)
-    booklet_editor(workdir, items)
     if not idxs:
         st.warning("該当する項目がありません。")
         return
@@ -533,6 +604,8 @@ def main() -> None:
     st.session_state["current_pos"] = int(pos)
     idx = idxs[st.session_state["current_pos"]]
     item = items[idx]
+
+    current_booklet_meta_panel(workdir, items, item)
 
     b1, b2, b3, b4 = st.columns(4)
     prev_key = f"nav_prev_{item.item_uid}"
