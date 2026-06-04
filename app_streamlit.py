@@ -484,34 +484,33 @@ def edit_simple_item(
             key=value_key,
             on_change=_save_and_advance,
         )
-        if value:
-            ok, msg = validate_value(value, item)
-            if not ok:
-                st.error(msg)
-            col_a, col_b, col_c = st.columns(3)
-            if col_a.button("確定", key=f"confirm_{item.item_uid}", disabled=not ok):
-                item.value = value
-                item.status = "confirmed"
-                st.success("confirmed")
-            if col_b.button("空欄", key=f"blank_{item.item_uid}"):
-                item.value = ""
-                item.status = "blank"
-                st.success("blank")
-            if col_c.button("判読不能", key=f"unk_{item.item_uid}"):
-                item.value = "?"
-                item.status = "unknown"
-                st.success("unknown")
-            if st.session_state.get(save_next_key) and ok:
-                item.value = value
-                item.status = "confirmed"
-                save_items(workdir, st.session_state["review_items"])
-                save_manifest(workdir, st.session_state.get("manifest", {}))
-                st.session_state[save_next_key] = False
-                st.session_state["current_pos"] = min(
-                    st.session_state["current_pos"] + 1,
-                    len(st.session_state["review_items"]) - 1,
-                )
-                st.rerun()
+        ok, msg = validate_value(value, item)
+        if not ok:
+            st.error(msg)
+        col_a, col_b, col_c = st.columns(3)
+        if col_a.button("確定", key=f"confirm_{item.item_uid}", disabled=not ok):
+            item.value = value
+            item.status = "confirmed"
+            st.success("confirmed")
+        if col_b.button("空欄", key=f"blank_{item.item_uid}"):
+            item.value = ""
+            item.status = "blank"
+            st.success("blank")
+        if col_c.button("判読不能", key=f"unk_{item.item_uid}"):
+            item.value = "?"
+            item.status = "unknown"
+            st.success("unknown")
+        if st.session_state.get(save_next_key) and ok:
+            item.value = value
+            item.status = "confirmed"
+            save_items(workdir, st.session_state["review_items"])
+            save_manifest(workdir, st.session_state.get("manifest", {}))
+            st.session_state[save_next_key] = False
+            st.session_state["current_pos"] = min(
+                st.session_state["current_pos"] + 1,
+                len(st.session_state["review_items"]) - 1,
+            )
+            st.rerun()
     return item
 
 
